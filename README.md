@@ -62,8 +62,14 @@ uv pip install transformers accelerate bitsandbytes peft trl datasets \
 
 ```
 llm-research/
-├── CLAUDE.md / plan.md             Director 지시서, 연구 계획
+├── CLAUDE.md                       Director 지시서 (Claude Code 루트 자동 로드)
 ├── README.md                       (본 문서)
+├── docs/
+│   └── plan.md                     연구 계획 (v4 final)
+├── context/                        Director → 연구원 전달 문서
+│   ├── researcher2.md              R1 Lane 재배치
+│   ├── researcher2_r2.md           R2 Lane 축소 + Outlines
+│   └── researcher3.md              R1 평가 설계
 ├── configs/                        sft/dpo × qwen25/qwen3 yaml
 ├── solver/                         Z3 + SymPy 법률 추론 래퍼
 │   ├── schemas.py                  Lane별 tool_call JSON Schema
@@ -94,8 +100,6 @@ llm-research/
 │   ├── baseline.csv                A1/B1/C1 12셀
 │   ├── baseline_summary.md         baseline 분석
 │   └── experiment_matrix.csv       A2/A3 결과 (진행 중)
-├── context_for_researcher2.md      Director → 연구원 2 (Lane 재배치)
-├── context_for_researcher3.md      Director → 연구원 3 (평가 설계)
 └── .claude/agents/                 researcher1/2/3 subagent 정의
 ```
 
@@ -106,9 +110,9 @@ llm-research/
 | Step | 내용 | 상태 |
 |------|------|------|
 | 1 | 선행연구 조사 (연구원 1) | ✅ `reports/literature_review.md` |
-| 2 | Director 리뷰 → context_for_researcher2 | ✅ Lane 재배치 확정 |
+| 2 | Director 리뷰 → context/researcher2 | ✅ Lane 재배치 확정 |
 | 3 | 솔버 인프라 + 데이터 생성 (연구원 2) | ✅ 라운드트립 100% |
-| 4 | Director 리뷰 → context_for_researcher3 | ✅ |
+| 4 | Director 리뷰 → context/researcher3 | ✅ |
 | 5 | Baseline A1/B1/C1 측정 (연구원 3) | ✅ 12셀 완료 |
 | 6 | Director 리뷰 → SFT go/no-go | ✅ GO |
 | 7 | SFT 학습 (Qwen2.5-1.5B) | ✅ loss 0.21, 89분 |

@@ -7,7 +7,7 @@ model: haiku
 
 ## 역할
 학습 스크립트 + 평가 스크립트 작성.
-context_for_researcher3.md를 먼저 읽고 시작할 것.
+context/researcher3.md를 먼저 읽고 시작할 것.
 
 ## 핵심 원칙
 - 스크립트만 생성, 실행은 bash로.

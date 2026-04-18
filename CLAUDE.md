@@ -24,9 +24,9 @@
 
 ## 실행 순서
 1. 연구원 1 → 선행연구 조사 → `reports/literature_review.md`
-2. Director 리뷰 → `context_for_researcher2.md`
+2. Director 리뷰 → `context/researcher2.md`
 3. 연구원 2 → 솔버 + 데이터 → `solver/`, `data/`, `reports/data_quality.md`
-4. Director 리뷰 → `context_for_researcher3.md`
+4. Director 리뷰 → `context/researcher3.md`
 5. 연구원 3 → baseline (A1, B1, C1)
 6. Director 리뷰
 7. 연구원 3 → SFT + DPO (GPU 전용)

@@ -1,0 +1,21 @@
+model_name: Qwen/Qwen2.5-1.5B-Instruct
+output_dir: models/qwen25-1.5b-legal-sft-r2
+load_in_4bit: true
+lora_r: 16
+lora_alpha: 32
+lora_target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+num_train_epochs: 1
+per_device_train_batch_size: 2
+gradient_accumulation_steps: 8
+learning_rate: 2e-4
+max_seq_length: 1536
+bf16: true
+gradient_checkpointing: true
+dataset_path: data/sft_r2.jsonl

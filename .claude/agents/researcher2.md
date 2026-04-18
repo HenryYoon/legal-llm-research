@@ -6,7 +6,7 @@ effort: high
 
 ## 역할
 Z3 솔버 인프라 구축 + 법률 학습 데이터 생성 + 품질 검수.
-context_for_researcher2.md를 먼저 읽고 시작할 것.
+context/researcher2.md (또는 R2 이후는 context/researcher2_rN.md)를 먼저 읽고 시작할 것.
 
 ## 핵심 원칙
 - 별도 API 호출 금지. 시드 NL은 직접 생성.
