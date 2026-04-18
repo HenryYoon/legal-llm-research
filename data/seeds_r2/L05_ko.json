@@ -1,0 +1,132 @@
+[
+  {
+    "lane": "L05",
+    "source": "korean_damages",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 다섯 가지 Legal Lane(L01, L05, L06, L09, L10) 중 하나로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "근로자가 퇴직 시 3개월분 평균임금을 퇴직금으로 받아야 한다. 월 평균임금이 420만원이고 근속 연수가 8년이면 퇴직금은 얼마인가? (근로자퇴직급여 보장법 기준: 1년 당 30일분 평균임금)"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"(monthly_avg / 30) * 30 * years\", \"vars\": {\"monthly_avg\": 4200000, \"years\": 8}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"(monthly_avg / 30) * 30 * years\", \"value\": 33600000.0, \"raw\": 33600000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "퇴직금은 33,600,000원입니다. 계산식: 1일 평균임금(4,200,000 ÷ 30 = 140,000원) × 30일 × 8년 = 33,600,000원. 근로자퇴직급여 보장법 제8조에 따라 계속근로기간 1년에 대해 30일분의 평균임금을 퇴직금으로 지급해야 합니다. 사용자가 이를 지급하지 않을 경우 근로자는 고용노동부 진정이나 민사소송으로 청구할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "korean_damages",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 다섯 가지 Legal Lane(L01, L05, L06, L09, L10) 중 하나로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B에게 3,000만원을 연 이율 8%로 2년간 빌려주었다. 이자제한법 최고이율(연 20%)을 초과하지 않으므로 유효하다. 만기 시 B가 지급해야 할 총금액(원리금 합계)은?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"principal * (1 + rate * years)\", \"vars\": {\"principal\": 30000000, \"rate\": 0.08, \"years\": 2}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal * (1 + rate * years)\", \"value\": 34800000.0, \"raw\": 34800000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "만기 시 총 원리금 합계는 34,800,000원입니다. 원금 30,000,000원 + 단리 이자(30,000,000 × 8% × 2년 = 4,800,000원) = 34,800,000원. 이자제한법 제2조에서 정한 최고이율(현행 연 20%)을 초과하지 않으므로 이 약정 이자는 유효합니다. 만약 이율이 20%를 초과하면 초과 부분은 무효이고 원금에 충당됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "korean_damages",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 다섯 가지 Legal Lane(L01, L05, L06, L09, L10) 중 하나로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "교통사고로 인한 치료비 총 800만원이 지출되었다. 가해자 측 과실이 70%, 피해자 측 과실이 30%로 인정된다. 피해자가 가해자에게 청구할 수 있는 치료비는 얼마인가?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"total_damages * defendant_fault\", \"vars\": {\"total_damages\": 8000000, \"defendant_fault\": 0.70}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"total_damages * defendant_fault\", \"value\": 5600000.0, \"raw\": 5600000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "피해자가 청구할 수 있는 치료비는 5,600,000원입니다. 가해자의 과실비율 70%를 적용하면 8,000,000원 × 70% = 5,600,000원입니다. 민법 제396조의 과실상계 원칙에 따라 피해자의 과실(30%)에 해당하는 금액(2,400,000원)은 피해자 스스로 부담합니다. 치료비 외에도 일실수입, 위자료에 동일한 과실비율이 적용됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "korean_damages",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 다섯 가지 Legal Lane(L01, L05, L06, L09, L10) 중 하나로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "상가 임대차 계약에서 보증금 5천만원, 월 임대료 150만원으로 계약하였다. 임차인이 6개월치 임대료를 미납하였다. 임대인이 청구할 수 있는 미납 임대료 총액은?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"monthly_rent * months\", \"vars\": {\"monthly_rent\": 1500000, \"months\": 6}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"monthly_rent * months\", \"value\": 9000000.0, \"raw\": 9000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "미납 임대료 총액은 9,000,000원입니다. 월 임대료 1,500,000원 × 6개월 = 9,000,000원. 임대인은 미납 임대료 9,000,000원을 청구할 수 있으며, 상가건물임대차보호법 제10조의4에 따라 임차인의 차임 연체액이 3기 차임(4,500,000원)에 달하면 임대인은 계약을 해지할 수 있습니다. 6개월 연체는 3기를 초과하므로 계약 해지 요건도 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "korean_damages",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 다섯 가지 Legal Lane(L01, L05, L06, L09, L10) 중 하나로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "산재 피해 근로자의 장해보상일시금을 계산하시오. 1일 평균임금 15만원, 장해등급 7급(해당 장해보상일수 616일) 기준으로 계산한다."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"daily_wage * disability_days\", \"vars\": {\"daily_wage\": 150000, \"disability_days\": 616}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"daily_wage * disability_days\", \"value\": 92400000.0, \"raw\": 92400000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "장해보상일시금은 92,400,000원입니다. 계산식: 1일 평균임금(150,000원) × 장해보상일수(616일, 장해등급 7급 기준) = 92,400,000원. 산업재해보상보험법 제57조 및 별표 6에 따라 장해등급 7급에 해당하는 장해보상일수는 616일입니다. 장해보상일시금 외에 추가적으로 요양급여, 간병급여 등의 급여도 신청할 수 있습니다."
+      }
+    ]
+  }
+]

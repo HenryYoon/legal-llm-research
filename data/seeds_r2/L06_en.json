@@ -1,0 +1,191 @@
+[
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Explain the difference between express and implied contracts."},
+      {"role": "assistant", "content": "An express contract is one in which the parties explicitly state the terms of their agreement, either orally or in writing. All essential terms — offer, acceptance, and consideration — are clearly articulated. An implied contract, by contrast, arises from the conduct, circumstances, or relationship of the parties rather than from explicit statements. An implied-in-fact contract occurs when the parties' actions demonstrate mutual intent to contract (e.g., accepting and paying for a service without a written agreement). An implied-in-law contract (quasi-contract) is a legal fiction courts impose to prevent unjust enrichment, even absent true agreement. The key distinction: express contracts rest on explicit words; implied contracts rest on conduct or equity."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "What is the parol evidence rule, and what are its main exceptions?"},
+      {"role": "assistant", "content": "The parol evidence rule bars introduction of prior or contemporaneous oral or written statements to contradict, vary, or add to the terms of a fully integrated written contract. The purpose is to protect the integrity of the written agreement as the final expression of the parties' deal. However, the rule contains important exceptions: (1) to show the contract is void or voidable (fraud, duress, mistake, illegality); (2) to explain ambiguous or unclear terms; (3) to establish a condition precedent to the contract's effectiveness; (4) to show subsequent modifications to the written contract; (5) to fill gaps in a partially integrated agreement; and (6) in the UCC context, to add consistent additional terms unless the writing was intended as a complete and exclusive statement. Courts apply the rule narrowly to avoid unfair windfalls."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Compare strict liability and negligence as bases for tort liability."},
+      {"role": "assistant", "content": "Negligence requires proving that the defendant owed a duty of care, breached that duty by failing to act as a reasonable person would, and that the breach caused the plaintiff's harm. Fault is central: the defendant must have acted unreasonably. Strict liability, by contrast, imposes liability regardless of fault or intent. In strict liability cases (ultra-hazardous activities, product liability), a plaintiff need not prove the defendant was careless — only that the activity or product caused harm. Key differences: (1) fault element — required for negligence, absent for strict liability; (2) defenses — contributory/comparative negligence applies to both, but assumption of risk is a stronger defense in strict liability; (3) policy rationale — strict liability spreads the cost of dangerous activities to those who profit from them rather than requiring harm victims to prove carelessness."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Explain the concept of mens rea and its role in criminal law."},
+      {"role": "assistant", "content": "Mens rea, Latin for 'guilty mind,' refers to the mental state or intent required to establish criminal liability. Most crimes require both a guilty act (actus reus) and a guilty mind (mens rea) to occur simultaneously. The MPC identifies four mental states: (1) purpose — the defendant consciously desires the prohibited result; (2) knowledge — the defendant is aware their conduct will cause the result; (3) recklessness — the defendant consciously disregards a substantial and unjustifiable risk; (4) negligence — the defendant fails to perceive a risk that a reasonable person would recognize. The required mens rea varies by crime: murder typically requires purpose or knowledge, manslaughter recklessness, and regulatory offenses may impose strict liability with no mens rea. Mens rea is a constitutional safeguard against punishing morally blameless conduct."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Summarize the key protections afforded by the Fourth Amendment."},
+      {"role": "assistant", "content": "The Fourth Amendment protects people against 'unreasonable searches and seizures' by the government and requires warrants to be based on probable cause, supported by oath or affirmation, and to specifically describe the place to be searched and persons or things to be seized. Key protections include: (1) The warrant requirement — searches generally require a warrant issued by a neutral magistrate; (2) The probable cause standard — law enforcement must demonstrate sufficient factual basis to believe evidence of crime will be found; (3) The exclusionary rule — evidence obtained in violation of the Fourth Amendment is typically inadmissible (Mapp v. Ohio, 1961); (4) Recognized exceptions — Terry stops (reasonable suspicion for brief stops), exigent circumstances, plain view, consent, search incident to arrest, and automobile exception. The amendment applies to government actors; private searches are unprotected."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "What is promissory estoppel, and when does it apply?"},
+      {"role": "assistant", "content": "Promissory estoppel (also called detrimental reliance) is an equitable doctrine that allows enforcement of a promise even absent a formal contract, when: (1) the promisor makes a clear and definite promise; (2) the promisor reasonably expects the promise to induce action or forbearance; (3) the promisee actually and reasonably relies on the promise to their detriment; and (4) injustice can only be avoided by enforcing the promise. It is most commonly invoked when a contract fails for lack of consideration but the promisee has changed their position based on the promise. Restatement (Second) of Contracts § 90 codifies the doctrine. Courts typically award reliance damages (out-of-pocket losses) rather than expectation damages under promissory estoppel, though some jurisdictions award full expectation damages in appropriate cases."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Explain the difference between civil and criminal procedure in the U.S. legal system."},
+      {"role": "assistant", "content": "Civil procedure governs disputes between private parties (or between a private party and the government acting in a non-prosecutorial capacity) over legal rights, obligations, or damages. The plaintiff initiates the suit; the burden of proof is preponderance of the evidence (more likely than not). Remedies include damages, injunctions, and specific performance. Criminal procedure governs the prosecution of individuals or entities by the government for violations of criminal law. The state prosecutes; the burden of proof is beyond a reasonable doubt — a far higher standard. Remedies include imprisonment, fines, probation, and in some jurisdictions, death. Key procedural differences: (1) discovery scope (broader in civil cases); (2) right against self-incrimination applies only in criminal proceedings; (3) jury verdicts must be unanimous in federal criminal trials; (4) double jeopardy bars re-prosecution after acquittal in criminal cases only."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Explain the doctrine of respondeat superior and its limits."},
+      {"role": "assistant", "content": "Respondeat superior ('let the master answer') is a doctrine of vicarious liability holding an employer responsible for torts committed by an employee acting within the scope of employment. The rationale is that employers profit from employee activity and can best prevent harm by selecting, training, and supervising workers. For the doctrine to apply: (1) an employer-employee relationship must exist (independent contractors generally do not trigger respondeat superior); (2) the employee must have been acting within the scope of employment at the time of the tort — performing job duties or conduct incidental to them. Limits: (1) frolic vs. detour — major departures from job duties ('frolics') take an employee outside the scope; minor deviations ('detours') remain within scope; (2) intentional torts — employers are generally not liable for employees' intentional torts unless the tort is characteristic of the employment or the employer authorized it; (3) independent contractors — hiring parties are usually not liable for independent contractors' torts absent certain exceptions."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "What is the rule against perpetuities, and why does it matter?"},
+      {"role": "assistant", "content": "The rule against perpetuities (RAP) is a common-law rule prohibiting future interests in property that might not vest (become certain) within a life in being at the time of the grant plus 21 years. The purpose is to prevent property from being tied up indefinitely by contingent future interests, thereby ensuring the free alienability of property and limiting 'dead hand' control over assets. The classic formulation: 'No interest is good unless it must vest, if at all, not later than 21 years after some life in being at the creation of the interest.' Courts famously apply the 'fertile octogenarian' and 'unborn widow' scenarios to void interests that could theoretically vest too remotely. Many states have reformed or abolished the RAP through the Uniform Statutory Rule Against Perpetuities (USRAP), which allows a 90-year vesting period, or 'wait-and-see' approaches. Modern practice relies heavily on dynasty trusts in RAP-abolished jurisdictions to achieve multigenerational estate planning."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Summarize the main elements of a prima facie case for employment discrimination under Title VII of the Civil Rights Act."},
+      {"role": "assistant", "content": "Under the McDonnell Douglas Corp. v. Green (1973) burden-shifting framework, a plaintiff establishes a prima facie case of disparate treatment employment discrimination under Title VII by showing: (1) membership in a protected class (race, color, religion, sex, or national origin); (2) qualification for the position or job benefit at issue; (3) an adverse employment action (termination, demotion, failure to hire, etc.); and (4) circumstances raising an inference of discrimination (e.g., a similarly situated employee outside the protected class was treated more favorably). Once established, the burden shifts to the employer to articulate a legitimate, non-discriminatory reason for the action. The plaintiff must then show the stated reason is pretextual — that discrimination was the real motivating factor. Alternatively, plaintiffs may use a mixed-motive theory (Desert Palace v. Costa) showing that protected status was a motivating factor, even if other legitimate factors also played a role."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Compare the fiduciary duties owed by corporate officers versus directors."},
+      {"role": "assistant", "content": "Both corporate directors and officers owe fiduciary duties of care and loyalty to the corporation and its shareholders, but the standards differ in important ways. Directors, as part of the board, owe the duty of care (make informed decisions after reasonable investigation) and the duty of loyalty (act in the corporation's best interest, avoid self-dealing). The business judgment rule protects director decisions from judicial second-guessing if made in good faith, on an informed basis, and in the honest belief they serve the corporation's interests. Officers also owe duties of care and loyalty but are held to a higher standard of day-to-day operational competence because they manage the business. Some jurisdictions (following the ALI Principles and the MBCA) impose a duty of obedience on officers (follow corporate policy and legal requirements). Officers do not receive the business judgment rule's strong deferential protection for routine managerial acts in the same way directors do for boardroom decisions."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "What is the difference between a deed of trust and a mortgage?"},
+      {"role": "assistant", "content": "Both a mortgage and a deed of trust are instruments that secure a lender's interest in real property as collateral for a loan, but they differ in structure and foreclosure process. A mortgage involves two parties: the borrower (mortgagor) and the lender (mortgagee). Upon default, foreclosure must proceed through a judicial process (court order) in most states, which is time-consuming. A deed of trust involves three parties: the borrower (trustor), the lender (beneficiary), and a neutral third-party trustee who holds legal title to the property. If the borrower defaults, the trustee conducts a non-judicial foreclosure (trustee's sale) by following a statutory notice process, without a court order. Non-judicial foreclosure is typically faster and cheaper for the lender. California, Texas, and many western states prefer deeds of trust; eastern states often use mortgages. The practical distinction matters most at default: the foreclosure process determines how quickly the lender can recover the collateral."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Explain the concept of standing in U.S. federal courts."},
+      {"role": "assistant", "content": "Standing is the constitutional requirement that a plaintiff have a sufficient stake in a controversy before a federal court can hear the case. Derived from Article III's 'case or controversy' requirement, standing has three elements established in Lujan v. Defenders of Wildlife (1992): (1) injury-in-fact — a concrete, particularized, actual or imminent injury, not hypothetical or speculative; (2) causation — a causal connection between the injury and the defendant's challenged conduct; (3) redressability — a favorable court decision must be likely to redress the injury. Courts also consider prudential standing considerations (zone of interests, third-party standing). Standing must be maintained at every stage of litigation, not just at the outset. It is distinct from ripeness (is the dispute ready for adjudication?) and mootness (has the dispute been resolved?). Organizational standing is established when at least one member has standing and the organization seeks relief germane to its purpose."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Summarize the key differences between Chapter 7 and Chapter 13 bankruptcy."},
+      {"role": "assistant", "content": "Chapter 7 (liquidation) bankruptcy allows individuals or businesses to discharge most unsecured debts (credit cards, medical bills) quickly, typically within 4-6 months. A trustee liquidates non-exempt assets to pay creditors. The debtor receives a fresh start, but loses non-exempt property and cannot refile for 8 years. Eligibility is limited by the means test (income below state median or passing a disposable income test). Chapter 13 (reorganization/wage earner's plan) allows individuals with regular income to keep their assets while repaying debts over a 3-5 year plan. Debtors can cure mortgage arrears, strip junior liens, and modify certain secured debts. It requires sufficient income to fund the repayment plan and is available only to individuals (not businesses). Key distinctions: (1) Chapter 7 is faster but results in asset liquidation; (2) Chapter 13 is slower but lets debtors keep property; (3) Chapter 13 requires ongoing income; (4) Both discharge eligible debts upon successful completion, but non-dischargeable debts (student loans, most taxes, criminal fines) survive both."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Explain the difference between actual damages, nominal damages, and punitive damages in tort law."},
+      {"role": "assistant", "content": "Actual damages (compensatory damages) are intended to restore the plaintiff to the position they would have been in but for the defendant's wrongful act. They include special damages (quantifiable economic losses: medical bills, lost wages, property damage) and general damages (non-economic losses: pain and suffering, emotional distress, loss of consortium). Nominal damages are a small symbolic award (often $1) granted when the plaintiff proves a legal violation but cannot demonstrate actual harm. They vindicate the plaintiff's right without compensating a tangible loss — common in constitutional rights cases. Punitive damages (exemplary damages) are awarded beyond actual damages to punish defendants for egregious, malicious, reckless, or fraudulent conduct and to deter similar behavior. They are not available in most contract actions (only in tort) and must bear a reasonable relationship to actual damages under BMW of North America v. Gore (1996), generally no more than a 9:1 ratio, with higher ratios permitted when actual damages are small and conduct particularly reprehensible."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Summarize the Supreme Court's holding in Miranda v. Arizona and its practical implications."},
+      {"role": "assistant", "content": "In Miranda v. Arizona (1966), the Supreme Court held that the Fifth Amendment privilege against self-incrimination and the Sixth Amendment right to counsel require law enforcement to advise suspects of their rights before custodial interrogation. The required advisements — now standard Miranda warnings — include: the right to remain silent; that anything said can be used against the suspect in court; the right to have an attorney present during questioning; and that an attorney will be appointed if the suspect cannot afford one. Practical implications: (1) Statements obtained in violation of Miranda are inadmissible in the prosecution's case-in-chief (though may be used for impeachment — Harris v. New York); (2) The suspect may waive Miranda rights voluntarily, knowingly, and intelligently; (3) Miranda applies only to custodial interrogation — routine booking questions and public safety questioning may be exempt (New York v. Quarles); (4) Invocation of the right to counsel immediately halts interrogation (Edwards v. Arizona); (5) Post-Berghuis v. Thompkins (2010), silence alone does not invoke Miranda; the suspect must affirmatively invoke the right."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "What is the concept of piercing the corporate veil, and under what circumstances do courts apply it?"},
+      {"role": "assistant", "content": "Piercing the corporate veil is an equitable doctrine allowing courts to hold shareholders, directors, or officers personally liable for a corporation's debts or obligations — disregarding the entity's limited liability protection. It applies in exceptional circumstances where maintaining the corporate fiction would sanction fraud or injustice. Courts consider: (1) commingling of assets — failure to maintain separation between corporate and personal funds; (2) undercapitalization — the corporation lacked sufficient capital to meet foreseeable obligations; (3) failure to observe corporate formalities — no board meetings, minutes, or separate records; (4) use as a mere alter ego — the corporation is operated as the personal business of the shareholder with no independent existence; (5) fraud or wrongdoing — the corporate form is used to perpetrate fraud or evade legal obligations. The two-prong test commonly used: unity of interest and ownership (alter ego) plus an inequitable result from maintaining the corporate fiction. Veil-piercing is harder in arms-length commercial contexts and more readily applied against closely held corporations with a single dominant shareholder."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Explain the attorney-client privilege and the work product doctrine."},
+      {"role": "assistant", "content": "The attorney-client privilege protects confidential communications between a client and their attorney made for the purpose of seeking or providing legal advice. The privilege belongs to the client, who may waive it. Key elements: (1) confidential communication; (2) between attorney and client (or client's agent); (3) made for the purpose of obtaining or providing legal advice; (4) not shared with third parties in a way that destroys confidentiality. Exceptions include: the crime-fraud exception (communications made to further a future crime or fraud are unprotected) and involuntary disclosure. The work product doctrine (Hickman v. Taylor, codified in FRCP 26(b)(3)) protects documents and tangible things prepared by or for a party's attorney in anticipation of litigation. Unlike attorney-client privilege, work product can be overcome by showing substantial need and inability to obtain the information elsewhere. Core opinion work product (counsel's mental impressions, legal theories) receives near-absolute protection. The two doctrines serve different purposes: privilege protects client communications; work product protects litigation preparation."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Compare common law defamation with defamation of a public figure under New York Times v. Sullivan."},
+      {"role": "assistant", "content": "At common law, defamation (libel or slander) required: a false statement of fact about the plaintiff; publication to a third party; identification of the plaintiff; and damage to reputation. For private figures, negligence sufficed for fault. In New York Times Co. v. Sullivan (1964), the Supreme Court constitutionalized defamation law under the First Amendment. For public officials (and later public figures), a plaintiff must prove actual malice — knowledge that the statement was false or reckless disregard for its truth or falsity — a significantly higher standard than negligence. The Court's rationale: robust public debate requires breathing space; the threat of defamation liability could chill legitimate criticism of public figures exercising power. Key consequences: (1) public figures bear a much heavier burden of proof; (2) truth remains an absolute defense; (3) private figures suing on matters of public concern must still prove at least negligence (Gertz v. Robert Welch, Inc.); (4) statements of opinion are generally protected (Milkovich v. Lorain Journal Co. — but 'opinion' framing doesn't automatically immunize factual assertions)."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Summarize the doctrine of unconscionability in contract law."},
+      {"role": "assistant", "content": "Unconscionability is a doctrine that allows courts to refuse to enforce, or to limit enforcement of, contracts or terms that are oppressively unfair. UCC § 2-302 and the Restatement (Second) of Contracts § 208 recognize it. Courts typically analyze two dimensions: (1) Procedural unconscionability — relates to the bargaining process: extreme inequality of bargaining power, fine print, lack of meaningful choice, high-pressure tactics, or terms that are hidden or incomprehensible to the weaker party. (2) Substantive unconscionability — relates to the terms themselves: grossly unfair, one-sided, or oppressive provisions that no reasonable person would agree to if they fully understood them (e.g., extreme price disparities, one-sided arbitration clauses, class-action waivers combined with high costs). Most courts require both elements, though the degree of each may vary — greater procedural unfairness may require less substantive unfairness and vice versa. Remedies include refusing enforcement of the entire contract, refusing the unconscionable term, or limiting application to avoid the unfair result. Consumer contracts, adhesion contracts, and arbitration clauses are frequent unconscionability battlegrounds."}
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "What is the Erie doctrine, and why is it significant in federal court litigation?"},
+      {"role": "assistant", "content": "The Erie doctrine, established in Erie Railroad Co. v. Tompkins (1938), holds that federal courts sitting in diversity jurisdiction must apply the substantive law of the state in which they sit, not a general federal common law. Before Erie, Swift v. Tyson (1842) allowed federal courts to apply their own view of common law, creating a dual legal system that bred forum shopping and inequitable outcomes. Erie overruled Swift, finding it unconstitutional: Congress has no power to declare substantive rules for state-governed matters, and federal courts cannot create general common law. The significance: (1) It eliminates forum shopping advantages between state and federal courts in diversity cases; (2) Procedural matters (pleading, discovery, trial procedure) are governed by federal law (FRCP); (3) Substantive matters (elements of a claim, statutes of limitations, choice of law) follow state law; (4) The line between 'procedural' and 'substantive' is often contested (Hanna v. Plumer). For practitioners, determining which forum's law applies is a threshold issue in every diversity case."}
+    ]
+  }
+]

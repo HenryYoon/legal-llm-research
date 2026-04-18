@@ -1,0 +1,340 @@
+[
+  {
+    "lane": "L05",
+    "source": "damages_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A plaintiff invested $500,000 at an annual simple interest rate of 6% for 4 years. Calculate the total interest earned."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"principal * rate * years\", \"vars\": {\"principal\": 500000, \"rate\": 0.06, \"years\": 4}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal * rate * years\", \"value\": 120000.0, \"raw\": 120000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "The total simple interest earned is $120,000. Calculation: $500,000 (principal) × 0.06 (annual rate) × 4 (years) = $120,000. This figure represents the statutory or contractual interest accrued over the four-year period and would typically be added to the principal to determine total damages of $620,000."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "damages_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A tenant owes 3 months of unpaid rent at $2,400 per month, plus a 5% late fee on the total unpaid amount. What is the total amount owed?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"months * monthly_rent * (1 + late_fee_rate)\", \"vars\": {\"months\": 3, \"monthly_rent\": 2400, \"late_fee_rate\": 0.05}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"months * monthly_rent * (1 + late_fee_rate)\", \"value\": 7560.0, \"raw\": 7560.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "The total amount owed is $7,560. Breakdown: 3 months × $2,400 = $7,200 in unpaid rent, plus 5% late fee ($360) = $7,560 total. Under most residential lease agreements and state landlord-tenant statutes, this constitutes the liquidated damages recoverable by the landlord, assuming the lease agreement expressly authorizes the 5% late fee."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "damages_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "An employee was wrongfully terminated and lost income for 18 months. Her monthly salary was $5,500. She found a new job earning $4,200 per month after 6 months. Calculate total lost wages (mitigation applies)."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"full_loss_months * monthly_salary + partial_loss_months * (monthly_salary - new_salary)\", \"vars\": {\"full_loss_months\": 6, \"monthly_salary\": 5500, \"partial_loss_months\": 12, \"new_salary\": 4200}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"full_loss_months * monthly_salary + partial_loss_months * (monthly_salary - new_salary)\", \"value\": 48600.0, \"raw\": 48600.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "Total lost wages with mitigation is $48,600. First 6 months (no income): 6 × $5,500 = $33,000. Next 12 months (reduced income): 12 × ($5,500 − $4,200) = 12 × $1,300 = $15,600. Total: $33,000 + $15,600 = $48,600. The duty to mitigate reduces the plaintiff's recovery by the income earned in the replacement job, consistent with the general principle of compensatory damages in wrongful termination cases."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "damages_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A car accident caused property damage of $12,000. The at-fault driver's insurance has a $2,000 deductible. The plaintiff also incurred $800 in rental car costs and $350 in medical co-pays. Calculate total compensable damages."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"property_damage + rental + medical - deductible\", \"vars\": {\"property_damage\": 12000, \"rental\": 800, \"medical\": 350, \"deductible\": 2000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"property_damage + rental + medical - deductible\", \"value\": 11150.0, \"raw\": 11150.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "Total compensable damages after the deductible are $11,150. Breakdown: $12,000 (property damage) + $800 (rental) + $350 (medical co-pays) = $13,150 gross damages, minus $2,000 deductible = $11,150 net recoverable. The deductible represents the plaintiff's self-insured retention and reduces the insurer's liability accordingly. Additional damages (pain and suffering, lost wages) would be calculated separately."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "damages_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A contractor agreed to complete a project for $180,000. The project was 60% complete when the contractor abandoned it. The owner hired a replacement contractor for $90,000 to finish the remaining 40%. What are the owner's damages?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"replacement_cost - remaining_contract_value\", \"vars\": {\"replacement_cost\": 90000, \"remaining_contract_value\": 72000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"replacement_cost - remaining_contract_value\", \"value\": 18000.0, \"raw\": 18000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "The owner's damages are $18,000. The remaining contract value for the 40% unfinished work was 40% × $180,000 = $72,000. The replacement contractor charged $90,000, so the excess cost is $90,000 − $72,000 = $18,000. Under the expectation damages principle in contract law, the owner is entitled to be placed in the position they would have occupied had the contract been performed — meaning recovery of the additional cost to complete the work above the original contract price."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "damages_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A security deposit of $3,500 was collected. The landlord deducts $1,200 for cleaning, $650 for broken window repair, and $200 for carpet stain. State law requires return within 21 days; the landlord returned the balance on day 28. Is a penalty owed? Calculate the refund amount."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"deposit - cleaning - window - carpet\", \"vars\": {\"deposit\": 3500, \"cleaning\": 1200, \"window\": 650, \"carpet\": 200}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"deposit - cleaning - window - carpet\", \"value\": 1450.0, \"raw\": 1450.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "The refund owed is $1,450 ($3,500 − $1,200 − $650 − $200). Because the landlord returned the balance on day 28 — seven days past the 21-day statutory deadline — a penalty may apply. Many state statutes (e.g., California Civil Code § 1950.5, Washington RCW 59.18.280) impose a penalty of up to twice the wrongfully withheld amount for late return. The $1,450 refund was timely owed; if the late return is deemed wrongful, the tenant may recover up to $2,900 in addition to the deposit. Specific penalties depend on the applicable state statute."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "damages_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A breach of contract claim involves consequential damages of $45,000 and direct damages of $30,000. The defendant proves the plaintiff failed to mitigate, reducing recoverable damages by 20%. What is the total recoverable damages?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"(direct + consequential) * (1 - mitigation_reduction)\", \"vars\": {\"direct\": 30000, \"consequential\": 45000, \"mitigation_reduction\": 0.20}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"(direct + consequential) * (1 - mitigation_reduction)\", \"value\": 60000.0, \"raw\": 60000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "Total recoverable damages after mitigation reduction are $60,000. Gross damages: $30,000 (direct) + $45,000 (consequential) = $75,000. Reduced by 20% for failure to mitigate: $75,000 × 0.80 = $60,000. Under the avoidable consequences doctrine, a plaintiff cannot recover damages that reasonable steps would have prevented. The 20% reduction reflects the portion of damages attributable to the plaintiff's failure to take reasonable mitigation measures after the breach."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "korean_damages",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 다섯 가지 Legal Lane(L01, L05, L06, L09, L10) 중 하나로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 원고에게 5,000만원을 불법행위로 편취하였고, 불법행위일부터 3년이 경과하였다. 민법 제379조의 법정이율 연 5%로 단리 이자를 계산하여 총 손해배상액을 구하시오."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"principal + principal * rate * years\", \"vars\": {\"principal\": 50000000, \"rate\": 0.05, \"years\": 3}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal + principal * rate * years\", \"value\": 57500000.0, \"raw\": 57500000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "총 손해배상액은 57,500,000원입니다. 원금 50,000,000원에 민법 제379조 법정이율(연 5%) 적용 단리 이자를 계산하면, 50,000,000 × 0.05 × 3년 = 7,500,000원입니다. 따라서 원금 50,000,000원 + 이자 7,500,000원 = 57,500,000원이 됩니다. 소송촉진 등에 관한 특례법에 따라 소장 송달 다음 날부터는 연 12% 지연손해금이 적용될 수 있으므로 실제 청구액은 이와 달라질 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "korean_damages",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 다섯 가지 Legal Lane(L01, L05, L06, L09, L10) 중 하나로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "교통사고로 인한 일실수입을 계산하시오. 피해자의 월 소득은 350만원이고, 사고로 인해 6개월간 전혀 일하지 못하였다. 이후 부분 복귀하여 12개월 동안 기존 소득의 40%만 얻었다."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"full_months * monthly + partial_months * monthly * partial_rate\", \"vars\": {\"full_months\": 6, \"monthly\": 3500000, \"partial_months\": 12, \"partial_rate\": 0.6}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"full_months * monthly + partial_months * monthly * partial_rate\", \"value\": 46200000.0, \"raw\": 46200000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "일실수입 합계는 46,200,000원입니다. 완전 휴업 6개월: 6 × 3,500,000원 = 21,000,000원. 부분 복귀 12개월 동안 잃은 소득(60%): 12 × 3,500,000원 × 0.6 = 25,200,000원. 합계 21,000,000 + 25,200,000 = 46,200,000원. 이는 손해배상 청구에서 일실수입 항목으로 산정되며, 별도로 치료비, 위자료, 개호비 등이 추가될 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "korean_damages",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 다섯 가지 Legal Lane(L01, L05, L06, L09, L10) 중 하나로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 보증금 1억원을 2년 계약으로 납부하였다. 임대인이 계약 종료 후 30일이 지나도 반환하지 않아 연 12% 지연이자가 발생한다. 30일분 지연이자는 얼마인가?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"deposit * annual_rate * (days / 365)\", \"vars\": {\"deposit\": 100000000, \"annual_rate\": 0.12, \"days\": 30}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"deposit * annual_rate * (days / 365)\", \"value\": 986301.0, \"raw\": 986301.3698630136}"
+      },
+      {
+        "role": "assistant",
+        "content": "30일분 지연이자는 약 986,301원입니다. 계산식: 1억원 × 12% × (30일 ÷ 365일) = 986,301원. 소송촉진 등에 관한 특례법 제3조에 따라 법원이 지정한 이율이 적용되며, 지연손해금은 보증금 반환일까지 일별로 계속 발생합니다. 임차인은 내용증명 발송 후 법원에 보증금 반환 청구 소송을 제기하거나 임차권 등기명령을 신청할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "damages_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A plaintiff's medical malpractice claim seeks $250,000 in economic damages (medical bills and lost wages) and $300,000 in non-economic damages (pain and suffering). The jurisdiction applies a 50% comparative fault rule, and the plaintiff is found 30% at fault. What is the net award?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"(economic + noneconomic) * (1 - plaintiff_fault)\", \"vars\": {\"economic\": 250000, \"noneconomic\": 300000, \"plaintiff_fault\": 0.30}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"(economic + noneconomic) * (1 - plaintiff_fault)\", \"value\": 385000.0, \"raw\": 385000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "The net award after comparative fault reduction is $385,000. Gross damages: $250,000 (economic) + $300,000 (non-economic) = $550,000. Reduced by 30% plaintiff fault: $550,000 × 0.70 = $385,000. Because the plaintiff's fault (30%) is below the 50% threshold required to bar recovery under modified comparative fault, the plaintiff may still recover. The reduction reflects the proportional share of damages attributable to the plaintiff's own negligence under pure comparative fault principles."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "damages_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A company breached a supply contract. The buyer suffered $80,000 in direct damages (cost to cover from a more expensive supplier) and $25,000 in consequential damages (lost profits on downstream contracts). What is the total claim, and what portion of the $25,000 is recoverable if the Hadley v. Baxendale foreseeability test limits consequential damages to $15,000?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"direct + recoverable_consequential\", \"vars\": {\"direct\": 80000, \"recoverable_consequential\": 15000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"direct + recoverable_consequential\", \"value\": 95000.0, \"raw\": 95000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "Total recoverable damages under Hadley v. Baxendale are $95,000. Direct damages of $80,000 (cost to cover) are fully recoverable as they flow naturally from the breach. Of the $25,000 in consequential damages, only $15,000 passes the foreseeability test — the portion that was within the reasonable contemplation of the parties at contract formation. The remaining $10,000 in consequential damages is excluded because the supplier could not have foreseen those remote downstream losses. Total: $80,000 + $15,000 = $95,000."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "damages_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A personal injury settlement requires periodic payments: $50,000 now, $30,000 in Year 1, and $20,000 in Year 2. Using a 4% discount rate, what is the present value of the deferred payments?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"payment1 / (1 + rate)**1 + payment2 / (1 + rate)**2\", \"vars\": {\"payment1\": 30000, \"payment2\": 20000, \"rate\": 0.04}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"payment1 / (1 + rate)**1 + payment2 / (1 + rate)**2\", \"value\": 47337.28, \"raw\": 47337.27810650888}"
+      },
+      {
+        "role": "assistant",
+        "content": "The present value of the deferred payments is approximately $47,467.46. Year 1 payment: $30,000 ÷ 1.04 = $28,846.15. Year 2 payment: $20,000 ÷ 1.04² = $18,491.12 (approximately). Deferred PV: $28,846.15 + $18,621.31 ≈ $47,467.46. Combined with the $50,000 lump sum, the total present value of the settlement is approximately $97,467.46. Courts and structured settlement planners routinely discount future periodic payments to present value to assess economic equivalence with lump-sum alternatives."
+      }
+    ]
+  }
+]

@@ -1,0 +1,522 @@
+[
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "On the issue of whether Rebecca was ill, the fact that Rebecca told Ronald that she was unwell. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"Rebecca told Ronald she was unwell\", \"statement made outside court\", \"offered to prove Rebecca was ill\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"Rebecca told Ronald she was unwell\", \"statement made outside court\", \"offered to prove Rebecca was ill\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is hearsay under FRE 801. Rebecca's statement to Ronald was made out of court by the declarant (Rebecca) and is offered to prove the truth of the matter asserted — that she was ill. All three hearsay elements are satisfied: out-of-court statement, made by declarant, offered for truth. No recognized exception applies on these facts."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "On the issue of whether David is fast, the fact that David set a high school track record. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"track record is a non-assertive act\", \"no verbal statement made\", \"conduct not intended as assertion\"], \"matching\": {\"out-of-court statement\": false, \"made by declarant\": false, \"offered for truth of matter asserted\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": false, \"made by declarant\": false, \"offered for truth of matter asserted\": false}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"track record is a non-assertive act\", \"no verbal statement made\", \"conduct not intended as assertion\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, this is not hearsay under FRE 801. Setting a track record is non-assertive conduct — David did not intend the act as an assertion. FRE 801(a) requires a 'statement,' defined as an oral, written, or nonverbal conduct intended as an assertion. Because there is no intended assertion, the track record is not a statement and cannot be hearsay."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "To prove that Tim was a soccer fan, the fact that Tim told Jimmy that 'Real Madrid was the best soccer team in the world.' Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"Tim told Jimmy Real Madrid was best\", \"statement made out of court\", \"statement offered to show Tim is a fan, not to prove Real Madrid is actually the best\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": false}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"Tim told Jimmy Real Madrid was best\", \"statement made out of court\", \"statement offered to show Tim is a fan, not to prove Real Madrid is actually the best\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, this is not hearsay. Although Tim's statement was made out of court, it is not offered to prove the truth of the matter asserted (that Real Madrid is actually the best team). Instead, it is introduced to show Tim's preference — that he is a soccer fan. Under FRE 801(c), a statement is hearsay only if offered to prove the truth of what it asserts. Since the third element is absent, hearsay does not apply."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "When asked by the attorney on cross-examination, Alice testified that she had 'never seen the plaintiff before, and had no idea who she was.' Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"Alice testified in court under cross-examination\", \"statement made in court proceeding\", \"declarant present and subject to cross-examination\"], \"matching\": {\"out-of-court statement\": false, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": false, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"Alice testified in court under cross-examination\", \"statement made in court proceeding\", \"declarant present and subject to cross-examination\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, this is not hearsay. Alice's testimony was made in court during cross-examination, not out of court. FRE 801(c) defines hearsay as an out-of-court statement; a statement made while testifying at the current trial or hearing is by definition in-court. The first element — out-of-court — is not satisfied, so hearsay does not apply."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "On the issue of whether Martin punched James, the fact that Martin smiled and nodded when asked if he did so by an officer on the scene. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"Martin smiled and nodded in response to officer's question\", \"conduct occurred outside court\", \"nodding intended as assertion of guilt\", \"offered to prove Martin punched James\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"Martin smiled and nodded in response to officer's question\", \"conduct occurred outside court\", \"nodding intended as assertion of guilt\", \"offered to prove Martin punched James\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is non-verbal hearsay under FRE 801. Martin's nod in response to the officer's direct question is non-verbal conduct intended as an assertion — an affirmative answer equivalent to 'Yes, I did.' It was made outside court (at the scene) and is offered to prove the truth of the matter asserted (that Martin punched James). All three hearsay elements are met; this constitutes hearsay and is inadmissible absent an exception."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "On the issue of whether the defendant was at the crime scene, the fact that the defendant's neighbor told police that she saw defendant's car parked outside at midnight. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"neighbor told police she saw the car\", \"statement made outside court\", \"offered to prove defendant was present\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"neighbor told police she saw the car\", \"statement made outside court\", \"offered to prove defendant was present\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is hearsay under FRE 801. The neighbor's statement to police was made out of court, by the declarant (the neighbor), and is offered to prove the truth of the matter asserted — that defendant's car was parked outside at midnight, establishing his presence at the scene. All three hearsay elements are satisfied. The statement is inadmissible unless a recognized exception (e.g., excited utterance, present sense impression) applies."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "To prove that the plaintiff was in pain after the accident, the fact that a bystander wrote in her diary that she heard the plaintiff moaning loudly at the scene. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"diary entry written by bystander\", \"entry written outside court\", \"moaning is non-assertive involuntary conduct\", \"entry offered to prove pain\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": false}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"diary entry written by bystander\", \"entry written outside court\", \"moaning is non-assertive involuntary conduct\", \"entry offered to prove pain\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "This is a nuanced case. The diary entry itself is an out-of-court statement by the declarant (bystander) and could be hearsay if offered for truth. However, the moaning described is non-assertive involuntary conduct by the plaintiff — not a 'statement' under FRE 801(a). The diary entry may still be excluded as hearsay if offered to prove pain, because the entry (as opposed to the moaning) asserts that the plaintiff was moaning. Courts may analyze this as double hearsay requiring exceptions for both layers."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "On the issue of whether the building was structurally unsound, an engineer's written report prepared for litigation stating the building was 'dangerously unstable' is offered. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"engineer's written report prepared before trial\", \"report authored by engineer (declarant)\", \"report offered to prove building was unstable\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"engineer's written report prepared before trial\", \"report authored by engineer (declarant)\", \"report offered to prove building was unstable\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is hearsay under FRE 801. The engineer's written report is an out-of-court statement by the declarant (the engineer), and it is offered to prove the truth of the matter asserted — that the building was dangerously unstable. All three elements are met. The report may be admissible under FRE 803(6) as a business record or under FRE 702 if the engineer testifies as an expert, but the statement itself qualifies as hearsay."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "To impeach the witness, the prosecutor introduces a prior written statement by the witness contradicting her current testimony. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"written statement made by witness outside court\", \"offered to show inconsistency with current testimony\", \"not offered to prove truth of prior statement's content\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": false}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"written statement made by witness outside court\", \"offered to show inconsistency with current testimony\", \"not offered to prove truth of prior statement's content\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, the prior statement is not hearsay when used solely for impeachment. Under FRE 801(c), a statement is hearsay only if offered to prove the truth of the matter asserted. Here, the statement is introduced to show the witness is inconsistent — not to prove what the prior statement said was true. The 'offered for truth' element is absent. However, the court should give a limiting instruction to the jury that the statement may only be considered for impeachment purposes."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "On the issue of whether the victim feared the defendant, an email the victim sent to her friend saying 'I am scared of John' is offered. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"victim sent email to friend\", \"email sent outside court\", \"offered to prove victim was afraid of defendant\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"victim sent email to friend\", \"email sent outside court\", \"offered to prove victim was afraid of defendant\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is hearsay under FRE 801. The victim's email to her friend is an out-of-court statement by the declarant (the victim), offered to prove the truth of the matter asserted — that she was scared of John. All three elements are satisfied. However, the email may qualify for the state-of-mind exception under FRE 803(3), which allows statements of the declarant's then-existing mental, emotional, or physical condition, provided the fear is a relevant issue in the case."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "On the issue of whether the road was icy, the fact that several cars pulled over and put on chains before attempting the hill. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"drivers performed non-verbal act of putting on chains\", \"no verbal or written assertion made\", \"conduct not intended as assertion about road conditions\"], \"matching\": {\"out-of-court statement\": false, \"made by declarant\": false, \"offered for truth of matter asserted\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": false, \"made by declarant\": false, \"offered for truth of matter asserted\": false}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"drivers performed non-verbal act of putting on chains\", \"no verbal or written assertion made\", \"conduct not intended as assertion about road conditions\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, this is not hearsay. Drivers putting on chains is non-assertive conduct — the act was not intended as an assertion about road conditions. FRE 801(a) requires that a 'statement' be oral, written, or nonverbal conduct intended as an assertion. Because the drivers' actions were precautionary behavior rather than an intended declaration, there is no 'statement,' and therefore no hearsay. The conduct is admissible as circumstantial evidence of icy road conditions."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "To prove the company was aware of the product defect, the plaintiff offers an internal memo written by the CEO to the engineering team saying 'fix the safety issue before someone gets hurt.' Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"CEO wrote internal memo before trial\", \"memo is out-of-court statement by CEO (declarant)\", \"offered to show company knew of defect, i.e., truth of the safety issue\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"CEO wrote internal memo before trial\", \"memo is out-of-court statement by CEO (declarant)\", \"offered to show company knew of defect, i.e., truth of the safety issue\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is hearsay if offered to prove the CEO's knowledge that there was a safety issue. The internal memo is an out-of-court statement by the declarant (CEO), and when offered to establish that the company knew of the defect (truth of the matter asserted), all three hearsay elements are satisfied. However, the memo may be admissible as an admission by a party-opponent under FRE 801(d)(2)(D), since the CEO is an agent of the company (a party), and the statement concerns matters within the scope of employment."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "The defendant wants to offer a recorded 911 call where the victim says 'He's breaking down my door!' to prove the defendant was there. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"victim made 911 call outside court\", \"victim is declarant\", \"statement offered to prove defendant was at door\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"victim made 911 call outside court\", \"victim is declarant\", \"statement offered to prove defendant was at door\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is hearsay under FRE 801. The victim's 911 call was made out of court, by the declarant (victim), and is offered to prove the truth — that the defendant was actually breaking down the door. All three hearsay elements are met. The statement may nonetheless be admissible under the excited utterance exception (FRE 803(2)) if the victim was under the stress of the startling event, or as a present sense impression (FRE 803(1)) if made while perceiving the event."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "To prove the defendant confessed, the police officer testifies that the defendant said 'I did it' during questioning. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"defendant said 'I did it' during police questioning\", \"statement made outside court\", \"defendant is the opposing party\", \"offered to prove defendant committed the act\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"defendant said 'I did it' during police questioning\", \"statement made outside court\", \"defendant is the opposing party\", \"offered to prove defendant committed the act\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "The statement technically meets all three hearsay elements: it was made out of court by the declarant (defendant), and is offered for the truth of the matter asserted. However, under FRE 801(d)(2)(A), a statement is not hearsay if it is an admission by a party-opponent — specifically, the statement of a party offered against that party. The defendant's confession qualifies as a party admission and is expressly excluded from the hearsay definition. It is therefore admissible."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "To prove the signal was red, a traffic camera photo showing the red light is introduced. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"traffic camera is a machine, not a human declarant\", \"photograph is an automated recording\", \"no human assertion embedded in photograph\"], \"matching\": {\"out-of-court statement\": false, \"made by declarant\": false, \"offered for truth of matter asserted\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": false, \"made by declarant\": false, \"offered for truth of matter asserted\": false}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"traffic camera is a machine, not a human declarant\", \"photograph is an automated recording\", \"no human assertion embedded in photograph\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, a traffic camera photograph is not hearsay. FRE 801(b) defines a declarant as a person — hearsay requires a human statement. A photograph automatically captured by a machine contains no human assertion; it is real evidence, not a statement. Because there is no human declarant and no intended assertion, hearsay does not apply. Admissibility depends on authentication (FRE 901) and relevance, not hearsay rules."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A doctor testifies about the medical history the patient told him during examination, offered to explain the basis for his diagnosis. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"patient told doctor history before trial\", \"patient is declarant\", \"statement offered as basis for expert opinion, not for its truth\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": false}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"patient told doctor history before trial\", \"patient is declarant\", \"statement offered as basis for expert opinion, not for its truth\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "When offered solely to explain the basis of the doctor's diagnosis, the medical history is not offered for the truth of the matter asserted and therefore is not hearsay. FRE 703 allows experts to rely on otherwise inadmissible information if experts in the field reasonably rely on it. The jury should receive a limiting instruction that the medical history is considered only to understand the basis of the expert's opinion, not as substantive proof of what the patient reported."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "To prove that a warning label existed on the product, the plaintiff offers the label itself as evidence. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"product label created by manufacturer before trial\", \"label is a written statement by manufacturer\", \"offered to prove a warning existed, not truth of warning's technical content\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": false}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"product label created by manufacturer before trial\", \"label is a written statement by manufacturer\", \"offered to prove a warning existed, not truth of warning's technical content\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "If the label is offered only to prove that a warning existed on the product (i.e., to show its existence as a legally operative fact), it is not hearsay — it is not offered to prove the truth of any assertion in the label. However, if offered to prove the accuracy of the warning's content (e.g., the product was actually dangerous in the way described), it would be hearsay. Context determines admissibility, and courts often allow product labels as verbal acts or legally operative language rather than hearsay."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "On the issue of whether a contract was formed, plaintiff offers evidence that she said 'I accept your offer' on the phone. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"plaintiff said 'I accept' on phone call before trial\", \"plaintiff is declarant\", \"statement has legal operative effect — it forms the contract\", \"offered to prove contract formation, not truth of any factual assertion\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": false}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"plaintiff said 'I accept' on phone call before trial\", \"plaintiff is declarant\", \"statement has legal operative effect — it forms the contract\", \"offered to prove contract formation, not truth of any factual assertion\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, this is not hearsay. 'I accept your offer' is a verbal act — a legally operative statement that itself creates legal consequences (contract formation). It is not offered to prove the truth of any factual assertion, but rather to show that the act of acceptance occurred. Under FRE 801(c), such operative words are not hearsay because the statement's significance lies in the utterance itself, not in the truth of what was said."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "On the issue of the deceased's mental state at the time of making her will, her attorney testifies that she told him 'I know exactly what I'm doing and what property I own.' Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"testator told attorney about her mental clarity before trial\", \"testator is declarant\", \"offered to prove her then-existing state of mind\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"testator told attorney about her mental clarity before trial\", \"testator is declarant\", \"offered to prove her then-existing state of mind\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is hearsay under FRE 801 — an out-of-court statement by the declarant (testator), offered for the truth of the matter asserted (that she was mentally competent). However, the statement qualifies for the state-of-mind exception under FRE 803(3), which allows then-existing mental or emotional condition statements. Since testamentary capacity requires awareness of one's property and natural heirs, this statement is directly probative and likely admissible under the exception."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_hearsay_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "To prove a hospital was negligent, plaintiff offers records showing a nurse charted that the patient's blood pressure was 'critically low' and she notified no one. Is this hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"nurse charted observation in medical record before trial\", \"nurse is declarant\", \"chart offered to prove blood pressure was critically low and no action was taken\"], \"matching\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"made by declarant\": true, \"offered for truth of matter asserted\": true}, \"elements\": [\"out-of-court statement\", \"made by declarant\", \"offered for truth of matter asserted\"], \"facts\": [\"nurse charted observation in medical record before trial\", \"nurse is declarant\", \"chart offered to prove blood pressure was critically low and no action was taken\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, the nurse's chart entry is hearsay: an out-of-court statement by the declarant (nurse), offered for the truth of the matter asserted (that the blood pressure was critically low and unreported). All three elements are satisfied. However, hospital medical records regularly qualify under the business records exception (FRE 803(6)) if made in the regular course of business, at or near the time of the event, by someone with personal knowledge. If so, the records are admissible despite being hearsay."
+      }
+    ]
+  }
+]

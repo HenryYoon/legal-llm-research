@@ -1,0 +1,47 @@
+[
+  {
+    "lane": "L10",
+    "source": "legal_uncertainty",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Is my verbal employment agreement enforceable in court?"},
+      {"role": "assistant", "content": "Uncertain. Whether a verbal employment agreement is enforceable depends on multiple jurisdiction-specific factors that cannot be resolved without more information. Key variables include: (1) the jurisdiction's statute of frauds (some states require certain employment contracts exceeding one year to be in writing); (2) the specific terms of the verbal agreement and whether they were sufficiently definite; (3) whether there is corroborating evidence (witnesses, emails, pay stubs consistent with the terms); (4) the employment-at-will doctrine (in most U.S. states, employment is at-will absent a contract, but verbal contracts can overcome this presumption); and (5) whether any exceptions (promissory estoppel, implied contract based on employee handbook) apply. Verbal agreements are often difficult to enforce due to evidentiary challenges. Consulting a licensed employment attorney in your jurisdiction is strongly recommended."}
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertainty",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Will my non-compete agreement hold up in court if I leave my current employer?"},
+      {"role": "assistant", "content": "Uncertain. The enforceability of non-compete agreements varies dramatically by jurisdiction and cannot be determined without reviewing the specific contract terms and applicable state law. Key factors courts consider: (1) geographic scope — must be reasonably limited; (2) duration — typically 6 months to 2 years is scrutinized; (3) legitimate business interest — employer must have a protectable interest (trade secrets, specialized training, customer relationships); (4) hardship on the employee — overly broad restrictions may be void. Some states (California, Minnesota, Oklahoma, North Dakota) effectively ban non-competes. Others (Florida) apply strong enforcement. Many states 'blue-pencil' (judicially narrow) overbroad agreements. The FTC attempted a near-total federal ban in 2024 (Ryan LLC v. FTC), but litigation has blocked enforcement. Your outcome depends heavily on your state's law and the specific facts. Consulting a labor attorney before leaving is essential."}
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertainty",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "If I post a negative review of a business online, can I be sued for defamation?"},
+      {"role": "assistant", "content": "Uncertain. Whether an online negative review constitutes actionable defamation depends on multiple legal and factual variables. Statements of opinion ('I had a bad experience' or 'I didn't like the service') are generally protected under the First Amendment and are not defamatory. Statements of fact that are false and published to third parties can be defamatory if they harm the business's reputation. Key legal issues: (1) Is the statement fact or opinion? Courts look at whether the statement is verifiable as true or false; (2) Is the statement materially false? Truth is an absolute defense; (3) Was the statement made with the requisite fault? For private businesses, negligence is the typical standard; (4) Does the SPEECH Act or your state's Anti-SLAPP statute provide protection against meritless suits? Many states have strong anti-SLAPP laws (California, Texas, Oregon) that allow early dismissal of defamation suits targeting protected speech. You face meaningful legal risk only if your review contains materially false statements of fact. Consulting a First Amendment or defamation attorney for review-specific advice is recommended."}
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertainty",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Can I legally use someone's copyrighted image in my blog post under fair use?"},
+      {"role": "assistant", "content": "Uncertain. Fair use is a highly fact-specific doctrine that cannot be reliably assessed in the abstract. Courts apply a four-factor balancing test under 17 U.S.C. § 107: (1) purpose and character of use — commercial use weighs against fair use; transformative use (commentary, criticism, parody) weighs in favor; (2) nature of the copyrighted work — published factual works receive less protection than unpublished creative works; (3) amount and substantiality used — using the 'heart' of the work or a large portion weighs against fair use; (4) effect on the market for the original — if the use substitutes for the original or harms its licensing market, this weighs heavily against fair use. No single factor is determinative; all four must be weighed together. There is no bright-line rule — even small uses can be infringing, and some large uses are fair. If you are commenting on or criticizing the image directly, a fair use defense is stronger. If you are decorating your blog, it is weaker. Attribution does not create fair use. Licensing the image is the safest course; consulting an intellectual property attorney is recommended for high-stakes decisions."}
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertainty",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Does my startup's use of an open-source library under the MIT license create any intellectual property risks?"},
+      {"role": "assistant", "content": "Uncertain — though generally low risk under the MIT license specifically. The MIT license is one of the most permissive open-source licenses: it allows use, copying, modification, and distribution (including in commercial products) with essentially no restrictions beyond preserving the copyright notice and license text. However, IP risk cannot be completely assessed without knowing: (1) whether the library's upstream dependencies carry their own more restrictive licenses (GPL, LGPL, AGPL — which may require you to open-source your own code if used in certain ways); (2) whether any patents cover the library's functionality, independent of the copyright license (MIT licenses do not grant patent rights, creating patent risk in some areas); (3) whether the MIT license has been properly applied to all contributed code (license incompatibility issues in complex projects). For high-value products, an open-source license audit is advisable. For typical startup software, MIT-licensed code is generally safe to use commercially. IP counsel can assess patent risk specific to your technical domain."}
+    ]
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "lane": "L09",
+    "source": "legal_translation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Translate the Korean legal term '손해배상' into English and explain its legal meaning."},
+      {"role": "assistant", "content": "'손해배상' (損害賠償) translates to 'damages' or more precisely 'compensation for damages' in English legal usage. Under Korean civil law (민법 제750조 et seq.), it refers to the legal obligation of a party who has caused harm — through a tort (불법행위) or breach of contract (채무불이행) — to restore the injured party to the position they would have occupied absent the wrongful act. The concept encompasses both actual economic losses (재산적 손해: property damage, lost income) and non-economic losses (비재산적 손해 or 정신적 손해: emotional distress, pain and suffering). The Korean equivalent of the English 'compensatory damages' is '전보적 손해배상,' while punitive damages ('징벌적 손해배상') exist only in limited statutory contexts in Korean law, unlike the broader U.S. tort system."}
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Translate 'mens rea' into Korean and explain the concept within Korean criminal law."},
+      {"role": "assistant", "content": "'Mens rea' is the Latin term for the subjective mental state (guilty mind) required to establish criminal liability, translated into Korean as '범의(犯意)' or '고의(故意)' depending on context. In Korean criminal law, 고의 (intentional act) corresponds to the MPC's 'purpose' and 'knowledge' categories — a deliberate decision to commit the act or awareness that the act will cause a prohibited result (형법 제13조). The Korean criminal code also recognizes '과실(過失)' (negligence/recklessness), which corresponds to the absence of deliberate intent but failure to exercise due care. Korea does not have a four-tier MPC structure; the Korean framework distinguishes primarily between 고의범 (intentional crimes) and 과실범 (negligent crimes), with strict liability (결과적 가중범) applying in some aggravated offense contexts."}
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Translate the English legal term 'injunction' into Korean and explain its legal meaning in the Korean legal system."},
+      {"role": "assistant", "content": "In English law, an 'injunction' is a court order requiring a party to do (mandatory injunction) or refrain from doing (prohibitory injunction) a specified act, enforceable by contempt of court. In Korean law, the closest equivalent is '가처분(假處分)' — a provisional injunction issued under the Civil Execution Act (민사집행법 제300조). Korean law distinguishes between '가압류' (provisional seizure of assets, equivalent to a freezing injunction/attachment) and '가처분' (interim relief requiring or prohibiting specific conduct). A permanent prohibitory order after trial corresponds to '금지명령(禁止命令)' in specific statutory contexts. Contempt enforcement for Korean court orders operates through indirect compulsion (간접강제, 민사집행법 제261조) — the court imposes daily financial penalties until compliance — rather than through criminal contempt as commonly used in the U.S. and U.K."}
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "What is the English translation and legal meaning of the Korean term '선의취득(善意取得)'?"},
+      {"role": "assistant", "content": "'선의취득(善意取得)' translates to 'bona fide acquisition' or 'good faith acquisition' in English. Under Korean civil law (민법 제249조), a transferee who acquires a movable property from a person who had no right to transfer it (non-owner) can nonetheless acquire valid title if the transferee acted in good faith (선의) and without negligence (무과실), and the transfer was based on a valid transaction (transaction of the kind that would transfer ownership). The doctrine sacrifices static security (protecting the original owner's title) in favor of dynamic security (protecting commerce and reliance by good-faith buyers). The English law equivalent is the 'bona fide purchaser for value' (BFP) doctrine, though its scope and application differ between the systems — Korean law focuses on movable property, while BFP doctrine in equity applies primarily to interests in land and intangible assets."}
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation",
+    "messages": [
+      {"role": "system", "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."},
+      {"role": "user", "content": "Translate the term 'class action lawsuit' into Korean and describe its equivalent mechanism in Korean civil procedure."},
+      {"role": "assistant", "content": "A 'class action lawsuit' is translated into Korean as '집단소송(集團訴訟)' — a procedural device allowing a representative plaintiff to sue on behalf of a large group of similarly situated claimants. In the U.S., class actions are governed by FRCP Rule 23, requiring numerosity, commonality, typicality, and adequacy of representation. Korea does not have a general class action mechanism equivalent to U.S. Rule 23. Instead, Korean law provides: (1) '증권관련집단소송법(Securities-Related Class Action Act)' — a specialized class action for securities fraud since 2005; (2) '선정당사자 소송' (representative party litigation) under the Civil Procedure Act (민사소송법 제53조) — allows a selected representative to sue on behalf of multiple parties with common interests, but requires each member to affirmatively authorize the representative, unlike opt-out U.S. class actions. Broad consumer class actions remain more limited in Korea than in the United States."}
+    ]
+  }
+]

@@ -1,0 +1,470 @@
+[
+  {
+    "lane": "L01",
+    "source": "legalbench_pj",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Dustin is a repairman who lives in Arizona and repairs computers in California, Oregon, and Washington. While traveling to repair a computer in Washington, Dustin is involved in a car crash in Oregon with Laura, a citizen of Oregon. After the accident, Dustin returns to Arizona. Laura sues him in Arizona. Does Arizona have personal jurisdiction over Dustin?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Dustin is domiciled in Arizona\", \"domicile establishes general jurisdiction\", \"claim need not arise from Arizona contacts for general jurisdiction\"], \"matching\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Dustin is domiciled in Arizona\", \"domicile establishes general jurisdiction\", \"claim need not arise from Arizona contacts for general jurisdiction\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, Arizona has personal jurisdiction over Dustin. Because Dustin is domiciled in Arizona, the state has general personal jurisdiction over him regardless of where the claim arose. Under Goodyear and Daimler AG v. Bauman, an individual's domicile is the paradigm forum for general jurisdiction. Arizona courts can hear any claim against Dustin, including this Oregon accident, because he is 'at home' in Arizona. All elements for general jurisdiction are satisfied."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Tony (from Texas) is a regional manager for Tasty Eats Books (incorporated and principal place of business in Delaware). While in Michigan for the first time, Tony gets into a fight with Arthur (a Michigan resident). Tony sues Arthur in Indiana. Does Indiana have personal jurisdiction over Arthur?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Arthur lives in Michigan, not Indiana\", \"fight occurred in Michigan, not Indiana\", \"no facts show any Arthur contact with Indiana\", \"plaintiff's choice of Indiana does not create contacts\"], \"matching\": {\"minimum contacts with forum state\": false, \"claim arises from or relates to contacts\": false, \"exercise of jurisdiction is reasonable\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": false, \"claim arises from or relates to contacts\": false, \"exercise of jurisdiction is reasonable\": false}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Arthur lives in Michigan, not Indiana\", \"fight occurred in Michigan, not Indiana\", \"no facts show any Arthur contact with Indiana\", \"plaintiff's choice of Indiana does not create contacts\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, Indiana does not have personal jurisdiction over Arthur. Arthur resides in Michigan, the fight occurred in Michigan, and there are no facts establishing any contact between Arthur and Indiana. Under International Shoe Co. v. Washington and its progeny, specific jurisdiction requires that the defendant purposefully availed himself of the forum state's privileges and that the claim arises from those contacts. Arthur has no contacts with Indiana, and neither element is met. The lawsuit must be brought in a state with proper jurisdiction over Arthur, most likely Michigan."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Martha makes pinwheel hats in Oregon and sells them online to all 50 states. Alex, a citizen of Maine, buys one and is injured. Alex sues Martha in Texas. Does Texas have personal jurisdiction over Martha?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Martha sells online to all states including Texas\", \"Texas customers may have purchased\", \"Alex is from Maine and injury occurred in Maine\", \"no specific nexus between Martha's Texas sales and this Maine plaintiff's claim\"], \"matching\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": false, \"exercise of jurisdiction is reasonable\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": false, \"exercise of jurisdiction is reasonable\": false}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Martha sells online to all states including Texas\", \"Texas customers may have purchased\", \"Alex is from Maine and injury occurred in Maine\", \"no specific nexus between Martha's Texas sales and this Maine plaintiff's claim\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, Texas does not have personal jurisdiction over Martha for this claim. While Martha's nationwide online sales create contacts with Texas, specific jurisdiction requires the claim to arise from or relate to those contacts. Alex is a Maine citizen whose injury from a hat purchased online bears no specific relationship to Martha's Texas business activities. Under Ford Motor Co. v. Montana Eighth Judicial District Court (2021), there must be a sufficient connection between the defendant's forum contacts and the plaintiff's suit. That nexus is absent here."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Ana, a Texas lawyer, buys a bike from David's Louisiana bike shop while visiting Louisiana. The bike seat explodes as she re-enters Texas, injuring her. Ana sues David in Texas. Does Texas have personal jurisdiction over David?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"David emailed Ana in Texas promoting his bikes\", \"David directed commercial communication into Texas\", \"Ana purchased in Louisiana but injury occurred in Texas upon return\", \"David's marketing to Ana (a Texas resident) created foreseeable Texas harm\"], \"matching\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"David emailed Ana in Texas promoting his bikes\", \"David directed commercial communication into Texas\", \"Ana purchased in Louisiana but injury occurred in Texas upon return\", \"David's marketing to Ana (a Texas resident) created foreseeable Texas harm\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, Texas has specific personal jurisdiction over David. David purposefully availed himself of Texas by emailing Ana — a Texas resident — to market his bikes. This constitutes directed commercial activity into Texas. The claim arises from that contact: David solicited Ana in Texas, she purchased the bike, and the injury occurred in Texas. Under International Shoe and Burger King Corp. v. Rudzewicz, these contacts support specific jurisdiction. Exercising jurisdiction is reasonable given David's deliberate targeting of a Texas resident."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Sandra, a California resident, visits Florida and signs a contract with a Florida company. The dispute arises from that contract. Sandra is sued in Florida. Does Florida have personal jurisdiction over Sandra?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Sandra physically traveled to Florida to sign contract\", \"Sandra purposefully availed herself of Florida by entering the state\", \"dispute arises directly from the Florida contract\", \"Florida courts are a reasonable forum for a Florida contract dispute\"], \"matching\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Sandra physically traveled to Florida to sign contract\", \"Sandra purposefully availed herself of Florida by entering the state\", \"dispute arises directly from the Florida contract\", \"Florida courts are a reasonable forum for a Florida contract dispute\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, Florida has specific personal jurisdiction over Sandra. By physically traveling to Florida to sign the contract, Sandra purposefully availed herself of Florida's legal protections and privileges. The claim arises directly from that Florida contact — the contract dispute is the very transaction that created the connection. Under International Shoe, exercising jurisdiction is reasonable: the contract was formed in Florida, governed by Florida law, and the defendant's contacts were deliberate and voluntary."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A New York company sells products exclusively in New York but one product is purchased by a New York customer who ships it to a friend in Ohio, where it injures the friend. Can Ohio exercise personal jurisdiction over the New York company?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"company sold exclusively in New York\", \"company never sold in Ohio\", \"product reached Ohio through unilateral act of third-party customer\", \"company did not purposefully direct activity toward Ohio\"], \"matching\": {\"minimum contacts with forum state\": false, \"claim arises from or relates to contacts\": false, \"exercise of jurisdiction is reasonable\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": false, \"claim arises from or relates to contacts\": false, \"exercise of jurisdiction is reasonable\": false}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"company sold exclusively in New York\", \"company never sold in Ohio\", \"product reached Ohio through unilateral act of third-party customer\", \"company did not purposefully direct activity toward Ohio\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, Ohio cannot exercise personal jurisdiction over the New York company. The product reached Ohio solely through the unilateral act of a third party — the New York customer who shipped it. The company never directed any activity toward Ohio and had no Ohio contacts. Under World-Wide Volkswagen Corp. v. Woodson (1980), foreseeability alone is insufficient; the defendant must purposefully avail itself of the forum state. Because the New York company had no purposeful availment of Ohio, jurisdiction is constitutionally impermissible."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A German automobile manufacturer has no U.S. offices but sells 40,000 cars per year in California through its U.S. distributor. A California resident is injured by one of those cars in California. Can California exercise personal jurisdiction over the German manufacturer?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"manufacturer sells 40,000 cars annually in California through distributor\", \"manufacturer deliberately serves California market\", \"plaintiff injured in California by a California-sold car\", \"claim directly relates to manufacturer's California sales activity\"], \"matching\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"manufacturer sells 40,000 cars annually in California through distributor\", \"manufacturer deliberately serves California market\", \"plaintiff injured in California by a California-sold car\", \"claim directly relates to manufacturer's California sales activity\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, California has specific personal jurisdiction over the German manufacturer. Selling 40,000 cars per year in California through a distributor demonstrates purposeful availment — the manufacturer deliberately exploits the California market. The plaintiff's injury arises from that very contact: a car distributed and sold in California injured a California resident in California. Under Ford Motor Co. v. Montana (2021), the claim 'relates to' the defendant's in-state activities even without a perfect causal link. Exercising jurisdiction is reasonable given the systematic California business."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A Florida corporation is incorporated in Florida with its headquarters in Florida. A New York plaintiff sues it in New York for breach of a contract negotiated entirely by phone, with no Florida party ever traveling to New York. Does New York have personal jurisdiction over the Florida corporation?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Florida corporation incorporated in Florida\", \"headquartered in Florida\", \"contract negotiated by phone with no physical New York presence\", \"no Florida party traveled to New York\", \"phone calls alone may be insufficient contacts\"], \"matching\": {\"minimum contacts with forum state\": false, \"claim arises from or relates to contacts\": false, \"exercise of jurisdiction is reasonable\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": false, \"claim arises from or relates to contacts\": false, \"exercise of jurisdiction is reasonable\": false}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Florida corporation incorporated in Florida\", \"headquartered in Florida\", \"contract negotiated by phone with no physical New York presence\", \"no Florida party traveled to New York\", \"phone calls alone may be insufficient contacts\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Likely no. The Florida corporation has its principal contacts in Florida, and the contract was negotiated entirely by phone with no physical presence in New York. Under Burger King Corp. v. Rudzewicz, phone and mail contacts can support jurisdiction if the defendant deliberately directed business into the forum. However, without more — such as a choice-of-law clause selecting New York law, significant ongoing performance in New York, or other deliberate forum ties — phone calls alone typically do not establish purposeful availment of New York. New York jurisdiction is likely unavailable on these facts."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "An Illinois resident purchases a defective car seat on a website operated by a Kentucky company. The website ships to any U.S. address. The Illinois resident is injured in Illinois. Does Illinois have personal jurisdiction over the Kentucky company?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Kentucky company operates website selling to all 50 states including Illinois\", \"company deliberately ships to Illinois\", \"plaintiff purchased product that was delivered to Illinois\", \"injury occurred in Illinois from that Illinois-delivered product\"], \"matching\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Kentucky company operates website selling to all 50 states including Illinois\", \"company deliberately ships to Illinois\", \"plaintiff purchased product that was delivered to Illinois\", \"injury occurred in Illinois from that Illinois-delivered product\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, Illinois has specific personal jurisdiction over the Kentucky company. By operating a website that deliberately ships products to Illinois customers — including the plaintiff — the company purposefully availed itself of Illinois. The claim (product liability for the defective car seat) arises directly from that Illinois-directed activity: the product was shipped to Illinois and caused injury there. Under the Zippo test and modern specific jurisdiction doctrine, this level of deliberate commercial targeting of Illinois creates sufficient contacts for jurisdiction."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A Nevada company posts defamatory content about a California resident on a website accessible worldwide. The California resident sues in California. Does California have personal jurisdiction over the Nevada company?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Nevada company posted content targeting California resident\", \"tortious conduct intentionally directed at California plaintiff\", \"harm occurred in California where plaintiff's reputation suffered\", \"claim arises from the intentional targeting of California\"], \"matching\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Nevada company posted content targeting California resident\", \"tortious conduct intentionally directed at California plaintiff\", \"harm occurred in California where plaintiff's reputation suffered\", \"claim arises from the intentional targeting of California\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, California has personal jurisdiction over the Nevada company under the 'effects test' from Calder v. Jones (1984). A defendant who commits an intentional tort expressly aimed at a forum-state plaintiff, causing harm the defendant knows will be felt there, subjects itself to personal jurisdiction in that forum. The Nevada company targeted a California resident with defamatory content; the reputational harm was felt in California. The claim arises from that intentional, forum-directed tortious conduct, satisfying all three elements of specific personal jurisdiction."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A corporation is incorporated in Delaware and has its principal place of business in California. It is sued in Georgia for a contract dispute. Does Georgia have personal jurisdiction over the corporation?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"incorporated in Delaware, headquarters in California\", \"no facts show Georgia contacts\", \"claim arose from unspecified contract with no Georgia nexus stated\", \"corporation is not 'at home' in Georgia for general jurisdiction\"], \"matching\": {\"minimum contacts with forum state\": false, \"claim arises from or relates to contacts\": false, \"exercise of jurisdiction is reasonable\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": false, \"claim arises from or relates to contacts\": false, \"exercise of jurisdiction is reasonable\": false}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"incorporated in Delaware, headquarters in California\", \"no facts show Georgia contacts\", \"claim arose from unspecified contract with no Georgia nexus stated\", \"corporation is not 'at home' in Georgia for general jurisdiction\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Likely no. The corporation is incorporated in Delaware and headquartered in California; Georgia is not its place of incorporation or principal place of business, so general jurisdiction is unavailable. For specific jurisdiction, Georgia would need to show the claim arose from the corporation's Georgia contacts — but no facts establish any Georgia contacts or nexus. Under Daimler AG v. Bauman (2014), a corporation is subject to general jurisdiction only where it is 'at home' (state of incorporation or principal place of business). Without Georgia-specific contacts tied to this claim, Georgia lacks jurisdiction."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "An out-of-state driver causes an accident in Michigan while passing through. The Michigan plaintiff sues in Michigan. Does Michigan have personal jurisdiction over the out-of-state driver?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"driver physically entered Michigan and drove on Michigan roads\", \"entering a state to drive is purposeful availment of state's highway system\", \"accident occurred in Michigan\", \"claim arises from Michigan driving conduct\"], \"matching\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"driver physically entered Michigan and drove on Michigan roads\", \"entering a state to drive is purposeful availment of state's highway system\", \"accident occurred in Michigan\", \"claim arises from Michigan driving conduct\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, Michigan has specific personal jurisdiction over the out-of-state driver. By voluntarily entering Michigan and driving on its roads, the driver purposefully availed himself of Michigan's highway infrastructure, traffic laws, and emergency services — a paradigmatic purposeful availment. The tort claim (the accident) arises directly from those Michigan contacts. Under Michigan's long-arm statute and constitutional due process, specific jurisdiction is clear when a defendant physically commits a tort within the forum state."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A Washington State company sends a single unsolicited email to a Colorado resident advertising its services but never contracts with that resident. The Colorado resident sues in Colorado for unfair trade practices. Does Colorado have personal jurisdiction over the Washington company?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"company sent single email to Colorado resident\", \"single unsolicited email may be insufficient contact\", \"no contract formed\", \"claim arises from the email itself\"], \"matching\": {\"minimum contacts with forum state\": false, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": false, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": false}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"company sent single email to Colorado resident\", \"single unsolicited email may be insufficient contact\", \"no contract formed\", \"claim arises from the email itself\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Likely no. A single unsolicited email, without more, generally does not constitute purposeful availment of the Colorado forum. While the claim technically arises from that email, minimum contacts require the defendant to have purposefully directed activity toward the forum state — not merely that a communication happened to reach a forum resident. Courts have generally held that isolated electronic contacts are insufficient. Colorado jurisdiction is likely unavailable; Washington, where the company operates, would be the proper forum."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A Pennsylvania defendant signed a contract containing a forum-selection clause designating New York courts for all disputes. The dispute is now in New York. Does the forum-selection clause satisfy personal jurisdiction in New York?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"defendant voluntarily signed contract with New York forum-selection clause\", \"consent by contract is a recognized basis for personal jurisdiction\", \"claim arises from the contract containing the New York clause\", \"enforcement of agreed forum is reasonable\"], \"matching\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"defendant voluntarily signed contract with New York forum-selection clause\", \"consent by contract is a recognized basis for personal jurisdiction\", \"claim arises from the contract containing the New York clause\", \"enforcement of agreed forum is reasonable\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. A contractual forum-selection clause constitutes consent to personal jurisdiction in the designated forum. The Pennsylvania defendant voluntarily agreed to litigate disputes in New York courts by signing the contract. Consent is a recognized independent basis for personal jurisdiction (apart from minimum contacts), upheld in Insurance Corp. of Ireland v. Compagnie des Bauxites de Guinee (1982). The claim arises from the contract that contains the clause, and enforcing the agreed forum is reasonable. New York courts have jurisdiction."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A Connecticut defendant files a counterclaim against a Massachusetts plaintiff in a Massachusetts court. Does Massachusetts have personal jurisdiction over the Connecticut defendant for purposes of the counterclaim?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Connecticut defendant voluntarily appeared in Massachusetts court\", \"voluntary appearance waives personal jurisdiction objection\", \"counterclaim filed by defendant who submitted to jurisdiction\", \"defendant cannot challenge jurisdiction it implicitly accepted\"], \"matching\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"Connecticut defendant voluntarily appeared in Massachusetts court\", \"voluntary appearance waives personal jurisdiction objection\", \"counterclaim filed by defendant who submitted to jurisdiction\", \"defendant cannot challenge jurisdiction it implicitly accepted\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. By filing a counterclaim in Massachusetts, the Connecticut defendant voluntarily submitted to Massachusetts personal jurisdiction. A defendant who appears in a forum and asserts affirmative claims implicitly consents to that court's jurisdiction, at least with respect to the counterclaim. The defendant cannot simultaneously invoke the Massachusetts court's authority to adjudicate its counterclaim while objecting that the court lacks jurisdiction over it. Consent through appearance is a well-established basis for personal jurisdiction."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A foreign corporation registers to do business in Pennsylvania and appoints a registered agent there as required by Pennsylvania law. Is it subject to general personal jurisdiction in Pennsylvania?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"corporation registered to do business in Pennsylvania\", \"appointed registered agent in Pennsylvania\", \"circuit split on whether registration constitutes consent to general jurisdiction\", \"SCOTUS has not definitively resolved registration-as-consent post-Daimler\"], \"matching\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"corporation registered to do business in Pennsylvania\", \"appointed registered agent in Pennsylvania\", \"circuit split on whether registration constitutes consent to general jurisdiction\", \"SCOTUS has not definitively resolved registration-as-consent post-Daimler\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "This is unsettled law. In Mallory v. Norfolk Southern Railway (2023), a plurality of the Supreme Court held that Pennsylvania's registration statute, which requires consent to suit as a condition of registration, constitutes valid consent-based general jurisdiction. However, the decision was fractured and lower courts remain divided. Under Pennsylvania's statute, a registered corporation may be subject to general jurisdiction in Pennsylvania. Parties should be aware that the constitutional limits of registration-based jurisdiction remain contested post-Daimler."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A Texas plaintiff is injured in Texas by a product manufactured in Germany and sold in Germany. The German manufacturer has never advertised in or shipped to Texas. Does Texas have personal jurisdiction?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"German manufacturer operates solely in Germany\", \"never advertised in Texas\", \"never shipped products to Texas\", \"product reached Texas only through independent chain of distribution\"], \"matching\": {\"minimum contacts with forum state\": false, \"claim arises from or relates to contacts\": false, \"exercise of jurisdiction is reasonable\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": false, \"claim arises from or relates to contacts\": false, \"exercise of jurisdiction is reasonable\": false}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"German manufacturer operates solely in Germany\", \"never advertised in Texas\", \"never shipped products to Texas\", \"product reached Texas only through independent chain of distribution\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, Texas cannot exercise personal jurisdiction over the German manufacturer. The manufacturer has no contacts with Texas — it never advertised there, never shipped there, and did not target the Texas market. Under Asahi Metal Industry Co. v. Superior Court and J. McIntyre Machinery v. Nicastro, placing a product into the stream of commerce without more (without specifically targeting the forum state) is insufficient for personal jurisdiction. The product's presence in Texas was due to independent downstream actors, not the manufacturer's purposeful availment of Texas."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_pj_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A Florida lawyer is served with process while briefly passing through Montana to attend a conference. Montana asserts personal jurisdiction based on in-state service. Is this jurisdiction valid?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"defendant was physically present in Montana when served\", \"in-state physical presence service is Burnham/tag jurisdiction\", \"no minimum contacts analysis required for transient jurisdiction\", \"physical service while voluntarily present is historically valid\"], \"matching\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts with forum state\": true, \"claim arises from or relates to contacts\": true, \"exercise of jurisdiction is reasonable\": true}, \"elements\": [\"minimum contacts with forum state\", \"claim arises from or relates to contacts\", \"exercise of jurisdiction is reasonable\"], \"facts\": [\"defendant was physically present in Montana when served\", \"in-state physical presence service is Burnham/tag jurisdiction\", \"no minimum contacts analysis required for transient jurisdiction\", \"physical service while voluntarily present is historically valid\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes. In-state personal service (tag jurisdiction) is a constitutionally recognized basis for personal jurisdiction that predates and coexists with the International Shoe minimum contacts framework. In Burnham v. Superior Court (1990), the Supreme Court upheld transient jurisdiction based on in-state service during voluntary physical presence, even without minimum contacts. By voluntarily entering Montana and being served there, the Florida lawyer is subject to Montana jurisdiction under this traditional basis. The claim need not relate to Montana activities."
+      }
+    ]
+  }
+]

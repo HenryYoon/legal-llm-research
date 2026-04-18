@@ -1,0 +1,444 @@
+[
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court first looks to the 'ordinary, contemporary, common meaning' of the phrase 'election laws,' finding it means laws that specifically govern elections rather than generally applicable laws that may affect elections. Does this passage apply textualist interpretation?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court looked to ordinary contemporary common meaning of 'election laws'\", \"court relied on dictionary and structural canon rather than legislative intent\", \"court rejected broader reading not supported by text\"], \"matching\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court looked to ordinary contemporary common meaning of 'election laws'\", \"court relied on dictionary and structural canon rather than legislative intent\", \"court rejected broader reading not supported by text\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this passage applies textualist interpretation. The court follows the core textualist canon by first consulting the 'ordinary, contemporary, common meaning' of the statutory phrase — consulting the dictionary and compound-word usage rather than legislative history or purpose. The court's conclusion that 'election law' is a closed compound meaning laws specifically governing elections (not merely affecting them) is a structural textual canon consistent with Scalia-style textualism. All three textualist elements are satisfied."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court interprets 'maintenance, operation or inspection' of an improvement to real property as applying only to completed structures, because the statutory language implies an existing, functional installation. Does this reflect textualism?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court analyzed 'maintenance' as upkeep of existing property\", \"court cited Black's Law Dictionary definition\", \"court inferred from 'operation' and 'inspection' that structure must already exist\", \"no legislative history consulted\"], \"matching\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court analyzed 'maintenance' as upkeep of existing property\", \"court cited Black's Law Dictionary definition\", \"court inferred from 'operation' and 'inspection' that structure must already exist\", \"no legislative history consulted\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this reflects textualist interpretation. The court relies on Black's Law Dictionary to define 'maintenance' as upkeep of existing property, and reads 'operation' and 'inspection' as presupposing a functional, completed installation. This whole-text canon — reading individual terms in light of surrounding statutory words — is a hallmark of textualism. The analysis is grounded in statutory language alone without reference to legislative purpose or committee reports, satisfying all three textualist criteria."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court notes that a stipulation that a loan was secured by 'residential real property' might be read as simply a factual agreement, leaving open the legal question of whether 'residential' is a term of art in the statute. Does this reflect textualist reasoning?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court distinguishes between factual stipulation and legal meaning of 'residential'\", \"court considers whether 'residential' has specialized statutory meaning\", \"court refuses to treat party stipulation as resolving statutory interpretation\", \"focus is on what Congress meant by the statutory term\"], \"matching\": {\"plain meaning analysis\": false, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": false, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": false}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court distinguishes between factual stipulation and legal meaning of 'residential'\", \"court considers whether 'residential' has specialized statutory meaning\", \"court refuses to treat party stipulation as resolving statutory interpretation\", \"focus is on what Congress meant by the statutory term\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Partially, but not a complete textualist analysis. The court correctly rejects a party stipulation as dispositive of statutory meaning and focuses on what the statute means — a textualist instinct. However, the court explicitly considers whether 'residential' might be a 'term of art' used by Congress, which opens inquiry beyond plain ordinary meaning. A strict textualist would still start with the statutory text; this passage is better characterized as a preliminary framing question about the interpretive method, not a completed textualist analysis."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court interprets 'pertinent to and within the scope of an authorized law enforcement activity' in a Privacy Act provision by comparing circuit court decisions on the phrase and adopting a relevancy standard requiring both relevance and a sufficient basis. Does this reflect textualist reasoning?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court reviewed other circuit interpretations of the phrase\", \"court adopted a multi-factor standard not apparent from text alone\", \"no reference to dictionary definitions or grammatical structure\", \"analysis relies heavily on comparative circuit jurisprudence\"], \"matching\": {\"plain meaning analysis\": false, \"focus on statutory text over legislative history\": false, \"ordinary meaning of statutory language\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": false, \"focus on statutory text over legislative history\": false, \"ordinary meaning of statutory language\": false}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court reviewed other circuit interpretations of the phrase\", \"court adopted a multi-factor standard not apparent from text alone\", \"no reference to dictionary definitions or grammatical structure\", \"analysis relies heavily on comparative circuit jurisprudence\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, this does not reflect textualist reasoning. The court surveys circuit court decisions and synthesizes a multi-factor standard — conduct not supported by the statutory text itself. Textualism requires grounding interpretation in the plain, ordinary meaning of statutory words, not in what other courts have decided or in purpose-driven multi-factor tests. The absence of dictionary analysis, grammatical parsing, or structural canons, combined with the reliance on precedent and a judicially-created standard, characterizes this as common-law interpretive reasoning rather than textualism."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court interprets the word 'vehicle' in a statute prohibiting 'vehicles in the park.' Applying textualism, it looks to the dictionary definition ('a thing used for transporting people or goods') and concludes that a bicycle qualifies. Is this textualist?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court consulted dictionary definition of 'vehicle'\", \"court applied ordinary meaning of the term to facts\", \"court did not examine legislative history or purpose of the park ordinance\"], \"matching\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court consulted dictionary definition of 'vehicle'\", \"court applied ordinary meaning of the term to facts\", \"court did not examine legislative history or purpose of the park ordinance\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is classic textualist interpretation. The court applies the Hart & Sacks 'ordinary meaning' canon: look to the dictionary definition, apply it to the facts, and conclude a bicycle qualifies as a 'vehicle' under the statute. By declining to examine legislative history (e.g., whether the legislature was concerned only with automobiles) or the statute's purpose, the court follows the textualist method championed by Justice Scalia in A Matter of Interpretation. The plain meaning of 'vehicle' controls, and bicycles fall within it."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court interprets 'any firearm' in a federal statute to include antique muskets, reasoning that Congress used the word 'any' without qualification. The dissent argues the purpose was only to regulate modern weapons. Who employs textualism?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"majority reads 'any' as unqualified and all-inclusive\", \"majority did not consult legislative purpose\", \"dissent relies on legislative purpose to narrow the statute\", \"'any firearm' has plain meaning covering all firearms\"], \"matching\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"majority reads 'any' as unqualified and all-inclusive\", \"majority did not consult legislative purpose\", \"dissent relies on legislative purpose to narrow the statute\", \"'any firearm' has plain meaning covering all firearms\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "The majority employs textualism. By holding that 'any firearm' means exactly what it says — all firearms, with no qualification — and refusing to limit the statute based on the legislature's presumed purpose (modern weapons only), the majority applies the plain meaning rule. The word 'any' is an expansion term in statutory language (Ali v. Federal Bureau of Prisons), and textualists give it its full scope absent clear textual limitation. The dissent's purpose-based narrowing represents purposivist or intentionalist interpretation, not textualism."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court applies the rule of lenity to interpret an ambiguous criminal statute in the defendant's favor, noting that the legislature failed to clearly include the defendant's conduct in the statute's text. Is this textualism?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court first analyzed text and found it ambiguous\", \"court applied rule of lenity as a textual last resort\", \"rule of lenity is a textual/structural canon, not purposivist reasoning\", \"court did not resort to legislative history\"], \"matching\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": false}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court first analyzed text and found it ambiguous\", \"court applied rule of lenity as a textual last resort\", \"rule of lenity is a textual/structural canon, not purposivist reasoning\", \"court did not resort to legislative history\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Substantially yes, with a caveat. The court's analysis is textualist-compatible: it first exhausts textual analysis, finds genuine ambiguity, and then applies the rule of lenity — a structural canon that textualists accept. Lenity is a default rule mandating that when penal statutes genuinely cannot be resolved by textual analysis, courts resolve ambiguity in the defendant's favor. Justice Scalia endorsed lenity as a legitimate textual tool. However, because the plain ordinary meaning element was inconclusive (ambiguous), not all three elements are fully met. The approach is textualist in method though inconclusive in outcome."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Congress enacted a statute saying 'no person shall discriminate on the basis of sex.' A court consults the legislative history and finds Congress was only concerned with sex stereotyping, not sexual orientation. It rules that sexual orientation claims are excluded. Does this reflect textualism?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court relied on legislative history to narrow scope\", \"court substituted legislative intent for plain text\", \"plain text 'on the basis of sex' does not expressly exclude sexual orientation\", \"textualism would look to what 'sex' means in ordinary usage\"], \"matching\": {\"plain meaning analysis\": false, \"focus on statutory text over legislative history\": false, \"ordinary meaning of statutory language\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": false, \"focus on statutory text over legislative history\": false, \"ordinary meaning of statutory language\": false}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court relied on legislative history to narrow scope\", \"court substituted legislative intent for plain text\", \"plain text 'on the basis of sex' does not expressly exclude sexual orientation\", \"textualism would look to what 'sex' means in ordinary usage\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, this does not reflect textualism. The court replaces the statutory text with what it discerns from legislative history — the classic intentionalist error that textualists reject. A textualist court (as demonstrated in Bostock v. Clayton County, 2020) would ask what 'on the basis of sex' means in ordinary language, not what Congress 'really meant.' Scalia's textualism insists that a court cannot use legislative history to narrow unambiguous text. The outcome here substitutes congressional intent for the law as written, which is the opposite of textualist methodology."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court applies the noscitur a sociis canon to interpret the word 'neighboring' in a zoning statute, holding that it means 'immediately adjacent' because it appears alongside 'abutting' and 'contiguous.' Is this textualism?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court used noscitur a sociis — a word is known by its companions\", \"court interpreted 'neighboring' by examining adjacent statutory terms\", \"'abutting' and 'contiguous' are precise spatial terms narrowing 'neighboring'\", \"no legislative history consulted\"], \"matching\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court used noscitur a sociis — a word is known by its companions\", \"court interpreted 'neighboring' by examining adjacent statutory terms\", \"'abutting' and 'contiguous' are precise spatial terms narrowing 'neighboring'\", \"no legislative history consulted\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is textualist interpretation using the noscitur a sociis canon. The court interprets 'neighboring' by examining the words that surround it in the statute — 'abutting' and 'contiguous' — both of which carry specific spatial precision. Under noscitur a sociis, ambiguous words take meaning from their statutory context. This is a structural textual canon that textualists regularly employ. The analysis is entirely text-based with no resort to legislative history or purpose, satisfying all three textualist criteria."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A statute says 'whoever commits fraud shall be punished.' A court holds that corporate entities cannot be punished because 'whoever' ordinarily refers to natural persons. Is this textualist?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court analyzed ordinary meaning of 'whoever'\", \"court found 'whoever' in common usage often refers to natural persons\", \"court applied ordinary meaning without consulting legislative history\", \"conclusion: corporations excluded based on textual analysis\"], \"matching\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court analyzed ordinary meaning of 'whoever'\", \"court found 'whoever' in common usage often refers to natural persons\", \"court applied ordinary meaning without consulting legislative history\", \"conclusion: corporations excluded based on textual analysis\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is a textualist analysis, though the conclusion is debatable. The court grounds its reasoning in the ordinary meaning of 'whoever' — a purely textual inquiry. Textualists accept that statutory terms should be read in their ordinary sense at the time of enactment. However, 'whoever' is commonly used as a comprehensive pronoun and the Dictionary Act (1 U.S.C. § 1) provides that 'person' includes corporations unless context indicates otherwise. A competing textualist would reach the opposite conclusion using the same method. The methodology is textualist; the outcome depends on which ordinary-meaning reading prevails."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court applies the surplusage canon to interpret a statute, holding that a provision must mean something different from a neighboring provision, because otherwise one of them would be redundant. Is this textualism?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court applied surplusage canon — every word should have meaning\", \"court gave distinct meaning to adjacent provisions to avoid redundancy\", \"analysis is purely structural and textual\", \"no legislative history or purpose consulted\"], \"matching\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court applied surplusage canon — every word should have meaning\", \"court gave distinct meaning to adjacent provisions to avoid redundancy\", \"analysis is purely structural and textual\", \"no legislative history or purpose consulted\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, the surplusage canon is a textualist structural tool. Textualism holds that legislatures choose their words deliberately and that courts should give each word independent meaning. Reading two provisions as coextensive would render one surplusage — an interpretive outcome textualists strongly resist. By using the structure of the statute itself (rather than legislative history or purpose) to derive meaning, the court follows textualist methodology. This is consistent with the whole-act rule and the canon that courts avoid interpretations making provisions superfluous."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court consults the committee report explaining why a statute was enacted and concludes Congress intended to include a particular class of transactions, even though the statutory text does not mention them. Is this textualism?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court relied on committee report to expand scope of statute\", \"committee report is legislative history, not enacted text\", \"court substituted congressional intent for statutory text\", \"no textual basis for including the transactions\"], \"matching\": {\"plain meaning analysis\": false, \"focus on statutory text over legislative history\": false, \"ordinary meaning of statutory language\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": false, \"focus on statutory text over legislative history\": false, \"ordinary meaning of statutory language\": false}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court relied on committee report to expand scope of statute\", \"committee report is legislative history, not enacted text\", \"court substituted congressional intent for statutory text\", \"no textual basis for including the transactions\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No, this is not textualism — it is intentionalism. Consulting a committee report to expand the scope of a statute beyond its text is the archetypal non-textualist move that Justice Scalia criticized throughout his career. In Chevron U.S.A. v. Natural Resources Defense Council and subsequent textualist cases, committee reports are dismissed as unauthoritative because they are not voted on by Congress or signed by the President. A textualist court would ask only what the enacted statutory text means, not what the committee thought it meant. All three textualist elements are absent here."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A statute uses the word 'and' between two elements. A court holds both elements must be present. The dissent argues 'and' should be read as 'or' to avoid an absurd result. Which position is textualist?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"majority reads 'and' in its ordinary conjunctive sense requiring both elements\", \"majority applies plain meaning without modification\", \"dissent rewrites text to avoid policy outcome\", \"absurdity doctrine allows departure from text only for true absurdity, not mere inconvenience\"], \"matching\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"majority reads 'and' in its ordinary conjunctive sense requiring both elements\", \"majority applies plain meaning without modification\", \"dissent rewrites text to avoid policy outcome\", \"absurdity doctrine allows departure from text only for true absurdity, not mere inconvenience\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "The majority's position is textualist. 'And' in ordinary English is conjunctive, requiring both elements — this is its plain meaning, and textualists give statutory words their ordinary meaning. The dissent's 'or' reading requires rewriting the text to achieve a preferred result, which textualists reject. While textualism recognizes a narrow absurdity exception, policy inconvenience does not reach the level of a 'true absurdity' (e.g., a reading no reasonable legislature could intend). Reading 'and' as 'and' is the textually correct, textualist position."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court interprets a statute enacted in 1910. It consults dictionaries from 1905-1915 to determine what 'manufacture' meant when Congress enacted the law. Is this textualism?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court consulted contemporary dictionaries to find original meaning\", \"court looked to meaning at time of enactment, not modern meaning\", \"analysis grounded in statutory text's original ordinary meaning\", \"no committee reports or floor debates consulted\"], \"matching\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court consulted contemporary dictionaries to find original meaning\", \"court looked to meaning at time of enactment, not modern meaning\", \"analysis grounded in statutory text's original ordinary meaning\", \"no committee reports or floor debates consulted\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is textualism in its originalist variant (sometimes called 'original public meaning textualism'). Consulting period dictionaries to determine what a statutory term meant when enacted is a core textualist method. Textualists hold that statutory language should be interpreted based on its ordinary public meaning at the time of enactment — words are 'frozen' at the moment Congress wrote them. Using 1905-1915 dictionaries for a 1910 statute is methodologically sound textualism, and avoids the risk that modern usage will alter the meaning of the law Congress actually passed."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court interprets 'proceeds of drug sales' in a money laundering statute. The defendant argues 'proceeds' means 'profits' (gross minus costs). The government argues it means 'gross receipts.' The court looks to other statutory provisions using 'proceeds' in the same Act to determine meaning. Is this textualism?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court applied whole-act canon to read 'proceeds' consistently across statute\", \"analysis grounded in statutory text and structure\", \"court did not consult legislative history\", \"cross-referencing statutory provisions is a textual tool\"], \"matching\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court applied whole-act canon to read 'proceeds' consistently across statute\", \"analysis grounded in statutory text and structure\", \"court did not consult legislative history\", \"cross-referencing statutory provisions is a textual tool\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, this is textualist interpretation employing the whole-act canon. By examining how 'proceeds' is used elsewhere in the same statute, the court uses the text itself as interpretive context — a standard textualist structural canon. This approach was used in United States v. Santos (2008), where Justice Scalia applied the whole-act rule to interpret 'proceeds.' If the statute consistently uses 'proceeds' to mean gross receipts in other provisions, textualism supports that reading here as well. The analysis is entirely text-and-structure based, with no resort to legislative history."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A statute prohibits 'cruel and unusual punishment.' A court holds that the Eighth Amendment's meaning is fixed at the time of ratification in 1791, so punishments considered acceptable in 1791 cannot violate the Eighth Amendment today. Is this textualist?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court applies original public meaning of 'cruel and unusual' as of 1791\", \"court rejects evolving-standards-of-decency doctrine\", \"analysis grounded in original textual meaning, not judicial glosses\", \"no reliance on legislative history of the Bill of Rights\"], \"matching\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": true, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": true}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court applies original public meaning of 'cruel and unusual' as of 1791\", \"court rejects evolving-standards-of-decency doctrine\", \"analysis grounded in original textual meaning, not judicial glosses\", \"no reliance on legislative history of the Bill of Rights\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Yes, fixing the Eighth Amendment's meaning to 1791 reflects originalist textualism applied to constitutional interpretation. The approach treats 'cruel and unusual' as having a fixed meaning anchored to the time of ratification — the constitutional analog of statutory original public meaning textualism. This rejects the 'living Constitution' approach (evolving standards of decency) in favor of the text's original meaning. Scalia and Thomas championed this originalist textualism in Eighth Amendment cases. All three textualist elements are satisfied: plain meaning, text over history, and original ordinary meaning."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "legalbench_textualism_synth",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the task into one of five Legal Lanes (L01, L05, L06, L09, L10) and call the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A court reads 'includes' in a statutory definition as exhaustive rather than illustrative, limiting the defined term to only the listed items. Is this textualism?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court interpreted 'includes' as exhaustive\", \"ordinary meaning of 'includes' is typically illustrative, not exhaustive\", \"reading 'includes' as exhaustive contradicts its ordinary meaning\", \"textualists follow ordinary meaning even if it disfavors the government\"], \"matching\": {\"plain meaning analysis\": false, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"plain meaning analysis\": false, \"focus on statutory text over legislative history\": true, \"ordinary meaning of statutory language\": false}, \"elements\": [\"plain meaning analysis\", \"focus on statutory text over legislative history\", \"ordinary meaning of statutory language\"], \"facts\": [\"court interpreted 'includes' as exhaustive\", \"ordinary meaning of 'includes' is typically illustrative, not exhaustive\", \"reading 'includes' as exhaustive contradicts its ordinary meaning\", \"textualists follow ordinary meaning even if it disfavors the government\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No — or at least, this is an incorrect textualist application. 'Includes' in ordinary English usage is illustrative, not exhaustive; it signals that the list is representative but not necessarily complete. A faithful textualist reads 'includes' as illustrative, not exhaustive, unless context strongly indicates otherwise. Reading 'includes' as limiting the term to only the listed items contradicts its ordinary meaning. The court's approach is text-focused but reaches a result that inverts the plain meaning of 'includes' — making it closer to a formalist over-reading than sound textualism."
+      }
+    ]
+  }
+]

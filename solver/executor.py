@@ -1,4 +1,7 @@
-"""Dispatch tool_call dicts to the appropriate solver backend."""
+"""Dispatch tool_call dicts to the appropriate solver backend.
+
+R1 (original) and R2 dispatch coexist.  Use execute_r2() for R2 data pipeline.
+"""
 from __future__ import annotations
 
 from typing import Dict, Any
@@ -45,3 +48,13 @@ def lane_of(tool_call: Dict[str, Any]) -> str:
         ("sympy", "solve"): "L05_calculation",
     }
     return mapping.get((tool, method), "unknown")
+
+
+# ---------------------------------------------------------------------------
+# R2 validator integration (called by generate_data_r2.py)
+# ---------------------------------------------------------------------------
+
+def validate_r2(tool_call: Dict[str, Any]) -> bool:
+    """Return True iff tool_call passes R2 schema + allowed-method check."""
+    from .validator_r2 import validate_schema_r2
+    return validate_schema_r2(tool_call)
