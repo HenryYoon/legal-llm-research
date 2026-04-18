@@ -249,7 +249,7 @@ python scripts/eval_with_solver.py --model qwen25 --variant lane_solver --task a
 
 ## 부록: Git init 이전 편집 이력
 
-이 저장소는 2026-04-19 `24e67ac` 커밋으로 초기화되었고, 그 이전의 편집 작업은 Claude Code의 로컬 file-history(`~/.claude/file-history/`)에 스냅샷 형태로만 남아 있어 git 이력으로 재구성할 수 없음. 재현성 참고용으로 세션별 타임라인 정리:
+이 저장소는 2026-04-19 `fb38ebc` 커밋으로 초기화되었고, 그 이전의 편집 작업은 Claude Code의 로컬 file-history(`~/.claude/file-history/`)에 스냅샷 형태로만 남아 있어 git 이력으로 재구성할 수 없음. 재현성 참고용으로 세션별 타임라인 정리:
 
 | 시기 | 세션/내용 | 비고 |
 |------|-----------|------|
@@ -259,7 +259,7 @@ python scripts/eval_with_solver.py --model qwen25 --variant lane_solver --task a
 | 2026-04-18 13:03 ~ | CLAUDE.md, researcher1/2/3.md 작성 | `.claude/agents/` 구성 |
 | 2026-04-18 14:30 | Step 1 선행연구 세션 준비 | literature review 구도 |
 | 2026-04-19 04:20 ~ | **현재 세션 시작** — Step 1~8 자동 실행 | 550+ 이벤트 |
-| 2026-04-19 06:11 | **`24e67ac` 초기 커밋** | 이 시점부터 git 관리 |
+| 2026-04-19 06:11 | **`fb38ebc` 초기 커밋** | 이 시점부터 git 관리 |
 
 file-history 하위 스냅샷(hash@vN)은 Edit/Write로 수정된 파일만 포함하며, subagent가 Python 스크립트로 생성한 대량 산출물(`data/sft_merged.jsonl` 등 19K+20K 샘플)은 추적 대상이 아니었음. 따라서 git 이전 이력을 commit으로 합성하는 것은 재현성을 오히려 해치므로 지양.
 
