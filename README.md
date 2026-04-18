@@ -263,3 +263,33 @@ python scripts/eval_with_solver.py --model qwen25 --variant lane_solver --task a
 
 file-history 하위 스냅샷(hash@vN)은 Edit/Write로 수정된 파일만 포함하며, subagent가 Python 스크립트로 생성한 대량 산출물(`data/sft_merged.jsonl` 등 19K+20K 샘플)은 추적 대상이 아니었음. 따라서 git 이전 이력을 commit으로 합성하는 것은 재현성을 오히려 해치므로 지양.
 
+### `.claude_old/` — 시행착오 흔적 (참고용 보존)
+
+저장소 루트의 `.claude_old/`는 **폐기된 초기 에이전트 팀 설정 스냅샷**. 현재 사용하는 `.claude/agents/` 구조로 오기 전의 실험 흔적으로, 재현성 참고용으로만 남겨둠.
+
+**무엇이었나:**
+- 이름: `bonsai-lane-solver` (팀 기반 multi-agent, 실험적 Agent Teams 기능 활용)
+- 구성: `team-lead` (Sonnet) + `researcher-lit`/`researcher-data`/`researcher-model` (Haiku)
+- 통신: SendMessage 기반 pull-first 원칙, 연구원별 inbox 파일
+- 주제: 당시 plan.md v2.0 — "Bonsai 1-bit LLM + Lane + 솔버" (법률 도메인 pivot 이전)
+
+**왜 폐기했나:**
+- **30분 만에 토큰 소진**. SendMessage 기반 다자간 통신이 agent 간 왕복 오버헤드가 커서, 실제 연구 진전 대비 컨텍스트 비용이 과도.
+- team-lead가 director 역할까지 겸임하는 구조에서 의례적 상태 체크가 빈발.
+- Haiku 연구원의 품질 자가 점검이 "Sonnet 승격 요청"으로 이어져 비용 이중 발생.
+
+**현재 구조와의 차이:**
+
+| 항목 | `.claude_old/` (폐기) | `.claude/agents/` (현재) |
+|------|----------------------|--------------------------|
+| 통신 | SendMessage (pull inbox) | Agent tool 단발 호출, 결과 파일로 전달 |
+| 오버헤드 | team-lead 상주 + 연구원 상주 | Director는 이 세션, 연구원은 필요 시 spawn |
+| 비용 | 토큰 급격 소진 | 한 세션에서 R1+R2 완주 가능 |
+| 상태 관리 | inbox JSON 파일 | TaskCreate/TaskUpdate + 파일 산출물 |
+
+**유지 이유:**
+- 초기 팀 프롬프트(team-lead, researcher-lit/data/model 각자의 역할 기술)에 **당시 설계 의도**가 남아 있어 참고 가치 있음.
+- 향후 multi-agent 실험 재시도 시 "무엇이 비쌌는지" 비교 기준.
+
+**주의:** `.claude_old/`는 **실행되지 않음**. Claude Code는 `.claude/` 만 인식. 삭제해도 무방하나 학습용으로 보존.
+
