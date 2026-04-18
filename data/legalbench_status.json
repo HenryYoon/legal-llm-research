@@ -1,0 +1,29 @@
+{
+  "hearsay": {
+    "variant": "hearsay",
+    "splits": {
+      "train": 5,
+      "test": 94
+    }
+  },
+  "personal_jurisdiction": {
+    "variant": "personal_jurisdiction",
+    "splits": {
+      "train": 4,
+      "test": 50
+    }
+  },
+  "rule_qa": {
+    "variant": "rule_qa",
+    "splits": {
+      "test": 50
+    }
+  },
+  "textualism_tool": {
+    "variant": "textualism_tool_dictionaries",
+    "splits": {
+      "train": 4,
+      "test": 107
+    }
+  }
+}

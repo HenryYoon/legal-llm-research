@@ -1,0 +1,1377 @@
+[
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "피고인이 편의점에서 음료수 2캔을 주머니에 넣고 결제 없이 나왔다. 절도죄가 성립하는가?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"타인의 재물\", \"절취\", \"불법영득의사\"], \"facts\": [\"편의점 소유 음료수 2캔\", \"주머니에 넣고 퇴장→점유이전\", \"결제의사 없음\"], \"matching\": {\"타인의 재물\": true, \"절취\": true, \"불법영득의사\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"타인의 재물\": true, \"절취\": true, \"불법영득의사\": true}, \"elements\": [\"타인의 재물\", \"절취\", \"불법영득의사\"], \"facts\": [\"편의점 소유 음료수 2캔\", \"주머니에 넣고 퇴장→점유이전\", \"결제의사 없음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "절도죄(형법 제329조)의 구성요건이 모두 충족되어 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "A는 자신이 분실했다고 생각한 우산이 사실 B의 것임을 알면서 가져갔다. 절도죄 성립?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"타인의 재물\", \"절취\", \"불법영득의사\"], \"facts\": [\"B 소유 우산\", \"A가 가져감\", \"A가 타인 소유임을 알고 있었음\"], \"matching\": {\"타인의 재물\": true, \"절취\": true, \"불법영득의사\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"타인의 재물\": true, \"절취\": true, \"불법영득의사\": true}, \"elements\": [\"타인의 재물\", \"절취\", \"불법영득의사\"], \"facts\": [\"B 소유 우산\", \"A가 가져감\", \"A가 타인 소유임을 알고 있었음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "타인의 재물에 대한 불법영득의사가 있어 절도죄가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "자신의 자전거를 실수로 가져온 경우 절도죄?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"타인의 재물\", \"절취\", \"불법영득의사\"], \"facts\": [\"자신 소유 자전거\", \"가져감\", \"불법영득의사 없음\"], \"matching\": {\"타인의 재물\": false, \"절취\": false, \"불법영득의사\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"타인의 재물\": false, \"절취\": false, \"불법영득의사\": false}, \"elements\": [\"타인의 재물\", \"절취\", \"불법영득의사\"], \"facts\": [\"자신 소유 자전거\", \"가져감\", \"불법영득의사 없음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "타인의 재물성 자체가 없어 절도죄가 성립하지 않습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "A는 B의 지갑을 잠시 보려고 들었다가 그대로 가지고 집에 갔다. 절도 성립?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"타인의 재물\", \"절취\", \"불법영격의사\"], \"facts\": [\"B의 지갑\", \"가지고 귀가\", \"불법영득의사 인정\"], \"matching\": {\"타인의 재물\": true, \"절취\": true, \"불법영격의사\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"타인의 재물\": true, \"절취\": true, \"불법영격의사\": true}, \"elements\": [\"타인의 재물\", \"절취\", \"불법영격의사\"], \"facts\": [\"B의 지갑\", \"가지고 귀가\", \"불법영득의사 인정\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "점유이전과 불법영득의사로 절도죄 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "주운 지갑을 경찰에 신고하지 않고 현금만 꺼낸 경우의 구성요건?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"타인의 재물\", \"횡령행위\", \"불법영득의사\"], \"facts\": [\"점유이탈물인 현금\", \"꺼내어 소비\", \"반환의사 없음\"], \"matching\": {\"타인의 재물\": true, \"횡령행위\": true, \"불법영득의사\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"타인의 재물\": true, \"횡령행위\": true, \"불법영득의사\": true}, \"elements\": [\"타인의 재물\", \"횡령행위\", \"불법영득의사\"], \"facts\": [\"점유이탈물인 현금\", \"꺼내어 소비\", \"반환의사 없음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "점유이탈물횡령죄의 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "A가 허위 투자상품을 설명하고 B로부터 1천만원을 송금받았다. 사기죄 성립?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"기망행위\", \"착오\", \"처분행위\", \"재산상 이득\"], \"facts\": [\"허위 투자상품 설명\", \"B의 착오\", \"송금\", \"A의 1천만원 수령\"], \"matching\": {\"기망행위\": true, \"착오\": true, \"처분행위\": true, \"재산상 이득\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"기망행위\": true, \"착오\": true, \"처분행위\": true, \"재산상 이득\": true}, \"elements\": [\"기망행위\", \"착오\", \"처분행위\", \"재산상 이득\"], \"facts\": [\"허위 투자상품 설명\", \"B의 착오\", \"송금\", \"A의 1천만원 수령\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "사기죄(형법 제347조)의 4요건 모두 충족."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "A가 사실을 있는 그대로 말했는데 B가 혼자 오해하여 돈을 보낸 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"기망행위\", \"착오\", \"처분행위\", \"재산상 이득\"], \"facts\": [\"진실 고지\", \"B의 자의적 오해\", \"송금\", \"이득 발생\"], \"matching\": {\"기망행위\": false, \"착오\": true, \"처분행위\": true, \"재산상 이득\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"기망행위\": false, \"착오\": true, \"처분행위\": true, \"재산상 이득\": true}, \"elements\": [\"기망행위\", \"착오\", \"처분행위\", \"재산상 이득\"], \"facts\": [\"진실 고지\", \"B의 자의적 오해\", \"송금\", \"이득 발생\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "기망행위가 없으므로 사기죄 불성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "부작위에 의한 기망이 성립하는 경우(고지의무 위반)의 구성요건 충족 여부?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"기망행위\", \"착오\", \"처분행위\", \"재산상 이득\"], \"facts\": [\"고지의무 있음에도 은폐\", \"상대방의 착오\", \"처분\", \"재산이득\"], \"matching\": {\"기망행위\": true, \"착오\": true, \"처분행위\": true, \"재산상 이득\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"기망행위\": true, \"착오\": true, \"처분행위\": true, \"재산상 이득\": true}, \"elements\": [\"기망행위\", \"착오\", \"처분행위\", \"재산상 이득\"], \"facts\": [\"고지의무 있음에도 은폐\", \"상대방의 착오\", \"처분\", \"재산이득\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "부작위 기망도 사기 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "A가 B에게 거짓 질병을 말했으나 B는 전혀 믿지 않고 돈을 주지 않았다."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"기망행위\", \"착오\", \"처분행위\", \"재산상 이득\"], \"facts\": [\"거짓말\", \"B 불신\", \"처분 없음\", \"이득 없음\"], \"matching\": {\"기망행위\": true, \"착오\": false, \"처분행위\": false, \"재산상 이득\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"기망행위\": true, \"착오\": false, \"처분행위\": false, \"재산상 이득\": false}, \"elements\": [\"기망행위\", \"착오\", \"처분행위\", \"재산상 이득\"], \"facts\": [\"거짓말\", \"B 불신\", \"처분 없음\", \"이득 없음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "착오·처분·이득이 없어 기수 불성립(미수 검토)."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "컴퓨터에 허위정보를 입력해 타인 계좌에서 이체받은 경우의 요건은?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"허위정보 입력\", \"정보처리\", \"재산상 이익\"], \"facts\": [\"은행 전산망에 허위 입력\", \"자동 처리\", \"자금 이체\"], \"matching\": {\"허위정보 입력\": true, \"정보처리\": true, \"재산상 이익\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"허위정보 입력\": true, \"정보처리\": true, \"재산상 이익\": true}, \"elements\": [\"허위정보 입력\", \"정보처리\", \"재산상 이익\"], \"facts\": [\"은행 전산망에 허위 입력\", \"자동 처리\", \"자금 이체\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "컴퓨터등사용사기죄(347조의2) 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 멱살을 잡고 흔든 경우 폭행죄 성립?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"유형력 행사\", \"사람의 신체에 대해\"], \"facts\": [\"멱살을 잡아 흔듦\", \"피해자 B의 신체\"], \"matching\": {\"유형력 행사\": true, \"사람의 신체에 대해\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"유형력 행사\": true, \"사람의 신체에 대해\": true}, \"elements\": [\"유형력 행사\", \"사람의 신체에 대해\"], \"facts\": [\"멱살을 잡아 흔듦\", \"피해자 B의 신체\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "폭행죄(형법 제260조) 구성요건 충족."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "A가 공포심을 줄 목적으로 B의 면전에서 벽을 세게 친 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"유형력 행사\", \"사람의 신체에 대해\"], \"facts\": [\"벽을 때림\", \"신체 직접 접촉 없음\"], \"matching\": {\"유형력 행사\": true, \"사람의 신체에 대해\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"유형력 행사\": true, \"사람의 신체에 대해\": false}, \"elements\": [\"유형력 행사\", \"사람의 신체에 대해\"], \"facts\": [\"벽을 때림\", \"신체 직접 접촉 없음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "판례상 신체에 대한 유형력 행사로 폭행 성립 가능(본 스키마에서는 엄격히 부정)."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "A가 밀쳐서 B가 넘어지며 팔이 골절됨. 상해죄 성립?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"폭행\", \"상해결과\", \"인과관계\"], \"facts\": [\"밀침\", \"팔 골절\", \"넘어짐과 골절 간 연결\"], \"matching\": {\"폭행\": true, \"상해결과\": true, \"인과관계\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"폭행\": true, \"상해결과\": true, \"인과관계\": true}, \"elements\": [\"폭행\", \"상해결과\", \"인과관계\"], \"facts\": [\"밀침\", \"팔 골절\", \"넘어짐과 골절 간 연결\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "상해죄(257조) 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "A가 B에게 욕설만 한 경우 폭행죄?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"유형력 행사\", \"사람의 신체에 대해\"], \"facts\": [\"욕설\", \"신체접촉 없음\"], \"matching\": {\"유형력 행사\": false, \"사람의 신체에 대해\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"유형력 행사\": false, \"사람의 신체에 대해\": true}, \"elements\": [\"유형력 행사\", \"사람의 신체에 대해\"], \"facts\": [\"욕설\", \"신체접촉 없음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "유형력이 없어 폭행 불성립, 모욕죄 검토."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "싸움 중 서로 때린 경우 쌍방 폭행의 구성요건?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"유형력 행사\", \"사람의 신체에 대해\"], \"facts\": [\"A→B 타격\", \"B→A 타격\"], \"matching\": {\"유형력 행사\": true, \"사람의 신체에 대해\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"유형력 행사\": true, \"사람의 신체에 대해\": true}, \"elements\": [\"유형력 행사\", \"사람의 신체에 대해\"], \"facts\": [\"A→B 타격\", \"B→A 타격\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "쌍방 폭행죄 각각 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "회사 자금을 개인 용도로 사용한 경우 업무상 횡령?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"타인 재물 보관자\", \"업무상 임무\", \"횡령행위\"], \"facts\": [\"회사 자금 관리자\", \"경리 업무\", \"개인 사용\"], \"matching\": {\"타인 재물 보관자\": true, \"업무상 임무\": true, \"횡령행위\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"타인 재물 보관자\": true, \"업무상 임무\": true, \"횡령행위\": true}, \"elements\": [\"타인 재물 보관자\", \"업무상 임무\", \"횡령행위\"], \"facts\": [\"회사 자금 관리자\", \"경리 업무\", \"개인 사용\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "업무상 횡령죄(356조) 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "타인의 사무를 처리하는 자가 임무에 위배하여 재산상 손해를 가한 경우 배임?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"타인 사무 처리자\", \"임무위배\", \"재산상 손해\", \"고의\"], \"facts\": [\"신임관계\", \"이사의 자기거래\", \"회사 손해 발생\", \"고의 인정\"], \"matching\": {\"타인 사무 처리자\": true, \"임무위배\": true, \"재산상 손해\": true, \"고의\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"타인 사무 처리자\": true, \"임무위배\": true, \"재산상 손해\": true, \"고의\": true}, \"elements\": [\"타인 사무 처리자\", \"임무위배\", \"재산상 손해\", \"고의\"], \"facts\": [\"신임관계\", \"이사의 자기거래\", \"회사 손해 발생\", \"고의 인정\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "배임죄(355조 2항) 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "단순 위탁받은 물건을 일시 사용한 후 반환한 경우 횡령?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"타인 재물 보관자\", \"불법영득의사\", \"횡령행위\"], \"facts\": [\"보관자\", \"반환의사 있음\", \"일시 사용\"], \"matching\": {\"타인 재물 보관자\": true, \"불법영득의사\": false, \"횡령행위\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"타인 재물 보관자\": true, \"불법영득의사\": false, \"횡령행위\": false}, \"elements\": [\"타인 재물 보관자\", \"불법영득의사\", \"횡령행위\"], \"facts\": [\"보관자\", \"반환의사 있음\", \"일시 사용\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불법영득의사 결여로 횡령 불성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "이사가 회사 기회를 가로챈 경우의 배임 요건?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"타인 사무 처리자\", \"임무위배\", \"재산상 이익 취득\", \"재산상 손해\"], \"facts\": [\"이사\", \"회사기회유용\", \"이득\", \"회사 손해\"], \"matching\": {\"타인 사무 처리자\": true, \"임무위배\": true, \"재산상 이익 취득\": true, \"재산상 손해\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"타인 사무 처리자\": true, \"임무위배\": true, \"재산상 이익 취득\": true, \"재산상 손해\": true}, \"elements\": [\"타인 사무 처리자\", \"임무위배\", \"재산상 이익 취득\", \"재산상 손해\"], \"facts\": [\"이사\", \"회사기회유용\", \"이득\", \"회사 손해\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "업무상 배임 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "회사 명의 카드로 개인 사적 지출을 한 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"타인 재물 보관자\", \"업무상 임무\", \"횡령행위\"], \"facts\": [\"법인카드 관리\", \"업무용\", \"사적 사용\"], \"matching\": {\"타인 재물 보관자\": true, \"업무상 임무\": true, \"횡령행위\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"타인 재물 보관자\": true, \"업무상 임무\": true, \"횡령행위\": true}, \"elements\": [\"타인 재물 보관자\", \"업무상 임무\", \"횡령행위\"], \"facts\": [\"법인카드 관리\", \"업무용\", \"사적 사용\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "업무상 횡령 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "A가 B에게 '돈 주지 않으면 비밀을 폭로하겠다'고 말해 500만원을 받았다. 공갈?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"해악의 고지\", \"외포심\", \"처분행위\", \"재산상 이득\"], \"facts\": [\"해악 고지\", \"피해자 겁먹음\", \"송금\", \"500만원 이득\"], \"matching\": {\"해악의 고지\": true, \"외포심\": true, \"처분행위\": true, \"재산상 이득\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"해악의 고지\": true, \"외포심\": true, \"처분행위\": true, \"재산상 이득\": true}, \"elements\": [\"해악의 고지\", \"외포심\", \"처분행위\", \"재산상 이득\"], \"facts\": [\"해악 고지\", \"피해자 겁먹음\", \"송금\", \"500만원 이득\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "공갈죄(350조) 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "해악을 고지했으나 상대가 전혀 무서워하지 않고 처분도 없었던 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"해악의 고지\", \"외포심\", \"처분행위\", \"재산상 이득\"], \"facts\": [\"해악 고지\", \"무서워 안함\", \"처분 없음\", \"이득 없음\"], \"matching\": {\"해악의 고지\": true, \"외포심\": false, \"처분행위\": false, \"재산상 이득\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"해악의 고지\": true, \"외포심\": false, \"처분행위\": false, \"재산상 이득\": false}, \"elements\": [\"해악의 고지\", \"외포심\", \"처분행위\", \"재산상 이득\"], \"facts\": [\"해악 고지\", \"무서워 안함\", \"처분 없음\", \"이득 없음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "미수 검토(형법 352조)."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "정당한 권리행사로 채무 변제를 요구한 경우 협박?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"해악의 고지\", \"위법성\"], \"facts\": [\"변제요구\", \"정당한 권리\"], \"matching\": {\"해악의 고지\": false, \"위법성\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"해악의 고지\": false, \"위법성\": false}, \"elements\": [\"해악의 고지\", \"위법성\"], \"facts\": [\"변제요구\", \"정당한 권리\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "정당행위로 협박 불성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "SNS에 A가 B의 허위사실을 공개적으로 게시한 경우 명예훼손?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"공연성\", \"사실적시\", \"허위사실\", \"명예훼손\"], \"facts\": [\"공개 게시\", \"사실 적시\", \"허위\", \"사회적 평가 저하\"], \"matching\": {\"공연성\": true, \"사실적시\": true, \"허위사실\": true, \"명예훼손\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"공연성\": true, \"사실적시\": true, \"허위사실\": true, \"명예훼손\": true}, \"elements\": [\"공연성\", \"사실적시\", \"허위사실\", \"명예훼손\"], \"facts\": [\"공개 게시\", \"사실 적시\", \"허위\", \"사회적 평가 저하\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "허위사실적시 명예훼손(307조 2항) 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "일대일 비공개 대화에서 험담한 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"공연성\", \"사실적시\", \"명예훼손\"], \"facts\": [\"1:1 비공개\", \"사실적시\", \"전파가능성 낮음\"], \"matching\": {\"공연성\": false, \"사실적시\": true, \"명예훼손\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"공연성\": false, \"사실적시\": true, \"명예훼손\": true}, \"elements\": [\"공연성\", \"사실적시\", \"명예훼손\"], \"facts\": [\"1:1 비공개\", \"사실적시\", \"전파가능성 낮음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "공연성 결여로 불성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공개된 자리에서 '바보'라는 경멸 표현만 사용한 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"공연성\", \"모욕적 표현\"], \"facts\": [\"공개\", \"경멸적 표현\"], \"matching\": {\"공연성\": true, \"모욕적 표현\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"공연성\": true, \"모욕적 표현\": true}, \"elements\": [\"공연성\", \"모욕적 표현\"], \"facts\": [\"공개\", \"경멸적 표현\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "모욕죄(311조) 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "주거침입죄의 구성요건: A가 야간에 B의 주거에 창문으로 침입."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사람의 주거\", \"침입\"], \"facts\": [\"B의 주거\", \"야간 창문 침입\"], \"matching\": {\"사람의 주거\": true, \"침입\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"사람의 주거\": true, \"침입\": true}, \"elements\": [\"사람의 주거\", \"침입\"], \"facts\": [\"B의 주거\", \"야간 창문 침입\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "주거침입죄(319조) 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 초대를 받고 들어간 경우 주거침입?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사람의 주거\", \"침입\"], \"facts\": [\"주거\", \"초대(승낙)\"], \"matching\": {\"사람의 주거\": true, \"침입\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"사람의 주거\": true, \"침입\": false}, \"elements\": [\"사람의 주거\", \"침입\"], \"facts\": [\"주거\", \"초대(승낙)\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "승낙이 있어 침입에 해당하지 않음."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "운전자가 횡단보도 신호 무시로 보행자 상해를 입힌 경우."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"업무상 과실\", \"사고\", \"상해결과\"], \"facts\": [\"운전 중 신호위반\", \"사고 발생\", \"보행자 부상\"], \"matching\": {\"업무상 과실\": true, \"사고\": true, \"상해결과\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"업무상 과실\": true, \"사고\": true, \"상해결과\": true}, \"elements\": [\"업무상 과실\", \"사고\", \"상해결과\"], \"facts\": [\"운전 중 신호위반\", \"사고 발생\", \"보행자 부상\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "교통사고처리특례법상 업무상과실치상 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "음주운전으로 사망사고를 낸 경우의 가중요건?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"음주운전\", \"사망사고\", \"인과관계\"], \"facts\": [\"혈중 0.15%\", \"피해자 사망\", \"음주와 사고 연관\"], \"matching\": {\"음주운전\": true, \"사망사고\": true, \"인과관계\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"음주운전\": true, \"사망사고\": true, \"인과관계\": true}, \"elements\": [\"음주운전\", \"사망사고\", \"인과관계\"], \"facts\": [\"혈중 0.15%\", \"피해자 사망\", \"음주와 사고 연관\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "특정범죄가중법상 위험운전치사 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "폭행 또는 협박으로 추행한 경우 강제추행의 구성요건?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"폭행 또는 협박\", \"추행\"], \"facts\": [\"협박 사용\", \"추행 행위\"], \"matching\": {\"폭행 또는 협박\": true, \"추행\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"폭행 또는 협박\": true, \"추행\": true}, \"elements\": [\"폭행 또는 협박\", \"추행\"], \"facts\": [\"협박 사용\", \"추행 행위\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "강제추행죄(298조) 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "B is from state X, sued in state Y. Minimum contacts, purposeful availment, fair play — PJ?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts\", \"purposeful availment\", \"fair play and substantial justice\"], \"facts\": [\"sold goods in Y\", \"targeted Y consumers\", \"reasonable to litigate\"], \"matching\": {\"minimum contacts\": true, \"purposeful availment\": true, \"fair play and substantial justice\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts\": true, \"purposeful availment\": true, \"fair play and substantial justice\": true}, \"elements\": [\"minimum contacts\", \"purposeful availment\", \"fair play and substantial justice\"], \"facts\": [\"sold goods in Y\", \"targeted Y consumers\", \"reasonable to litigate\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Specific personal jurisdiction is proper."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Defendant never sold in forum, no targeting, burden on defendant. PJ?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts\", \"purposeful availment\", \"fair play and substantial justice\"], \"facts\": [\"no contacts\", \"no targeting\", \"burden heavy\"], \"matching\": {\"minimum contacts\": false, \"purposeful availment\": false, \"fair play and substantial justice\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"minimum contacts\": false, \"purposeful availment\": false, \"fair play and substantial justice\": false}, \"elements\": [\"minimum contacts\", \"purposeful availment\", \"fair play and substantial justice\"], \"facts\": [\"no contacts\", \"no targeting\", \"burden heavy\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "No personal jurisdiction."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Defendant has contacts but litigation is unreasonably burdensome. PJ?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts\", \"purposeful availment\", \"fair play and substantial justice\"], \"facts\": [\"some contacts\", \"availment\", \"unreasonable burden\"], \"matching\": {\"minimum contacts\": true, \"purposeful availment\": true, \"fair play and substantial justice\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"minimum contacts\": true, \"purposeful availment\": true, \"fair play and substantial justice\": false}, \"elements\": [\"minimum contacts\", \"purposeful availment\", \"fair play and substantial justice\"], \"facts\": [\"some contacts\", \"availment\", \"unreasonable burden\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "PJ defeated by fair play prong."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "General jurisdiction: defendant corporation is 'at home' in the forum state?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"incorporated in forum\", \"principal place of business in forum\"], \"facts\": [\"corp incorporated in DE\", \"PPB in DE\"], \"matching\": {\"incorporated in forum\": true, \"principal place of business in forum\": true}, \"mode\": \"or\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"or\", \"details\": {\"incorporated in forum\": true, \"principal place of business in forum\": true}, \"elements\": [\"incorporated in forum\", \"principal place of business in forum\"], \"facts\": [\"corp incorporated in DE\", \"PPB in DE\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "General PJ satisfied (either prong)."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Stream-of-commerce: defendant knowingly sent product into forum?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"minimum contacts\", \"purposeful availment\"], \"facts\": [\"stream of commerce\", \"targeted forum\"], \"matching\": {\"minimum contacts\": true, \"purposeful availment\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"minimum contacts\": true, \"purposeful availment\": true}, \"elements\": [\"minimum contacts\", \"purposeful availment\"], \"facts\": [\"stream of commerce\", \"targeted forum\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Specific PJ satisfied."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Witness testifies about out-of-court statement to prove truth. Hearsay?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"offered for truth\"], \"facts\": [\"statement made outside court\", \"offered to prove content\"], \"matching\": {\"out-of-court statement\": true, \"offered for truth\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"offered for truth\": true}, \"elements\": [\"out-of-court statement\", \"offered for truth\"], \"facts\": [\"statement made outside court\", \"offered to prove content\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Hearsay."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Statement offered to show effect on listener, not for truth."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"offered for truth\"], \"facts\": [\"out-of-court statement\", \"offered for effect on listener\"], \"matching\": {\"out-of-court statement\": true, \"offered for truth\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"offered for truth\": false}, \"elements\": [\"out-of-court statement\", \"offered for truth\"], \"facts\": [\"out-of-court statement\", \"offered for effect on listener\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Not hearsay (non-truth purpose)."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Statement by party-opponent offered against them."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"offered for truth\", \"party opponent admission\"], \"facts\": [\"statement\", \"against party\", \"party's own statement\"], \"matching\": {\"out-of-court statement\": true, \"offered for truth\": true, \"party opponent admission\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"offered for truth\": true, \"party opponent admission\": true}, \"elements\": [\"out-of-court statement\", \"offered for truth\", \"party opponent admission\"], \"facts\": [\"statement\", \"against party\", \"party's own statement\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Admission by party-opponent — not hearsay (FRE 801(d)(2))."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Excited utterance exception: startling event, statement while under stress."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"offered for truth\", \"excited utterance\"], \"facts\": [\"startling event\", \"under stress\", \"relating to event\"], \"matching\": {\"out-of-court statement\": true, \"offered for truth\": true, \"excited utterance\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"offered for truth\": true, \"excited utterance\": true}, \"elements\": [\"out-of-court statement\", \"offered for truth\", \"excited utterance\"], \"facts\": [\"startling event\", \"under stress\", \"relating to event\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Hearsay, but admissible under excited utterance exception."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Witness' prior inconsistent statement offered to impeach, not for truth."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"offered for truth\"], \"facts\": [\"prior statement\", \"to impeach\"], \"matching\": {\"out-of-court statement\": true, \"offered for truth\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"offered for truth\": false}, \"elements\": [\"out-of-court statement\", \"offered for truth\"], \"facts\": [\"prior statement\", \"to impeach\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Not hearsay — impeachment purpose."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Business record kept in regular course of business."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"offered for truth\", \"business record\"], \"facts\": [\"record\", \"for truth\", \"regular business\"], \"matching\": {\"out-of-court statement\": true, \"offered for truth\": true, \"business record\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"offered for truth\": true, \"business record\": true}, \"elements\": [\"out-of-court statement\", \"offered for truth\", \"business record\"], \"facts\": [\"record\", \"for truth\", \"regular business\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Admissible under business records exception (803(6))."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Present sense impression: describing event while perceiving it."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"offered for truth\", \"present sense impression\"], \"facts\": [\"contemporaneous description\", \"for truth\", \"while perceiving\"], \"matching\": {\"out-of-court statement\": true, \"offered for truth\": true, \"present sense impression\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"offered for truth\": true, \"present sense impression\": true}, \"elements\": [\"out-of-court statement\", \"offered for truth\", \"present sense impression\"], \"facts\": [\"contemporaneous description\", \"for truth\", \"while perceiving\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Exception applies (803(1))."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Statement not made by human (machine printout)."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"offered for truth\"], \"facts\": [\"machine output\", \"not a statement by declarant\"], \"matching\": {\"out-of-court statement\": false, \"offered for truth\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"out-of-court statement\": false, \"offered for truth\": true}, \"elements\": [\"out-of-court statement\", \"offered for truth\"], \"facts\": [\"machine output\", \"not a statement by declarant\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Not a hearsay statement — machines are not declarants."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Dying declaration about cause of death in homicide case."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"offered for truth\", \"dying declaration\"], \"facts\": [\"statement\", \"about cause\", \"imminent death\"], \"matching\": {\"out-of-court statement\": true, \"offered for truth\": true, \"dying declaration\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"offered for truth\": true, \"dying declaration\": true}, \"elements\": [\"out-of-court statement\", \"offered for truth\", \"dying declaration\"], \"facts\": [\"statement\", \"about cause\", \"imminent death\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Admissible (804(b)(2))."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Statement against declarant's pecuniary interest, declarant unavailable."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"out-of-court statement\", \"offered for truth\", \"statement against interest\"], \"facts\": [\"statement\", \"for truth\", \"declarant unavailable and statement against interest\"], \"matching\": {\"out-of-court statement\": true, \"offered for truth\": true, \"statement against interest\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"out-of-court statement\": true, \"offered for truth\": true, \"statement against interest\": true}, \"elements\": [\"out-of-court statement\", \"offered for truth\", \"statement against interest\"], \"facts\": [\"statement\", \"for truth\", \"declarant unavailable and statement against interest\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Admissible (804(b)(3))."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "계약 성립요건: 청약과 승낙의 합치."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"청약\", \"승낙\", \"의사표시 합치\"], \"facts\": [\"매도청약\", \"매수승낙\", \"내용 일치\"], \"matching\": {\"청약\": true, \"승낙\": true, \"의사표시 합치\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"청약\": true, \"승낙\": true, \"의사표시 합치\": true}, \"elements\": [\"청약\", \"승낙\", \"의사표시 합치\"], \"facts\": [\"매도청약\", \"매수승낙\", \"내용 일치\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "계약 성립(민법 527조 이하)."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "승낙이 지연되어 청약의 효력이 소멸한 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"청약\", \"승낙\", \"기간 내 승낙\"], \"facts\": [\"청약\", \"지연된 승낙\", \"기간 경과\"], \"matching\": {\"청약\": true, \"승낙\": true, \"기간 내 승낙\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"청약\": true, \"승낙\": true, \"기간 내 승낙\": false}, \"elements\": [\"청약\", \"승낙\", \"기간 내 승낙\"], \"facts\": [\"청약\", \"지연된 승낙\", \"기간 경과\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "새로운 청약으로 간주(계약 불성립)."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "불법행위 성립요건: 고의/과실, 위법성, 손해, 인과관계."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"고의 또는 과실\", \"위법성\", \"손해\", \"인과관계\"], \"facts\": [\"과실 있음\", \"위법 행위\", \"손해 발생\", \"인과 인정\"], \"matching\": {\"고의 또는 과실\": true, \"위법성\": true, \"손해\": true, \"인과관계\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"고의 또는 과실\": true, \"위법성\": true, \"손해\": true, \"인과관계\": true}, \"elements\": [\"고의 또는 과실\", \"위법성\", \"손해\", \"인과관계\"], \"facts\": [\"과실 있음\", \"위법 행위\", \"손해 발생\", \"인과 인정\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불법행위책임(민법 750조) 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "위법성 조각사유(정당방위)가 인정된 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"고의 또는 과실\", \"위법성\", \"손해\", \"인과관계\"], \"facts\": [\"과실\", \"정당방위로 위법성 조각\", \"손해\", \"인과\"], \"matching\": {\"고의 또는 과실\": true, \"위법성\": false, \"손해\": true, \"인과관계\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"고의 또는 과실\": true, \"위법성\": false, \"손해\": true, \"인과관계\": true}, \"elements\": [\"고의 또는 과실\", \"위법성\", \"손해\", \"인과관계\"], \"facts\": [\"과실\", \"정당방위로 위법성 조각\", \"손해\", \"인과\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "위법성 조각으로 책임 불성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "사용자책임: 피용자의 불법행위가 사무집행 관련성 있을 때."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사용관계\", \"사무집행 관련성\", \"피용자 불법행위\"], \"facts\": [\"사용관계\", \"업무 중\", \"불법행위\"], \"matching\": {\"사용관계\": true, \"사무집행 관련성\": true, \"피용자 불법행위\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"사용관계\": true, \"사무집행 관련성\": true, \"피용자 불법행위\": true}, \"elements\": [\"사용관계\", \"사무집행 관련성\", \"피용자 불법행위\"], \"facts\": [\"사용관계\", \"업무 중\", \"불법행위\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "사용자책임(756조) 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "선의취득 요건: 동산, 점유취득, 평온공연, 선의무과실."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"동산\", \"점유취득\", \"평온공연\", \"선의무과실\"], \"facts\": [\"동산매매\", \"점유이전\", \"평온공연\", \"선의무과실\"], \"matching\": {\"동산\": true, \"점유취득\": true, \"평온공연\": true, \"선의무과실\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"동산\": true, \"점유취득\": true, \"평온공연\": true, \"선의무과실\": true}, \"elements\": [\"동산\", \"점유취득\", \"평온공연\", \"선의무과실\"], \"facts\": [\"동산매매\", \"점유이전\", \"평온공연\", \"선의무과실\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "선의취득(249조) 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "악의의 매수인이 도난품을 매수한 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"동산\", \"점유취득\", \"평온공연\", \"선의무과실\"], \"facts\": [\"도품\", \"점유\", \"공연\", \"악의\"], \"matching\": {\"동산\": true, \"점유취득\": true, \"평온공연\": true, \"선의무과실\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"동산\": true, \"점유취득\": true, \"평온공연\": true, \"선의무과실\": false}, \"elements\": [\"동산\", \"점유취득\", \"평온공연\", \"선의무과실\"], \"facts\": [\"도품\", \"점유\", \"공연\", \"악의\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "선의요건 결여로 선의취득 불성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "부당해고 요건: 사용자-근로자, 해고, 정당한 사유 없음."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"근로관계\", \"해고행위\", \"정당한 사유 없음\"], \"facts\": [\"근로자\", \"일방적 해고\", \"사유 부족\"], \"matching\": {\"근로관계\": true, \"해고행위\": true, \"정당한 사유 없음\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": true, \"mode\": \"and\", \"details\": {\"근로관계\": true, \"해고행위\": true, \"정당한 사유 없음\": true}, \"elements\": [\"근로관계\", \"해고행위\", \"정당한 사유 없음\"], \"facts\": [\"근로자\", \"일방적 해고\", \"사유 부족\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "부당해고 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L01_element_matching",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "정당한 징계해고 사유가 입증된 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01_element_matching</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"근로관계\", \"해고행위\", \"정당한 사유 없음\"], \"facts\": [\"근로자\", \"해고\", \"징계사유 충분\"], \"matching\": {\"근로관계\": true, \"해고행위\": true, \"정당한 사유 없음\": false}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L01_element_matching\", \"all_met\": false, \"mode\": \"and\", \"details\": {\"근로관계\": true, \"해고행위\": true, \"정당한 사유 없음\": false}, \"elements\": [\"근로관계\", \"해고행위\", \"정당한 사유 없음\"], \"facts\": [\"근로자\", \"해고\", \"징계사유 충분\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "정당한 해고로 부당해고 불성립."
+      }
+    ]
+  }
+]

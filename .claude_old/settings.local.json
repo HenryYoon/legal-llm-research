@@ -1,0 +1,19 @@
+{
+  "env": {
+    "MAX_THINKING_TOKENS": "10000"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(set -e)",
+      "Bash(mkdir -p /mnt/hdd/coding/llm-research/.claude/teams)",
+      "Bash(mkdir -p /mnt/hdd/coding/llm-research/.claude/tasks)",
+      "Bash(mv /home/yunihg/.claude/teams/bonsai-lane-solver /mnt/hdd/coding/llm-research/.claude/teams/bonsai-lane-solver)",
+      "Bash(mv /home/yunihg/.claude/tasks/bonsai-lane-solver /mnt/hdd/coding/llm-research/.claude/tasks/bonsai-lane-solver)",
+      "Bash(rm -rf /mnt/hdd/coding/llm-research/.claude/teams/bonsai-lane-solver /mnt/hdd/coding/llm-research/.claude/tasks/bonsai-lane-solver)",
+      "Bash(mkdir -p /mnt/hdd/coding/llm-research/.claude/teams /mnt/hdd/coding/llm-research/.claude/tasks)",
+      "Bash(rm -rf /home/yunihg/.claude/teams/bonsai-lane-solver /home/yunihg/.claude/tasks/bonsai-lane-solver)",
+      "Bash(ln -s /mnt/hdd/coding/llm-research/.claude/teams/bonsai-lane-solver /home/yunihg/.claude/teams/bonsai-lane-solver)",
+      "Bash(ln -s /mnt/hdd/coding/llm-research/.claude/tasks/bonsai-lane-solver /home/yunihg/.claude/tasks/bonsai-lane-solver)"
+    ]
+  }
+}

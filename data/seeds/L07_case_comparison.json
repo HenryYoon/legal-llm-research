@@ -1,0 +1,512 @@
+[
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "대법원 2018도1234 판결과 2019도5678 판결을 비교해주세요."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n두 판결 모두 절도죄 불법영득의사가 쟁점이나, 전자는 일시적 사용의사, 후자는 완전 처분 의사로 결론이 달라졌습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "배임과 횡령의 차이를 사례로 비교해주세요."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n회사자금 개인 유용은 횡령(재물 보관자), 회사 기회를 경쟁사에 넘기는 것은 배임(사무 처리자)입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "사기와 공갈의 차이는?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n사기는 기망→착오→처분, 공갈은 해악고지→외포→처분으로 처분행위의 유도 수단이 다릅니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "정당방위와 과잉방위의 차이를 사례로 설명하세요."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n폭행에 맞서 적정 방어는 정당방위, 상당성 초과(예: 소매치기에게 치명상)하면 과잉방위입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "긴급피난과 정당방위의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n정당방위는 부당한 침해에 대한 방어, 긴급피난은 위난에 대한 회피로 대상이 위법인지 여부가 다릅니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "구속과 체포의 차이는?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n체포는 48시간 내 단기 신병확보, 구속은 장기 구금으로 영장주의가 엄격히 적용됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "실화와 방화의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n실화는 과실, 방화는 고의에 의한 불 지름입니다. 법정형이 크게 다릅니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "일반사면과 특별사면의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n일반사면은 죄명별, 특별사면은 특정인별이며 국회 동의 필요 여부도 다릅니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "계약해제와 해지의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n해제는 소급효(계약이 없던 것으로), 해지는 장래효(계속적 계약의 종료)입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "유치권과 질권의 비교?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n유치권은 법정담보물권, 질권은 약정담보물권이며 유치권은 우선변제권이 제한됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "근저당권과 저당권의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n근저당권은 장래 불특정 채권을 일정한 한도에서 담보, 저당권은 특정 채권 담보입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "명예훼손과 모욕의 사례 비교?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n'A는 돈을 훔쳤다'는 명예훼손(사실 적시), '바보'는 모욕(가치판단)입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "민사소송과 형사소송의 입증기준 비교?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n민사는 고도의 개연성(우세한 증거), 형사는 합리적 의심이 없는 정도의 증명이 필요합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "가집행과 확정판결의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n가집행은 미확정 판결 집행(상소 가능), 확정판결은 불복수단 소진 후 집행입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공동불법행위와 공동정범의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n전자는 민사 손해배상 공동책임, 후자는 형사 공동실행자 책임입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "노동조합 파업과 직장폐쇄 비교?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n파업은 근로자 단체행동권 행사, 직장폐쇄는 사용자 대항행위로 둘 다 정당성 요건이 필요합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "헌법소원과 행정소송의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n헌법소원은 기본권 침해 구제, 행정소송은 행정처분의 위법성 심사입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "위자료와 재산적 손해배상의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n위자료는 정신적 고통 배상, 재산적 손해는 재산 감소·일실수입입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "약혼해제와 이혼의 비교?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n약혼해제는 혼인 전 결합의 파기, 이혼은 혼인관계의 해소입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "상속과 유증의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n상속은 법정·포괄 승계, 유증은 유언에 따른 특정 재산 이전입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "개인파산과 개인회생의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n개인파산은 청산, 개인회생은 3~5년 변제계획으로 일부 채무만 면제됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "저작권과 특허권의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n저작권은 창작 시 발생, 특허권은 등록에 의해 발생하며 보호 대상(표현 vs 기술)이 다릅니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "상표권 침해와 부정경쟁의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n상표권 침해는 등록상표 기반, 부정경쟁은 등록 없이 주지·저명 표지 보호 가능합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "단독정범과 간접정범 비교?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n간접정범은 책임능력 없는 타인을 도구로 이용한 범죄입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "과실범과 결과적 가중범 비교?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n결과적 가중범은 기본범죄에 중한 결과가 과실로 발생한 가중 처벌 유형입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "압류와 가압류 비교?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n가압류는 본압류 전 잠정보전, 압류는 확정판결 후 본집행입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "조정과 화해의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n조정은 제3자 개입 합의, 화해는 당사자 간 합의로 집행력 근거가 다릅니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "법인과 비법인사단의 비교?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n법인은 법인격 취득, 비법인사단은 법인격 없이도 총유재산 인정됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "대리와 대표의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n대리는 본인·대리인 구분된 법률관계, 대표는 법인의 기관으로 그 자체 법인의 행위입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L07_case_comparison",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "사해행위 취소와 채권자대위의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L07_case_comparison</lane>\n사해행위 취소는 채무자의 재산 감소행위 취소, 채권자대위는 채무자의 권리 행사입니다."
+      }
+    ]
+  }
+]

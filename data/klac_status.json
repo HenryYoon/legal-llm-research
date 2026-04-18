@@ -1,0 +1,23 @@
+{
+  "splits": {
+    "train": 10037
+  },
+  "fields": [
+    "major_label",
+    "minor_label",
+    "title",
+    "question",
+    "answer",
+    "url"
+  ],
+  "sample_excerpt": {
+    "major_label": "노동",
+    "minor_label": "임금 및 퇴직금",
+    "title": "최저임금제도",
+    "question": "최저임금제도란 무엇이며, 최저임금액은 어떻게 결정되는지요?",
+    "answer": "최저임금제도란 국가가 임금액의 최저한도를 정하여 사용자에게 이를 준수하도록 강제하는 제도를 말합니다. 그러므로 최저임금액이 결정·고시되면 사용자는 근로자와 합의하여 최저임금액보다 낮은 임금을 지급하기로 약정하더라도 그것은 당연히 무효가 되며, 고용노동부장관이 고시한 최저임금액 이상을 지급하여야 합니다(최저임금법 제6조). 최저임금제도의 적용대상은 근로자를 ...",
+    "url": "https://www.klac.or.kr/legalinfo/counselView.do?pageIndex=null&folderId=null&caseId=case-001-00001&listNm=null&searchCnd=0&searchWrd=&scdFolderId="
+  },
+  "license": "",
+  "description": ""
+}

@@ -1,0 +1,1277 @@
+[
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "형사책임 규칙: 고의 and 위법성 ⇒ 형사책임. 둘 다 있음."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"고의\", \"위법성\"], \"consequent\": \"형사책임\", \"mode\": \"and\", \"name\": \"형사책임의 일반원칙\"}, \"conditions\": {\"고의\": true, \"위법성\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"형사책임\": true}, \"antecedents\": {\"고의\": true, \"위법성\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "요건 충족으로 형사책임 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "위법성 조각사유 존재 시 형사책임?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"고의\", \"위법성\"], \"consequent\": \"형사책임\", \"mode\": \"and\", \"name\": \"형사책임의 일반원칙\"}, \"conditions\": {\"고의\": true, \"위법성\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"형사책임\": false}, \"antecedents\": {\"고의\": true, \"위법성\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "위법성 결여로 규칙 불발동."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "계약 성립 규칙: 청약 and 승낙 ⇒ 계약성립."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"청약\", \"승낙\"], \"consequent\": \"계약성립\", \"mode\": \"and\", \"name\": \"계약성립\"}, \"conditions\": {\"청약\": true, \"승낙\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"계약성립\": true}, \"antecedents\": {\"청약\": true, \"승낙\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "계약 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "승낙 없으면 계약 성립?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"청약\", \"승낙\"], \"consequent\": \"계약성립\", \"mode\": \"and\", \"name\": \"계약성립\"}, \"conditions\": {\"청약\": true, \"승낙\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"계약성립\": false}, \"antecedents\": {\"청약\": true, \"승낙\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "계약 불성립."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "소멸시효: 채권발생 and 기간도과 and 원용 ⇒ 소멸."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"채권발생\", \"기간도과\", \"원용\"], \"consequent\": \"채권소멸\", \"mode\": \"and\", \"name\": \"채권의 소멸시효\"}, \"conditions\": {\"채권발생\": true, \"기간도과\": true, \"원용\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"채권소멸\": true}, \"antecedents\": {\"채권발생\": true, \"기간도과\": true, \"원용\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "시효 완성으로 소멸."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "기간 미도과 시 소멸시효?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"채권발생\", \"기간도과\", \"원용\"], \"consequent\": \"채권소멸\", \"mode\": \"and\", \"name\": \"채권의 소멸시효\"}, \"conditions\": {\"채권발생\": true, \"기간도과\": false, \"원용\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"채권소멸\": false}, \"antecedents\": {\"채권발생\": true, \"기간도과\": false, \"원용\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "미완성."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "정당방위: 부당한 침해 and 자기나 타인 법익 방위 and 상당성 ⇒ 위법성조각."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"부당한침해\", \"방위행위\", \"상당성\"], \"consequent\": \"위법성조각\", \"mode\": \"and\", \"name\": \"정당방위\"}, \"conditions\": {\"부당한침해\": true, \"방위행위\": true, \"상당성\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"위법성조각\": true}, \"antecedents\": {\"부당한침해\": true, \"방위행위\": true, \"상당성\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "정당방위 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "상당성 초과하는 방어행위의 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"부당한침해\", \"방위행위\", \"상당성\"], \"consequent\": \"위법성조각\", \"mode\": \"and\", \"name\": \"정당방위\"}, \"conditions\": {\"부당한침해\": true, \"방위행위\": true, \"상당성\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"위법성조각\": false}, \"antecedents\": {\"부당한침해\": true, \"방위행위\": true, \"상당성\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "과잉방위(면책감경)."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "업무상과실치사상죄: 업무상 과실 and 사상결과 ⇒ 처벌."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"업무상 과실\", \"사상결과\"], \"consequent\": \"처벌\", \"mode\": \"and\", \"name\": \"업무상과실치사상\"}, \"conditions\": {\"업무상 과실\": true, \"사상결과\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"처벌\": true}, \"antecedents\": {\"업무상 과실\": true, \"사상결과\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "처벌."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "미성년자 계약의 취소 가능성: 미성년자 and 법정대리인 동의 없음 ⇒ 취소가능."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"미성년자\", \"법정대리인 동의 없음\"], \"consequent\": \"취소가능\", \"mode\": \"and\", \"name\": \"미성년자 계약 취소\"}, \"conditions\": {\"미성년자\": true, \"법정대리인 동의 없음\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"취소가능\": true}, \"antecedents\": {\"미성년자\": true, \"법정대리인 동의 없음\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "취소 가능."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "미성년자라도 법정대리인 동의가 있다면?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"미성년자\", \"법정대리인 동의 없음\"], \"consequent\": \"취소가능\", \"mode\": \"and\", \"name\": \"미성년자 계약 취소\"}, \"conditions\": {\"미성년자\": true, \"법정대리인 동의 없음\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"취소가능\": false}, \"antecedents\": {\"미성년자\": true, \"법정대리인 동의 없음\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "취소 불가."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "의사의 설명의무 위반: 의료행위 and 중대한 위험 설명누락 ⇒ 손해배상."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"의료행위\", \"중대위험 설명누락\"], \"consequent\": \"손해배상책임\", \"mode\": \"and\", \"name\": \"설명의무 위반\"}, \"conditions\": {\"의료행위\": true, \"중대위험 설명누락\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"손해배상책임\": true}, \"antecedents\": {\"의료행위\": true, \"중대위험 설명누락\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "배상책임."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "설명의무 이행된 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"의료행위\", \"중대위험 설명누락\"], \"consequent\": \"손해배상책임\", \"mode\": \"and\", \"name\": \"설명의무 위반\"}, \"conditions\": {\"의료행위\": true, \"중대위험 설명누락\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"손해배상책임\": false}, \"antecedents\": {\"의료행위\": true, \"중대위험 설명누락\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "책임 없음."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "제조물책임: 제조물의 결함 and 손해 and 인과관계 ⇒ 제조사 책임."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"결함\", \"손해\", \"인과관계\"], \"consequent\": \"제조사책임\", \"mode\": \"and\", \"name\": \"제조물책임\"}, \"conditions\": {\"결함\": true, \"손해\": true, \"인과관계\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"제조사책임\": true}, \"antecedents\": {\"결함\": true, \"손해\": true, \"인과관계\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "책임 성립."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "결함이 없는 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"결함\", \"손해\", \"인과관계\"], \"consequent\": \"제조사책임\", \"mode\": \"and\", \"name\": \"제조물책임\"}, \"conditions\": {\"결함\": false, \"손해\": true, \"인과관계\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"제조사책임\": false}, \"antecedents\": {\"결함\": false, \"손해\": true, \"인과관계\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "불성립."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "상표권 침해: 등록상표 and 동일유사 사용 and 혼동가능성 ⇒ 침해."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"등록상표\", \"동일유사 사용\", \"혼동가능성\"], \"consequent\": \"침해\", \"mode\": \"and\", \"name\": \"상표권 침해\"}, \"conditions\": {\"등록상표\": true, \"동일유사 사용\": true, \"혼동가능성\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"침해\": true}, \"antecedents\": {\"등록상표\": true, \"동일유사 사용\": true, \"혼동가능성\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "침해."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "혼동가능성이 없는 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"등록상표\", \"동일유사 사용\", \"혼동가능성\"], \"consequent\": \"침해\", \"mode\": \"and\", \"name\": \"상표권 침해\"}, \"conditions\": {\"등록상표\": true, \"동일유사 사용\": true, \"혼동가능성\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"침해\": false}, \"antecedents\": {\"등록상표\": true, \"동일유사 사용\": true, \"혼동가능성\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "침해 부정."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공동정범: 공동의사 and 공동실행 ⇒ 공동정범."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"공동의사\", \"공동실행\"], \"consequent\": \"공동정범\", \"mode\": \"and\", \"name\": \"공동정범\"}, \"conditions\": {\"공동의사\": true, \"공동실행\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"공동정범\": true}, \"antecedents\": {\"공동의사\": true, \"공동실행\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "성립."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공동의사 없이 우연적 가세한 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"공동의사\", \"공동실행\"], \"consequent\": \"공동정범\", \"mode\": \"and\", \"name\": \"공동정범\"}, \"conditions\": {\"공동의사\": false, \"공동실행\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"공동정범\": false}, \"antecedents\": {\"공동의사\": false, \"공동실행\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "공동정범 부정."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "긴급피난: 위난 and 피난행위 and 보충성 and 상당성 ⇒ 위법성조각."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"위난\", \"피난행위\", \"보충성\", \"상당성\"], \"consequent\": \"위법성조각\", \"mode\": \"and\", \"name\": \"긴급피난\"}, \"conditions\": {\"위난\": true, \"피난행위\": true, \"보충성\": true, \"상당성\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"위법성조각\": true}, \"antecedents\": {\"위난\": true, \"피난행위\": true, \"보충성\": true, \"상당성\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "긴급피난."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "하자담보책임: 하자 and 선의무과실 매수인 ⇒ 해제/대금감액."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"하자\", \"선의무과실\"], \"consequent\": \"해제대금감액\", \"mode\": \"and\", \"name\": \"매수인 하자담보책임\"}, \"conditions\": {\"하자\": true, \"선의무과실\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"해제대금감액\": true}, \"antecedents\": {\"하자\": true, \"선의무과실\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "인정."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "악의의 매수인인 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"하자\", \"선의무과실\"], \"consequent\": \"해제대금감액\", \"mode\": \"and\", \"name\": \"매수인 하자담보책임\"}, \"conditions\": {\"하자\": true, \"선의무과실\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"해제대금감액\": false}, \"antecedents\": {\"하자\": true, \"선의무과실\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "불인정."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "동시이행항변권: 쌍무계약 and 상대방 불이행 ⇒ 이행거절권."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"쌍무계약\", \"상대방 불이행\"], \"consequent\": \"이행거절권\", \"mode\": \"and\", \"name\": \"동시이행항변권\"}, \"conditions\": {\"쌍무계약\": true, \"상대방 불이행\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"이행거절권\": true}, \"antecedents\": {\"쌍무계약\": true, \"상대방 불이행\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "항변권 발동."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "편무계약인 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"쌍무계약\", \"상대방 불이행\"], \"consequent\": \"이행거절권\", \"mode\": \"and\", \"name\": \"동시이행항변권\"}, \"conditions\": {\"쌍무계약\": false, \"상대방 불이행\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"이행거절권\": false}, \"antecedents\": {\"쌍무계약\": false, \"상대방 불이행\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "부인."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "행정처분 취소 사유: 위법성 OR 재량남용 ⇒ 취소."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"위법성\", \"재량남용\"], \"consequent\": \"취소\", \"mode\": \"or\", \"name\": \"행정처분 취소\"}, \"conditions\": {\"위법성\": true, \"재량남용\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"취소\": true}, \"antecedents\": {\"위법성\": true, \"재량남용\": false}, \"mode\": \"or\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "취소 사유 인정."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "둘 다 없는 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"위법성\", \"재량남용\"], \"consequent\": \"취소\", \"mode\": \"or\", \"name\": \"행정처분 취소\"}, \"conditions\": {\"위법성\": false, \"재량남용\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"취소\": false}, \"antecedents\": {\"위법성\": false, \"재량남용\": false}, \"mode\": \"or\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "취소 사유 없음."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "국가배상: 공무원 직무상 행위 and 위법 and 고의과실 and 손해 ⇒ 배상."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"공무원 직무상 행위\", \"위법\", \"고의과실\", \"손해\"], \"consequent\": \"국가배상책임\", \"mode\": \"and\", \"name\": \"국가배상\"}, \"conditions\": {\"공무원 직무상 행위\": true, \"위법\": true, \"고의과실\": true, \"손해\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"국가배상책임\": true}, \"antecedents\": {\"공무원 직무상 행위\": true, \"위법\": true, \"고의과실\": true, \"손해\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "성립."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "고의과실이 없는 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"공무원 직무상 행위\", \"위법\", \"고의과실\", \"손해\"], \"consequent\": \"국가배상책임\", \"mode\": \"and\", \"name\": \"국가배상\"}, \"conditions\": {\"공무원 직무상 행위\": true, \"위법\": true, \"고의과실\": false, \"손해\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"국가배상책임\": false}, \"antecedents\": {\"공무원 직무상 행위\": true, \"위법\": true, \"고의과실\": false, \"손해\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "불성립."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "명예훼손 성립: 공연성 and 사실적시 ⇒ 명예훼손."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"공연성\", \"사실적시\"], \"consequent\": \"명예훼손\", \"mode\": \"and\", \"name\": \"명예훼손\"}, \"conditions\": {\"공연성\": true, \"사실적시\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"명예훼손\": true}, \"antecedents\": {\"공연성\": true, \"사실적시\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "성립."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "허위사실 가중: 공연성 and 사실적시 and 허위 ⇒ 가중."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"공연성\", \"사실적시\", \"허위\"], \"consequent\": \"가중처벌\", \"mode\": \"and\", \"name\": \"허위사실 명예훼손 가중\"}, \"conditions\": {\"공연성\": true, \"사실적시\": true, \"허위\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"가중처벌\": true}, \"antecedents\": {\"공연성\": true, \"사실적시\": true, \"허위\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "가중."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공익성 인정 시 위법성 조각."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"사실적시\", \"공익성\", \"진실성\"], \"consequent\": \"위법성조각\", \"mode\": \"and\", \"name\": \"공익 명예훼손 조각\"}, \"conditions\": {\"사실적시\": true, \"공익성\": true, \"진실성\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"위법성조각\": true}, \"antecedents\": {\"사실적시\": true, \"공익성\": true, \"진실성\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "조각."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "이혼 청구사유 유책: 부정행위 OR 악의유기 OR 기타중대사유 ⇒ 이혼."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"부정행위\", \"악의유기\", \"기타중대사유\"], \"consequent\": \"이혼허가\", \"mode\": \"or\", \"name\": \"재판상 이혼사유\"}, \"conditions\": {\"부정행위\": true, \"악의유기\": false, \"기타중대사유\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"이혼허가\": true}, \"antecedents\": {\"부정행위\": true, \"악의유기\": false, \"기타중대사유\": false}, \"mode\": \"or\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "이혼사유 인정."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "사유가 모두 없는 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"부정행위\", \"악의유기\", \"기타중대사유\"], \"consequent\": \"이혼허가\", \"mode\": \"or\", \"name\": \"재판상 이혼사유\"}, \"conditions\": {\"부정행위\": false, \"악의유기\": false, \"기타중대사유\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"이혼허가\": false}, \"antecedents\": {\"부정행위\": false, \"악의유기\": false, \"기타중대사유\": false}, \"mode\": \"or\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "기각."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "법인격 부인: 법인형식 남용 and 실질적 동일성 ⇒ 법인격 부인."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"법인형식 남용\", \"실질적 동일성\"], \"consequent\": \"법인격부인\", \"mode\": \"and\", \"name\": \"법인격 부인\"}, \"conditions\": {\"법인형식 남용\": true, \"실질적 동일성\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"법인격부인\": true}, \"antecedents\": {\"법인형식 남용\": true, \"실질적 동일성\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "부인."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "기각 사례."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"법인형식 남용\", \"실질적 동일성\"], \"consequent\": \"법인격부인\", \"mode\": \"and\", \"name\": \"법인격 부인\"}, \"conditions\": {\"법인형식 남용\": false, \"실질적 동일성\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"법인격부인\": false}, \"antecedents\": {\"법인형식 남용\": false, \"실질적 동일성\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "기각."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "상속 결격: 고의 살해 OR 유언방해 ⇒ 상속결격."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"고의살해\", \"유언방해\"], \"consequent\": \"상속결격\", \"mode\": \"or\", \"name\": \"상속결격\"}, \"conditions\": {\"고의살해\": false, \"유언방해\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"상속결격\": true}, \"antecedents\": {\"고의살해\": false, \"유언방해\": true}, \"mode\": \"or\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "결격."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "둘 다 없음."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"고의살해\", \"유언방해\"], \"consequent\": \"상속결격\", \"mode\": \"or\", \"name\": \"상속결격\"}, \"conditions\": {\"고의살해\": false, \"유언방해\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"상속결격\": false}, \"antecedents\": {\"고의살해\": false, \"유언방해\": false}, \"mode\": \"or\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "상속자격 유지."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "채권자취소권: 사해행위 and 악의 ⇒ 취소."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"사해행위\", \"수익자의 악의\"], \"consequent\": \"취소\", \"mode\": \"and\", \"name\": \"채권자취소권\"}, \"conditions\": {\"사해행위\": true, \"수익자의 악의\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"취소\": true}, \"antecedents\": {\"사해행위\": true, \"수익자의 악의\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "취소."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "선의 수익자."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"사해행위\", \"수익자의 악의\"], \"consequent\": \"취소\", \"mode\": \"and\", \"name\": \"채권자취소권\"}, \"conditions\": {\"사해행위\": true, \"수익자의 악의\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"취소\": false}, \"antecedents\": {\"사해행위\": true, \"수익자의 악의\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "불가."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "임대차 묵시적 갱신: 기간만료 and 이의 없음 ⇒ 갱신."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"기간만료\", \"이의없음\"], \"consequent\": \"갱신\", \"mode\": \"and\", \"name\": \"묵시적 갱신\"}, \"conditions\": {\"기간만료\": true, \"이의없음\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"갱신\": true}, \"antecedents\": {\"기간만료\": true, \"이의없음\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "갱신."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "이의 있음."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"기간만료\", \"이의없음\"], \"consequent\": \"갱신\", \"mode\": \"and\", \"name\": \"묵시적 갱신\"}, \"conditions\": {\"기간만료\": true, \"이의없음\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"갱신\": false}, \"antecedents\": {\"기간만료\": true, \"이의없음\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "종료."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "과실상계: 피해자 과실 있음 ⇒ 배상액 감액."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"피해자 과실\"], \"consequent\": \"배상액 감액\", \"mode\": \"and\", \"name\": \"과실상계\"}, \"conditions\": {\"피해자 과실\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"배상액 감액\": true}, \"antecedents\": {\"피해자 과실\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "감액."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "피해자 과실 없음."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"피해자 과실\"], \"consequent\": \"배상액 감액\", \"mode\": \"and\", \"name\": \"과실상계\"}, \"conditions\": {\"피해자 과실\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"배상액 감액\": false}, \"antecedents\": {\"피해자 과실\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "감액 없음."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "정당행위: 법령행위 OR 업무행위 OR 사회상규 ⇒ 위법성조각."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"법령행위\", \"업무행위\", \"사회상규\"], \"consequent\": \"위법성조각\", \"mode\": \"or\", \"name\": \"정당행위\"}, \"conditions\": {\"법령행위\": false, \"업무행위\": true, \"사회상규\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"위법성조각\": true}, \"antecedents\": {\"법령행위\": false, \"업무행위\": true, \"사회상규\": false}, \"mode\": \"or\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "조각."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "셋 다 부정."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"법령행위\", \"업무행위\", \"사회상규\"], \"consequent\": \"위법성조각\", \"mode\": \"or\", \"name\": \"정당행위\"}, \"conditions\": {\"법령행위\": false, \"업무행위\": false, \"사회상규\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"위법성조각\": false}, \"antecedents\": {\"법령행위\": false, \"업무행위\": false, \"사회상규\": false}, \"mode\": \"or\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "조각 없음."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공소시효 완성: 범죄 and 기간도과 ⇒ 면소."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"범죄성립\", \"기간도과\"], \"consequent\": \"면소\", \"mode\": \"and\", \"name\": \"공소시효\"}, \"conditions\": {\"범죄성립\": true, \"기간도과\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"면소\": true}, \"antecedents\": {\"범죄성립\": true, \"기간도과\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "면소."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "기간 도과 전."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"범죄성립\", \"기간도과\"], \"consequent\": \"면소\", \"mode\": \"and\", \"name\": \"공소시효\"}, \"conditions\": {\"범죄성립\": true, \"기간도과\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"면소\": false}, \"antecedents\": {\"범죄성립\": true, \"기간도과\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "공소 가능."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "손해배상 청구권: 불법행위 and 손해 and 인과관계 ⇒ 청구권."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"불법행위\", \"손해\", \"인과관계\"], \"consequent\": \"청구권\", \"mode\": \"and\", \"name\": \"불법행위 손해배상\"}, \"conditions\": {\"불법행위\": true, \"손해\": true, \"인과관계\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"청구권\": true}, \"antecedents\": {\"불법행위\": true, \"손해\": true, \"인과관계\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "청구 가능."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "인과관계 부정."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"불법행위\", \"손해\", \"인과관계\"], \"consequent\": \"청구권\", \"mode\": \"and\", \"name\": \"불법행위 손해배상\"}, \"conditions\": {\"불법행위\": true, \"손해\": true, \"인과관계\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"청구권\": false}, \"antecedents\": {\"불법행위\": true, \"손해\": true, \"인과관계\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "기각."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "저작권 침해: 저작물 and 복제 and 무단 ⇒ 침해."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"저작물성\", \"복제행위\", \"무단\"], \"consequent\": \"침해\", \"mode\": \"and\", \"name\": \"저작권 침해\"}, \"conditions\": {\"저작물성\": true, \"복제행위\": true, \"무단\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": true, \"conclusion\": {\"침해\": true}, \"antecedents\": {\"저작물성\": true, \"복제행위\": true, \"무단\": true}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "침해."
+      }
+    ]
+  },
+  {
+    "lane": "L02_rule_application",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "허락 받음."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L02_rule_application</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"apply_rule\", \"rule\": {\"antecedents\": [\"저작물성\", \"복제행위\", \"무단\"], \"consequent\": \"침해\", \"mode\": \"and\", \"name\": \"저작권 침해\"}, \"conditions\": {\"저작물성\": true, \"복제행위\": true, \"무단\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L02_rule_application\", \"rule_fired\": false, \"conclusion\": {\"침해\": false}, \"antecedents\": {\"저작물성\": true, \"복제행위\": true, \"무단\": false}, \"mode\": \"and\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "불침해."
+      }
+    ]
+  }
+]

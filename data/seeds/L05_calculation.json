@@ -1,0 +1,1227 @@
+[
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "원금 1천만원, 이율 5%, 기간 3년의 단리 이자는?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal*rate*years\", \"vars\": {\"principal\": 10000000, \"rate\": 0.05, \"years\": 3}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal*rate*years\", \"value\": 1500000.0, \"raw\": 1500000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "단리 이자 = 원금 × 이율 × 기간."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "원금 2천만원, 연 6%, 2년 단리 이자?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal*rate*years\", \"vars\": {\"principal\": 20000000, \"rate\": 0.06, \"years\": 2}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal*rate*years\", \"value\": 2400000.0, \"raw\": 2400000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "원금 500만원, 연 4%, 5년 단리?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal*rate*years\", \"vars\": {\"principal\": 5000000, \"rate\": 0.04, \"years\": 5}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal*rate*years\", \"value\": 1000000.0, \"raw\": 1000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "복리 계산: P*(1+r)^n, 1000만원 연 5% 3년."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal*(1+rate)**years\", \"vars\": {\"principal\": 10000000, \"rate\": 0.05, \"years\": 3}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal*(1+rate)**years\", \"value\": 11576250.0, \"raw\": 11576250.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "복리."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "복리 2000만원 연 3% 5년."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal*(1+rate)**years\", \"vars\": {\"principal\": 20000000, \"rate\": 0.03, \"years\": 5}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal*(1+rate)**years\", \"value\": 23185481.49, \"raw\": 23185481.486}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "월 복리 이자 총액: P*(1+r/12)^(12n)."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal*(1+rate/12)**(12*years)\", \"vars\": {\"principal\": 10000000, \"rate\": 0.06, \"years\": 2}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal*(1+rate/12)**(12*years)\", \"value\": 11271597.76, \"raw\": 11271597.762053918}"
+      },
+      {
+        "role": "assistant",
+        "content": "월복리."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "지연손해금: 원금*연5%*지연일수/365, 500만원 30일."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal*rate*days/365\", \"vars\": {\"principal\": 5000000, \"rate\": 0.05, \"days\": 30}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal*rate*days/365\", \"value\": 20547.95, \"raw\": 20547.945205479453}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "지연손해금 100일, 1천만원, 연 12%."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal*rate*days/365\", \"vars\": {\"principal\": 10000000, \"rate\": 0.12, \"days\": 100}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal*rate*days/365\", \"value\": 328767.12, \"raw\": 328767.12328767125}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "손해배상 총액 = 치료비 + 일실수입 + 위자료."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"med + income + solatium\", \"vars\": {\"med\": 3000000, \"income\": 5000000, \"solatium\": 2000000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"med + income + solatium\", \"value\": 10000000.0, \"raw\": 10000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "치료비 500, 일실 1000, 위자료 300만원."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"med + income + solatium\", \"vars\": {\"med\": 5000000, \"income\": 10000000, \"solatium\": 3000000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"med + income + solatium\", \"value\": 18000000.0, \"raw\": 18000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "과실상계: 전체손해 * (1 - 과실비율). 손해 1천만원, 피해자 과실 30%."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"total*(1 - fault)\", \"vars\": {\"total\": 10000000, \"fault\": 0.3}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"total*(1 - fault)\", \"value\": 7000000.0, \"raw\": 7000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "과실상계: 2천만 손해, 피해자 20%."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"total*(1 - fault)\", \"vars\": {\"total\": 20000000, \"fault\": 0.2}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"total*(1 - fault)\", \"value\": 16000000.0, \"raw\": 16000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "위자료 공식(1인당): 기본 1천만원 × 피해자 수."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"base*count\", \"vars\": {\"base\": 10000000, \"count\": 3}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"base*count\", \"value\": 30000000.0, \"raw\": 30000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "이자합계 = 월상환*개월수 - 원금. 월 100만, 24개월, 원금 2천만."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"monthly*months - principal\", \"vars\": {\"monthly\": 1000000, \"months\": 24, \"principal\": 20000000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"monthly*months - principal\", \"value\": 4000000.0, \"raw\": 4000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "원리금균등상환 월납입 (근사):"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal*(rate/12)*(1+rate/12)**(12*years) / ((1+rate/12)**(12*years)-1)\", \"vars\": {\"principal\": 100000000, \"rate\": 0.05, \"years\": 10}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal*(rate/12)*(1+rate/12)**(12*years) / ((1+rate/12)**(12*years)-1)\", \"value\": 1060655.15, \"raw\": 1060655.1523907525}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "기간 계산: 일수 = 종료일 - 시작일. 30일."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"end - start\", \"vars\": {\"end\": 45, \"start\": 15}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"end - start\", \"value\": 30.0, \"raw\": 30.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공소시효: 범죄일 + 기간 = 완성일. expr로 완성년도."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"start + period\", \"vars\": {\"start\": 2020, \"period\": 7}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"start + period\", \"value\": 2027.0, \"raw\": 2027.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "소멸시효 계산:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"start + period\", \"vars\": {\"start\": 2018, \"period\": 10}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"start + period\", \"value\": 2028.0, \"raw\": 2028.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "solve: 몇 년 투자하면 이자가 60만원? P=1천만, r=6%."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"solve\", \"expr\": \"principal*rate*years - 600000\", \"vars\": {\"principal\": 10000000, \"rate\": 0.06}, \"target\": \"years\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"solve\", \"target\": \"years\", \"solutions\": [1.0]}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "solve: 이자율? P=5백, 이자=25만, 기간=2년."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"solve\", \"expr\": \"principal*rate*years - 250000\", \"vars\": {\"principal\": 5000000, \"years\": 2}, \"target\": \"rate\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"solve\", \"target\": \"rate\", \"solutions\": [0.025]}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "solve: 원금? 이자=30만, r=0.03, n=2."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"solve\", \"expr\": \"principal*rate*years - 300000\", \"vars\": {\"rate\": 0.03, \"years\": 2}, \"target\": \"principal\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"solve\", \"target\": \"principal\", \"solutions\": [5000000.0]}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "부당이득반환 원금+이자 총액:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal + principal*rate*years\", \"vars\": {\"principal\": 10000000, \"rate\": 0.05, \"years\": 2}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal + principal*rate*years\", \"value\": 11000000.0, \"raw\": 11000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "구상금 계산: 공동불법행위자 부담비율 * 배상액."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"ratio*total\", \"vars\": {\"ratio\": 0.4, \"total\": 10000000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"ratio*total\", \"value\": 4000000.0, \"raw\": 4000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "양육비 월지급 합계: 월액*개월수."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"monthly*months\", \"vars\": {\"monthly\": 800000, \"months\": 120}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"monthly*months\", \"value\": 96000000.0, \"raw\": 96000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "상속분: 전체 상속재산 / 상속인 수 (균등)."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"total/heirs\", \"vars\": {\"total\": 600000000, \"heirs\": 3}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"total/heirs\", \"value\": 200000000.0, \"raw\": 200000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "유류분: 상속재산 * 법정유류분비율."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"estate*ratio\", \"vars\": {\"estate\": 400000000, \"ratio\": 0.5}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"estate*ratio\", \"value\": 200000000.0, \"raw\": 200000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "과태료 가산금: 원액 * 1.05^연체개월수."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"amount*(1.05**months)\", \"vars\": {\"amount\": 500000, \"months\": 3}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"amount*(1.05**months)\", \"value\": 578812.5, \"raw\": 578812.5000000001}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "세금 포탈액 * 3배 벌금:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"amount*3\", \"vars\": {\"amount\": 50000000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"amount*3\", \"value\": 150000000.0, \"raw\": 150000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "임대차 보증금 이자(전세금운용): P*r*n."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"deposit*rate*years\", \"vars\": {\"deposit\": 100000000, \"rate\": 0.03, \"years\": 2}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"deposit*rate*years\", \"value\": 6000000.0, \"raw\": 6000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "해고예고수당: 통상임금 30일분."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"daily*30\", \"vars\": {\"daily\": 100000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"daily*30\", \"value\": 3000000.0, \"raw\": 3000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "퇴직금: 평균임금*30*재직년수/30 = avg*years."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"avg*years\", \"vars\": {\"avg\": 3000000, \"years\": 5}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"avg*years\", \"value\": 15000000.0, \"raw\": 15000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "연차수당: 일임금 * 미사용 연차 일수."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"daily*unused\", \"vars\": {\"daily\": 120000, \"unused\": 10}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"daily*unused\", \"value\": 1200000.0, \"raw\": 1200000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "야간수당: 시급 * 1.5 * 시간."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"wage*1.5*hours\", \"vars\": {\"wage\": 10000, \"hours\": 8}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"wage*1.5*hours\", \"value\": 120000.0, \"raw\": 120000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "기간계산 - 연도 차이:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"end - start\", \"vars\": {\"end\": 2026, \"start\": 2020}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"end - start\", \"value\": 6.0, \"raw\": 6.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "월단위 이자:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal*rate/12*months\", \"vars\": {\"principal\": 12000000, \"rate\": 0.06, \"months\": 5}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal*rate/12*months\", \"value\": 300000.0, \"raw\": 300000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "일할 이자:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal*rate/365*days\", \"vars\": {\"principal\": 36500000, \"rate\": 0.1, \"days\": 10}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal*rate/365*days\", \"value\": 100000.0, \"raw\": 100000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "변동금리 평균:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"(r1+r2+r3)/3\", \"vars\": {\"r1\": 0.04, \"r2\": 0.05, \"r3\": 0.06}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"(r1+r2+r3)/3\", \"value\": 0.05, \"raw\": 0.05}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "위약금: 계약금의 배액 반환 또는 계약금 귀속."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"earnest*2\", \"vars\": {\"earnest\": 5000000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"earnest*2\", \"value\": 10000000.0, \"raw\": 10000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "소송비용 패소자 부담: 변호사보수 + 인지대."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"fee+stamp\", \"vars\": {\"fee\": 5000000, \"stamp\": 300000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"fee+stamp\", \"value\": 5300000.0, \"raw\": 5300000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "solve: 몇 개월? 월상환 50만, 총이자 300만, 원금 1천."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"solve\", \"expr\": \"monthly*months - principal - interest\", \"vars\": {\"monthly\": 500000, \"principal\": 10000000, \"interest\": 3000000}, \"target\": \"months\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"solve\", \"target\": \"months\", \"solutions\": [26.0]}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "양도소득세(단순): (양도가-취득가)*세율."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"(sale-cost)*rate\", \"vars\": {\"sale\": 500000000, \"cost\": 300000000, \"rate\": 0.22}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"(sale-cost)*rate\", \"value\": 44000000.0, \"raw\": 44000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "부가세: 공급가액 * 10%."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"supply*0.1\", \"vars\": {\"supply\": 10000000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"supply*0.1\", \"value\": 1000000.0, \"raw\": 1000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "인지세액:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"base*rate\", \"vars\": {\"base\": 100000000, \"rate\": 0.0005}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"base*rate\", \"value\": 50000.0, \"raw\": 50000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "지연이자 추가 - 연 12% 프리미엄 적용:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"principal*(rate+premium)*years\", \"vars\": {\"principal\": 10000000, \"rate\": 0.05, \"premium\": 0.07, \"years\": 1}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"principal*(rate+premium)*years\", \"value\": 1200000.0, \"raw\": 1200000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "손해 분담(연대): 인당 균등 부담."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"total/n\", \"vars\": {\"total\": 30000000, \"n\": 3}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"total/n\", \"value\": 10000000.0, \"raw\": 10000000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "대금감액: 원가 * (1 - defect_ratio)."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"price*(1-defect)\", \"vars\": {\"price\": 5000000, \"defect\": 0.1}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"price*(1-defect)\", \"value\": 4500000.0, \"raw\": 4500000.0}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "현재가치: FV/(1+r)^n."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"fv/(1+r)**n\", \"vars\": {\"fv\": 10000000, \"r\": 0.05, \"n\": 3}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"fv/(1+r)**n\", \"value\": 8638375.99, \"raw\": 8638375.98531476}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "미래가치:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"eval\", \"expr\": \"pv*(1+r)**n\", \"vars\": {\"pv\": 10000000, \"r\": 0.03, \"n\": 5}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"eval\", \"expr\": \"pv*(1+r)**n\", \"value\": 11592740.74, \"raw\": 11592740.743}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  },
+  {
+    "lane": "L05_calculation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "solve: 원금 몇? FV=13,31,25원 (=10M*1.1^3),r=0.1,n=3."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05_calculation</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"solve\", \"expr\": \"pv*(1+r)**n - fv\", \"vars\": {\"fv\": 13310000, \"r\": 0.1, \"n\": 3}, \"target\": \"pv\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L05_calculation\", \"method\": \"solve\", \"target\": \"pv\", \"solutions\": [10000000.0]}"
+      },
+      {
+        "role": "assistant",
+        "content": "."
+      }
+    ]
+  }
+]

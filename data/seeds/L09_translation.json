@@ -1,0 +1,512 @@
+[
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'소멸시효'를 영어로 번역해주세요."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nstatute of limitations / prescription"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'불법행위'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\ntort"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'상속인'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nheir"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'공소시효'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nstatute of limitations (criminal prosecution)"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'정당방위'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nself-defense"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'명예훼손'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\ndefamation"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'배임'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nbreach of trust / fiduciary breach"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'횡령'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nembezzlement"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'교사범'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nsolicitor / instigator"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'공동정범'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nco-principal / joint principal"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'위자료'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nconsolation money / compensation for mental damages"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'원고'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nplaintiff"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'피고'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\ndefendant"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'항소'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nappeal (intermediate)"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'상고'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nfinal appeal (to Supreme Court)"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'기각'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\ndismissal (denied on the merits)"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'각하'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\ndismissal (without prejudice / procedural)"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'무죄'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nnot guilty / acquittal"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'유죄'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nguilty / conviction"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'집행유예'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nsuspended sentence"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'벌금'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nfine"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'과태료'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nadministrative fine"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'강제집행'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\ncompulsory execution"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'가처분'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nprovisional disposition / preliminary injunction"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'소송비용'의 영문?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\nlitigation costs"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'hearsay'의 한국어?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\n전문증거 (전해 들은 증거)"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'personal jurisdiction'의 한국어?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\n대인관할권"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'due process'의 한국어?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\n적법절차"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'res judicata'의 한국어?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\n기판력"
+      }
+    ]
+  },
+  {
+    "lane": "L09_translation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'stare decisis'의 한국어?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09_translation</lane>\n선례구속의 원칙"
+      }
+    ]
+  }
+]

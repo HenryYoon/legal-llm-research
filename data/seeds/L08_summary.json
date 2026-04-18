@@ -1,0 +1,512 @@
+[
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "다음 판결을 2줄로 요약: '피고인은 편의점에서 음료를 절취하였고, 법원은 절도죄를 인정하였다.'"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n편의점 음료 절취 사건에서 법원은 절도죄 성립을 인정했다."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "계약서 주요 조항을 요약하세요 (임대차 2년, 월세 100만원, 보증금 1천만원)."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n임대차: 기간 2년, 월세 100만원, 보증금 1천만원."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "판결문 핵심을 3줄로 요약."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n쟁점: 계약 해제 사유. 판시: 이행지체 확인. 결론: 해제 인정, 손해배상 4백만원."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "다음 사건요지 요약 요청: 사기 피해자 3명, 총 5천만원 편취."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n사기 피해자 3인, 총 5천만원 편취 사건."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "계약서 해지 조항 요약."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n어느 일방 3개월 전 서면 통지로 해지 가능, 위약금 없음."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "판결 요지: 원고 승소, 피고 2천만원 지급 명령."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n원고 승소, 피고 2천만원 지급 의무."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "협약서 요약: 당사자 간 비밀유지, 기간 5년, 위반 시 손해배상."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n5년 NDA, 위반 시 손해배상."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "판례 요지 요약: 업무상 과실로 환자 사망, 의사 유죄."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n업무상 과실치사로 의사 유죄."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "법률의견서 요약: 문의자는 정당한 권리 행사로 판단됨."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n정당한 권리 행사 의견."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "분쟁 요지 2줄 요약: 공사대금 미지급으로 시공사가 소송 제기."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n공사대금 미지급 분쟁, 시공사 제소."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "민사판결 요지 요약: 손해배상 3천만원, 과실상계 30%."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n손해배상 3천만원, 피해자 과실 30% 상계."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "형사판결 요약: 징역 2년, 집행유예 3년."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n징역 2년 집행유예 3년."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "약관 요약: 14일 이내 청약철회 가능."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n14일 청약철회 허용."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "정관 요약: 이사회 결의 과반수, 대표 선임."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n이사회 과반수 의결, 대표이사 선임."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "노동 분쟁 요약: 부당해고 인정, 복직 명령."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n부당해고 → 복직 명령."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "행정판결 요약: 처분 취소."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n행정처분 취소."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "환경분쟁 요지: 공장 소음으로 인한 건강 피해, 손해배상 인정."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n공장 소음 피해 → 손해배상 인정."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "의료분쟁 요지: 설명의무 위반, 2천만원 배상."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n설명의무 위반, 2천만원 배상."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "상표분쟁 요지: 침해 인정, 금지 및 손해배상."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n상표권 침해, 금지·배상 인용."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "저작권 분쟁 요지: 표절 인정, 1억 배상."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n표절 인정, 1억 배상."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "입법 취지 요약: 피해자 보호 강화."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n피해자 보호 강화 목적 입법."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "개정안 요약: 과태료 상한 3배 인상."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n과태료 상한 3배 상향."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "부동산 매매계약 요약: 매매가 5억, 잔금 1개월 후."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n매매가 5억, 잔금 1개월 내 납부."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "합의서 요약: 상호 고소 취하, 합의금 5백만원."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n상호 고소취하, 합의금 500만원."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "중재판정 요지 요약: 당사자 합의로 2천만원 지급."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n합의 2천만원 지급."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "내용증명 요지: 3일 내 미납 시 법적 조치."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n3일 미납 시 법적 조치 경고."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "조정안 요약: 원고 청구 70% 인용."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n청구 70% 인용."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "고용계약 요약: 연봉 4천만, 기간 1년."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n연봉 4천만원 1년 계약."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "합병계약 요약: 주식교환 비율 1:2."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n주식교환 1:2 합병."
+      }
+    ]
+  },
+  {
+    "lane": "L08_summary",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "라이선스 계약 요약: 로열티 매출 5%."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L08_summary</lane>\n로열티 5% 라이선스."
+      }
+    ]
+  }
+]

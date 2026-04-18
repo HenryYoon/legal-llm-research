@@ -1,0 +1,512 @@
+[
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "형법 제329조(절도)의 의의를 설명해주세요."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n절도죄는 타인의 재물을 절취함으로써 성립하는 재산범죄입니다. 보호법익은 소유권이며, 주관적 요건으로 불법영득의사가 필요합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "계약자유의 원칙이란 무엇인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n계약자유의 원칙은 계약 체결 여부·상대방·내용·방식을 당사자가 자유롭게 결정할 수 있다는 민법의 기본원리입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "신의성실의 원칙이 적용되는 대표 사례를 알려주세요."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n신의성실 원칙은 권리행사와 의무이행에 있어서 형평성과 신뢰를 강조하며, 권리남용 금지, 금반언 등에서 구체화됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "부당이득의 반환 범위를 설명해주세요."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n선의 수익자는 현존이익만, 악의 수익자는 받은 이익 전부와 이자 및 손해를 반환해야 합니다(민법 748조)."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "법인격 부인의 의미는?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n법인격 부인은 법인형식을 남용한 경우 개별 구성원에게 책임을 묻기 위해 법인과 구성원의 법적 분리를 부정하는 법리입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "무과실책임이 인정되는 대표적 분야는?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n제조물책임, 항공기 사고, 원자력 손해, 공작물 점유자 책임 등 고위험 활동 영역에서 무과실책임이 인정됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "'상당인과관계설'이란?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n어떤 결과가 행위로부터 통상 발생할 수 있는 관계에 있을 때 인과관계를 인정하는 학설로, 판례의 주류입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "형법상 고의와 과실의 차이는?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n고의는 구성요건 실현 의사, 과실은 주의의무 위반으로 결과를 회피하지 못한 것입니다. 원칙상 고의범만 처벌합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공소시효의 의의를 설명해주세요."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n공소시효는 범죄 후 일정 기간이 지나면 국가의 형벌권이 소멸하는 제도로, 법적 안정성 확보 목적입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "재판상 이혼사유를 요약해주세요."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n부정행위, 악의의 유기, 배우자 또는 직계존속의 부당한 대우, 3년 이상 생사불명, 기타 중대한 사유(민법 840조)."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "미성년자의 법률행위 효력은?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n원칙적으로 법정대리인의 동의가 필요하며, 동의 없는 행위는 취소할 수 있습니다. 단순 수익 행위는 예외입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "제척기간과 소멸시효의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n제척기간은 권리의 존속기간으로 중단·정지가 없고, 소멸시효는 권리 불행사에 대한 제재로 중단·정지가 가능합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "위법성 조각사유를 열거하세요."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n정당방위, 긴급피난, 자구행위, 피해자의 승낙, 정당행위(법령·업무·사회상규)."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "책임능력의 의미는?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n자기 행위의 의미와 결과를 이해하고 이에 따라 행동할 수 있는 능력으로, 만 14세 미만·심신상실자는 책임 없음."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "선고유예, 집행유예, 가석방의 차이는?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n선고유예는 형 선고 자체 유예, 집행유예는 형 선고 후 집행 유예, 가석방은 형 집행 중 조건부 석방입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "사인증여와 유증의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n사인증여는 생전 계약(증여자의 사망조건), 유증은 일방적 유언에 의한 재산 처분행위입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "부동산 등기의 공신력이 인정되는가?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n우리 민법상 부동산 등기의 공신력은 인정되지 않습니다(동산 선의취득과 달리)."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "명의신탁의 법적 효력은?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n부동산 명의신탁은 원칙적으로 무효이며(부동산실명법), 예외적으로 종중·배우자 명의는 허용됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "국가배상청구의 요건을 설명하세요."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n공무원의 직무상 위법행위, 고의·과실, 손해, 인과관계가 요건이며 국가배상법 2조에 근거합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "행정소송의 종류는?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n항고소송(취소·무효확인·부작위위법확인), 당사자소송, 민중소송, 기관소송으로 분류됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "헌법소원심판의 대상은?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n공권력의 행사 또는 불행사로 기본권이 침해되었을 때 청구하며, 법원의 재판은 원칙적으로 제외됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "저작인격권의 내용은?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n공표권, 성명표시권, 동일성유지권이며 저작자의 일신전속적 권리입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "전용실시권과 통상실시권의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n전용실시권은 배타적 실시권, 통상실시권은 비배타적 실시권입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "명예훼손과 모욕의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n명예훼손은 구체적 사실의 적시, 모욕은 경멸적 표현(사실적시 없이)으로 인한 인격 침해입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "긴급체포의 요건을 설명하세요."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n중대한 범죄, 긴급성, 체포 필요성(도주·증거인멸 우려)이 요건이며 48시간 이내 구속영장 청구."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "자수감경은 언제 적용되나?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n범인이 수사기관에 자발적으로 죄를 신고하면 임의적 감경·면제가 가능합니다(형법 52조)."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공동정범과 교사범의 차이?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n공동정범은 공동의사로 직접 실행, 교사범은 타인을 범죄로 결의하게 한 자입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "미수와 예비의 구별기준은?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n실행의 착수 여부입니다. 착수 이전은 예비, 이후는 미수입니다."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "상속 포기의 방법은?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n상속 개시 사실을 안 날부터 3개월 내 가정법원에 신고해야 합니다(민법 1041조)."
+      }
+    ]
+  },
+  {
+    "lane": "L06_explanation",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "한정승인의 효과는?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06_explanation</lane>\n상속재산 범위 내에서만 상속인이 책임을 지므로 고유재산은 보호됩니다."
+      }
+    ]
+  }
+]

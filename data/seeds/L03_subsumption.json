@@ -1,0 +1,1252 @@
+[
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "편의점 음료 절취 사건을 형법 329조에 포섭하라."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제329조(절도)\", \"elements\": [\"타인의 재물\", \"절취\", \"불법영득의사\"]}, \"facts\": [\"편의점 음료\", \"주머니 은닉 후 퇴장\", \"불법영득 의도\"], \"subsumption\": {\"타인의 재물\": true, \"절취\": true, \"불법영득의사\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제329조(절도)\", \"holding\": true, \"details\": {\"타인의 재물\": true, \"절취\": true, \"불법영득의사\": true}, \"facts\": [\"편의점 음료\", \"주머니 은닉 후 퇴장\", \"불법영득 의도\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "절도 구성요건 포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "자신 소유물을 가져간 경우를 329조에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제329조(절도)\", \"elements\": [\"타인의 재물\", \"절취\", \"불법영득의사\"]}, \"facts\": [\"자기 물건\", \"가져감\", \"의사 없음\"], \"subsumption\": {\"타인의 재물\": false, \"절취\": false, \"불법영득의사\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제329조(절도)\", \"holding\": false, \"details\": {\"타인의 재물\": false, \"절취\": false, \"불법영득의사\": false}, \"facts\": [\"자기 물건\", \"가져감\", \"의사 없음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "절도 불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "의사의 수술행위를 상해죄(257조)에 포섭할 수 있는가?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제257조(상해)\", \"elements\": [\"신체의 완전성 침해\", \"고의\"]}, \"facts\": [\"수술로 절개\", \"업무상 승낙\"], \"subsumption\": {\"신체의 완전성 침해\": true, \"고의\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제257조(상해)\", \"holding\": false, \"details\": {\"신체의 완전성 침해\": true, \"고의\": false}, \"facts\": [\"수술로 절개\", \"업무상 승낙\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "고의·위법성 요건 미충족, 업무상 정당행위로 포섭 불가."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "의사의 설명 없이 수술한 경우 상해?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제257조(상해)\", \"elements\": [\"신체의 완전성 침해\", \"고의\"]}, \"facts\": [\"무단수술\", \"인식 있음\"], \"subsumption\": {\"신체의 완전성 침해\": true, \"고의\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제257조(상해)\", \"holding\": true, \"details\": {\"신체의 완전성 침해\": true, \"고의\": true}, \"facts\": [\"무단수술\", \"인식 있음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "상해 구성요건 포섭(승낙 결여)."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "단체채팅방 험담을 모욕죄(311조)에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제311조(모욕)\", \"elements\": [\"공연성\", \"모욕적 표현\"]}, \"facts\": [\"단체채팅방\", \"경멸 표현\"], \"subsumption\": {\"공연성\": true, \"모욕적 표현\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제311조(모욕)\", \"holding\": true, \"details\": {\"공연성\": true, \"모욕적 표현\": true}, \"facts\": [\"단체채팅방\", \"경멸 표현\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "모욕 포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "1:1 DM 모욕?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제311조(모욕)\", \"elements\": [\"공연성\", \"모욕적 표현\"]}, \"facts\": [\"사적 DM\", \"모욕 표현\"], \"subsumption\": {\"공연성\": false, \"모욕적 표현\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제311조(모욕)\", \"holding\": false, \"details\": {\"공연성\": false, \"모욕적 표현\": true}, \"facts\": [\"사적 DM\", \"모욕 표현\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "공연성 결여 불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "회사돈 개인사용 사건을 업무상 횡령(356)에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제356조(업무상 횡령)\", \"elements\": [\"타인재물 보관\", \"업무상 임무\", \"횡령\"]}, \"facts\": [\"회사자금\", \"경리업무\", \"개인유용\"], \"subsumption\": {\"타인재물 보관\": true, \"업무상 임무\": true, \"횡령\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제356조(업무상 횡령)\", \"holding\": true, \"details\": {\"타인재물 보관\": true, \"업무상 임무\": true, \"횡령\": true}, \"facts\": [\"회사자금\", \"경리업무\", \"개인유용\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "보관이 아닌 단순 점유자 사건?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제356조(업무상 횡령)\", \"elements\": [\"타인재물 보관\", \"업무상 임무\", \"횡령\"]}, \"facts\": [\"단순소지\", \"업무 외\", \"유용\"], \"subsumption\": {\"타인재물 보관\": false, \"업무상 임무\": false, \"횡령\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제356조(업무상 횡령)\", \"holding\": false, \"details\": {\"타인재물 보관\": false, \"업무상 임무\": false, \"횡령\": true}, \"facts\": [\"단순소지\", \"업무 외\", \"유용\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭(다른 죄명 검토)."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "교통사고를 업무상과실치상에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제268조(업무상과실치상)\", \"elements\": [\"업무상 과실\", \"상해결과\", \"인과\"]}, \"facts\": [\"운전 중 신호위반\", \"상해\", \"인과\"], \"subsumption\": {\"업무상 과실\": true, \"상해결과\": true, \"인과\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제268조(업무상과실치상)\", \"holding\": true, \"details\": {\"업무상 과실\": true, \"상해결과\": true, \"인과\": true}, \"facts\": [\"운전 중 신호위반\", \"상해\", \"인과\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "보행자 과실만 있는 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제268조(업무상과실치상)\", \"elements\": [\"업무상 과실\", \"상해결과\", \"인과\"]}, \"facts\": [\"보행자 과실\", \"상해\", \"인과 단절\"], \"subsumption\": {\"업무상 과실\": false, \"상해결과\": true, \"인과\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제268조(업무상과실치상)\", \"holding\": false, \"details\": {\"업무상 과실\": false, \"상해결과\": true, \"인과\": false}, \"facts\": [\"보행자 과실\", \"상해\", \"인과 단절\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "허위 세금계산서 발급을 조세범처벌법에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"조세범처벌법 제10조\", \"elements\": [\"계산서 발급의무\", \"허위 기재\", \"조세포탈 목적\"]}, \"facts\": [\"사업자\", \"허위 금액\", \"포탈 의도\"], \"subsumption\": {\"계산서 발급의무\": true, \"허위 기재\": true, \"조세포탈 목적\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"조세범처벌법 제10조\", \"holding\": true, \"details\": {\"계산서 발급의무\": true, \"허위 기재\": true, \"조세포탈 목적\": true}, \"facts\": [\"사업자\", \"허위 금액\", \"포탈 의도\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "사실 그대로 발급."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"조세범처벌법 제10조\", \"elements\": [\"계산서 발급의무\", \"허위 기재\", \"조세포탈 목적\"]}, \"facts\": [\"정상 발급\", \"사실기재\", \"목적 없음\"], \"subsumption\": {\"계산서 발급의무\": true, \"허위 기재\": false, \"조세포탈 목적\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"조세범처벌법 제10조\", \"holding\": false, \"details\": {\"계산서 발급의무\": true, \"허위 기재\": false, \"조세포탈 목적\": false}, \"facts\": [\"정상 발급\", \"사실기재\", \"목적 없음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "아파트 층간소음 사건을 경범죄처벌법에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"경범죄처벌법 제3조(인근소란)\", \"elements\": [\"소란행위\", \"주거지역\"]}, \"facts\": [\"심야 피아노\", \"아파트\"], \"subsumption\": {\"소란행위\": true, \"주거지역\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"경범죄처벌법 제3조(인근소란)\", \"holding\": true, \"details\": {\"소란행위\": true, \"주거지역\": true}, \"facts\": [\"심야 피아노\", \"아파트\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공업지역 낮 소음?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"경범죄처벌법 제3조(인근소란)\", \"elements\": [\"소란행위\", \"주거지역\"]}, \"facts\": [\"주간 공사소음\", \"공업지역\"], \"subsumption\": {\"소란행위\": true, \"주거지역\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"경범죄처벌법 제3조(인근소란)\", \"holding\": false, \"details\": {\"소란행위\": true, \"주거지역\": false}, \"facts\": [\"주간 공사소음\", \"공업지역\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공무원 뇌물수수를 형법 129조에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제129조(수뢰)\", \"elements\": [\"공무원\", \"직무관련\", \"수수\"]}, \"facts\": [\"공무원\", \"직무 관련\", \"금품수수\"], \"subsumption\": {\"공무원\": true, \"직무관련\": true, \"수수\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제129조(수뢰)\", \"holding\": true, \"details\": {\"공무원\": true, \"직무관련\": true, \"수수\": true}, \"facts\": [\"공무원\", \"직무 관련\", \"금품수수\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "직무 무관한 증여?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제129조(수뢰)\", \"elements\": [\"공무원\", \"직무관련\", \"수수\"]}, \"facts\": [\"공무원\", \"개인관계 선물\", \"수수\"], \"subsumption\": {\"공무원\": true, \"직무관련\": false, \"수수\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제129조(수뢰)\", \"holding\": false, \"details\": {\"공무원\": true, \"직무관련\": false, \"수수\": true}, \"facts\": [\"공무원\", \"개인관계 선물\", \"수수\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "배우자 외도로 인한 이혼청구를 840조 1호에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"민법 제840조 1호(부정행위)\", \"elements\": [\"배우자 부정행위\"]}, \"facts\": [\"혼외성관계\"], \"subsumption\": {\"배우자 부정행위\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"민법 제840조 1호(부정행위)\", \"holding\": true, \"details\": {\"배우자 부정행위\": true}, \"facts\": [\"혼외성관계\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "단순 대화?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"민법 제840조 1호(부정행위)\", \"elements\": [\"배우자 부정행위\"]}, \"facts\": [\"친구와 대화\"], \"subsumption\": {\"배우자 부정행위\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"민법 제840조 1호(부정행위)\", \"holding\": false, \"details\": {\"배우자 부정행위\": false}, \"facts\": [\"친구와 대화\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "2년 이상 별거를 840조 6호에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"민법 제840조 6호(기타 중대사유)\", \"elements\": [\"혼인관계 파탄\", \"중대사유\"]}, \"facts\": [\"5년 별거\", \"관계 회복 불능\"], \"subsumption\": {\"혼인관계 파탄\": true, \"중대사유\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"민법 제840조 6호(기타 중대사유)\", \"holding\": true, \"details\": {\"혼인관계 파탄\": true, \"중대사유\": true}, \"facts\": [\"5년 별거\", \"관계 회복 불능\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "일시적 별거?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"민법 제840조 6호(기타 중대사유)\", \"elements\": [\"혼인관계 파탄\", \"중대사유\"]}, \"facts\": [\"1개월 별거\", \"화해중\"], \"subsumption\": {\"혼인관계 파탄\": false, \"중대사유\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"민법 제840조 6호(기타 중대사유)\", \"holding\": false, \"details\": {\"혼인관계 파탄\": false, \"중대사유\": false}, \"facts\": [\"1개월 별거\", \"화해중\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "직장 성희롱을 남녀고용평등법에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"남녀고용평등법 제12조\", \"elements\": [\"직장 내\", \"성적 언동\", \"불이익\"]}, \"facts\": [\"회사 내\", \"성적 농담 반복\", \"인사 불이익\"], \"subsumption\": {\"직장 내\": true, \"성적 언동\": true, \"불이익\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"남녀고용평등법 제12조\", \"holding\": true, \"details\": {\"직장 내\": true, \"성적 언동\": true, \"불이익\": true}, \"facts\": [\"회사 내\", \"성적 농담 반복\", \"인사 불이익\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "회식 외 우연한 만남?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"남녀고용평등법 제12조\", \"elements\": [\"직장 내\", \"성적 언동\", \"불이익\"]}, \"facts\": [\"사적 만남\", \"언동\", \"불이익 없음\"], \"subsumption\": {\"직장 내\": false, \"성적 언동\": true, \"불이익\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"남녀고용평등법 제12조\", \"holding\": false, \"details\": {\"직장 내\": false, \"성적 언동\": true, \"불이익\": false}, \"facts\": [\"사적 만남\", \"언동\", \"불이익 없음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "음주운전 0.15%를 특가법에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"특정범죄가중법(위험운전치사상)\", \"elements\": [\"위험운전\", \"사고\", \"사상\"]}, \"facts\": [\"0.18% 음주\", \"충돌\", \"사망\"], \"subsumption\": {\"위험운전\": true, \"사고\": true, \"사상\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"특정범죄가중법(위험운전치사상)\", \"holding\": true, \"details\": {\"위험운전\": true, \"사고\": true, \"사상\": true}, \"facts\": [\"0.18% 음주\", \"충돌\", \"사망\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "혈중 0.02% 추돌?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"특정범죄가중법(위험운전치사상)\", \"elements\": [\"위험운전\", \"사고\", \"사상\"]}, \"facts\": [\"저농도\", \"경미 추돌\", \"부상 없음\"], \"subsumption\": {\"위험운전\": false, \"사고\": true, \"사상\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"특정범죄가중법(위험운전치사상)\", \"holding\": false, \"details\": {\"위험운전\": false, \"사고\": true, \"사상\": false}, \"facts\": [\"저농도\", \"경미 추돌\", \"부상 없음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "폭행 후 증거인멸을 증거인멸죄에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제155조(증거인멸)\", \"elements\": [\"타인 형사사건 증거\", \"인멸\"]}, \"facts\": [\"피의자 친구의 증거\", \"파기\"], \"subsumption\": {\"타인 형사사건 증거\": true, \"인멸\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제155조(증거인멸)\", \"holding\": true, \"details\": {\"타인 형사사건 증거\": true, \"인멸\": true}, \"facts\": [\"피의자 친구의 증거\", \"파기\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "자기 사건 증거?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제155조(증거인멸)\", \"elements\": [\"타인 형사사건 증거\", \"인멸\"]}, \"facts\": [\"자기 사건 증거\", \"파기\"], \"subsumption\": {\"타인 형사사건 증거\": false, \"인멸\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제155조(증거인멸)\", \"holding\": false, \"details\": {\"타인 형사사건 증거\": false, \"인멸\": true}, \"facts\": [\"자기 사건 증거\", \"파기\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭(자기증거 은닉은 처벌대상 아님)."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "협박 편지를 협박죄(283)에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제283조(협박)\", \"elements\": [\"해악의 고지\", \"상대방 인식\"]}, \"facts\": [\"살해 협박문자\", \"피해자 수신·인식\"], \"subsumption\": {\"해악의 고지\": true, \"상대방 인식\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제283조(협박)\", \"holding\": true, \"details\": {\"해악의 고지\": true, \"상대방 인식\": true}, \"facts\": [\"살해 협박문자\", \"피해자 수신·인식\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "전달되지 않은 미발송 편지?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"형법 제283조(협박)\", \"elements\": [\"해악의 고지\", \"상대방 인식\"]}, \"facts\": [\"작성만 함\", \"미전달\"], \"subsumption\": {\"해악의 고지\": false, \"상대방 인식\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"형법 제283조(협박)\", \"holding\": false, \"details\": {\"해악의 고지\": false, \"상대방 인식\": false}, \"facts\": [\"작성만 함\", \"미전달\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "개인정보보호법 위반(유출)에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"개인정보보호법 제71조\", \"elements\": [\"개인정보처리자\", \"정보 유출\", \"고의\"]}, \"facts\": [\"쇼핑몰 관리자\", \"고객정보 판매\", \"고의\"], \"subsumption\": {\"개인정보처리자\": true, \"정보 유출\": true, \"고의\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"개인정보보호법 제71조\", \"holding\": true, \"details\": {\"개인정보처리자\": true, \"정보 유출\": true, \"고의\": true}, \"facts\": [\"쇼핑몰 관리자\", \"고객정보 판매\", \"고의\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "해킹 피해자가 유출된 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"개인정보보호법 제71조\", \"elements\": [\"개인정보처리자\", \"정보 유출\", \"고의\"]}, \"facts\": [\"처리자가 피해자\", \"유출 결과\", \"고의 없음\"], \"subsumption\": {\"개인정보처리자\": true, \"정보 유출\": true, \"고의\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"개인정보보호법 제71조\", \"holding\": false, \"details\": {\"개인정보처리자\": true, \"정보 유출\": true, \"고의\": false}, \"facts\": [\"처리자가 피해자\", \"유출 결과\", \"고의 없음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭(관리감독 책임은 별개)."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "무면허 의료행위를 의료법 27조에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"의료법 제27조\", \"elements\": [\"무자격자\", \"의료행위\"]}, \"facts\": [\"자격 없음\", \"수술 시행\"], \"subsumption\": {\"무자격자\": true, \"의료행위\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"의료법 제27조\", \"holding\": true, \"details\": {\"무자격자\": true, \"의료행위\": true}, \"facts\": [\"자격 없음\", \"수술 시행\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "의사가 한 수술?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"의료법 제27조\", \"elements\": [\"무자격자\", \"의료행위\"]}, \"facts\": [\"면허 의사\", \"수술\"], \"subsumption\": {\"무자격자\": false, \"의료행위\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"의료법 제27조\", \"holding\": false, \"details\": {\"무자격자\": false, \"의료행위\": true}, \"facts\": [\"면허 의사\", \"수술\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "자본시장법상 미공개정보 이용을 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"자본시장법 제174조\", \"elements\": [\"내부자\", \"미공개 중요정보\", \"이용\"]}, \"facts\": [\"임원\", \"미공개 M&A 정보\", \"매매에 이용\"], \"subsumption\": {\"내부자\": true, \"미공개 중요정보\": true, \"이용\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"자본시장법 제174조\", \"holding\": true, \"details\": {\"내부자\": true, \"미공개 중요정보\": true, \"이용\": true}, \"facts\": [\"임원\", \"미공개 M&A 정보\", \"매매에 이용\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공개 후 거래?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"자본시장법 제174조\", \"elements\": [\"내부자\", \"미공개 중요정보\", \"이용\"]}, \"facts\": [\"내부자\", \"공시 후\", \"거래\"], \"subsumption\": {\"내부자\": true, \"미공개 중요정보\": false, \"이용\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"자본시장법 제174조\", \"holding\": false, \"details\": {\"내부자\": true, \"미공개 중요정보\": false, \"이용\": true}, \"facts\": [\"내부자\", \"공시 후\", \"거래\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "공직선거법상 허위사실 공표에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"공직선거법 제250조\", \"elements\": [\"후보자 관련\", \"허위사실 공표\", \"당선 목적\"]}, \"facts\": [\"상대후보 허위 경력\", \"SNS 공표\", \"선거 영향 의도\"], \"subsumption\": {\"후보자 관련\": true, \"허위사실 공표\": true, \"당선 목적\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"공직선거법 제250조\", \"holding\": true, \"details\": {\"후보자 관련\": true, \"허위사실 공표\": true, \"당선 목적\": true}, \"facts\": [\"상대후보 허위 경력\", \"SNS 공표\", \"선거 영향 의도\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "진실사실 공표?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"공직선거법 제250조\", \"elements\": [\"후보자 관련\", \"허위사실 공표\", \"당선 목적\"]}, \"facts\": [\"후보자 관련\", \"사실 공표\", \"의도 있음\"], \"subsumption\": {\"후보자 관련\": true, \"허위사실 공표\": false, \"당선 목적\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"공직선거법 제250조\", \"holding\": false, \"details\": {\"후보자 관련\": true, \"허위사실 공표\": false, \"당선 목적\": true}, \"facts\": [\"후보자 관련\", \"사실 공표\", \"의도 있음\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "마약류관리법 위반(투약)에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"마약류관리법 제61조\", \"elements\": [\"마약류\", \"투약·소지\", \"고의\"]}, \"facts\": [\"메스암페타민\", \"투약\", \"고의\"], \"subsumption\": {\"마약류\": true, \"투약·소지\": true, \"고의\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"마약류관리법 제61조\", \"holding\": true, \"details\": {\"마약류\": true, \"투약·소지\": true, \"고의\": true}, \"facts\": [\"메스암페타민\", \"투약\", \"고의\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "처방된 의약품 복용?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"마약류관리법 제61조\", \"elements\": [\"마약류\", \"투약·소지\", \"고의\"]}, \"facts\": [\"처방약\", \"복용\", \"합법\"], \"subsumption\": {\"마약류\": false, \"투약·소지\": true, \"고의\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"마약류관리법 제61조\", \"holding\": false, \"details\": {\"마약류\": false, \"투약·소지\": true, \"고의\": false}, \"facts\": [\"처방약\", \"복용\", \"합법\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "군형법상 명령불복종에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"군형법 제44조\", \"elements\": [\"군인\", \"정당한 명령\", \"불복종\"]}, \"facts\": [\"현역군인\", \"합법명령\", \"고의적 거부\"], \"subsumption\": {\"군인\": true, \"정당한 명령\": true, \"불복종\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"군형법 제44조\", \"holding\": true, \"details\": {\"군인\": true, \"정당한 명령\": true, \"불복종\": true}, \"facts\": [\"현역군인\", \"합법명령\", \"고의적 거부\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "위법한 명령?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"군형법 제44조\", \"elements\": [\"군인\", \"정당한 명령\", \"불복종\"]}, \"facts\": [\"군인\", \"위법명령\", \"거부\"], \"subsumption\": {\"군인\": true, \"정당한 명령\": false, \"불복종\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"군형법 제44조\", \"holding\": false, \"details\": {\"군인\": true, \"정당한 명령\": false, \"불복종\": true}, \"facts\": [\"군인\", \"위법명령\", \"거부\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "부정수표단속법에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"부정수표단속법 제2조\", \"elements\": [\"수표발행\", \"예금부족\", \"고의\"]}, \"facts\": [\"수표발행\", \"부도\", \"고의 인정\"], \"subsumption\": {\"수표발행\": true, \"예금부족\": true, \"고의\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"부정수표단속법 제2조\", \"holding\": true, \"details\": {\"수표발행\": true, \"예금부족\": true, \"고의\": true}, \"facts\": [\"수표발행\", \"부도\", \"고의 인정\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "착오로 발행?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"부정수표단속법 제2조\", \"elements\": [\"수표발행\", \"예금부족\", \"고의\"]}, \"facts\": [\"발행\", \"부도\", \"과실\"], \"subsumption\": {\"수표발행\": true, \"예금부족\": true, \"고의\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"부정수표단속법 제2조\", \"holding\": false, \"details\": {\"수표발행\": true, \"예금부족\": true, \"고의\": false}, \"facts\": [\"발행\", \"부도\", \"과실\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "textualism: statute's plain meaning governs — 'vehicle' includes motorbike?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"Plain meaning rule\", \"elements\": [\"ordinary meaning\", \"statutory text\"]}, \"facts\": [\"motorbike is vehicle ordinarily\", \"text says 'no vehicles'\"], \"subsumption\": {\"ordinary meaning\": true, \"statutory text\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"Plain meaning rule\", \"holding\": true, \"details\": {\"ordinary meaning\": true, \"statutory text\": true}, \"facts\": [\"motorbike is vehicle ordinarily\", \"text says 'no vehicles'\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Subsumed under plain meaning."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Does 'vehicle' include a toy car?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"Plain meaning rule\", \"elements\": [\"ordinary meaning\", \"statutory text\"]}, \"facts\": [\"toy is not ordinary vehicle\", \"text 'vehicles'\"], \"subsumption\": {\"ordinary meaning\": false, \"statutory text\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"Plain meaning rule\", \"holding\": false, \"details\": {\"ordinary meaning\": false, \"statutory text\": true}, \"facts\": [\"toy is not ordinary vehicle\", \"text 'vehicles'\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "Not subsumed."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "교통사고처리특례법상 중과실 12대 중과실 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"교통사고처리특례법 제3조\", \"elements\": [\"12대 중과실\", \"사상\"]}, \"facts\": [\"신호위반\", \"상해\"], \"subsumption\": {\"12대 중과실\": true, \"사상\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"교통사고처리특례법 제3조\", \"holding\": true, \"details\": {\"12대 중과실\": true, \"사상\": true}, \"facts\": [\"신호위반\", \"상해\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭(반의사불벌 예외)."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "단순 과실."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"교통사고처리특례법 제3조\", \"elements\": [\"12대 중과실\", \"사상\"]}, \"facts\": [\"전방주시 태만\", \"경미 상해\"], \"subsumption\": {\"12대 중과실\": false, \"사상\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"교통사고처리특례법 제3조\", \"holding\": false, \"details\": {\"12대 중과실\": false, \"사상\": true}, \"facts\": [\"전방주시 태만\", \"경미 상해\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭(반의사불벌)."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "아동복지법상 아동학대에 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"아동복지법 제17조\", \"elements\": [\"아동\", \"학대행위\"]}, \"facts\": [\"7세\", \"체벌\"], \"subsumption\": {\"아동\": true, \"학대행위\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"아동복지법 제17조\", \"holding\": true, \"details\": {\"아동\": true, \"학대행위\": true}, \"facts\": [\"7세\", \"체벌\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "훈육으로 적정한 경우?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"아동복지법 제17조\", \"elements\": [\"아동\", \"학대행위\"]}, \"facts\": [\"아동\", \"적정 훈육\"], \"subsumption\": {\"아동\": true, \"학대행위\": false}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"아동복지법 제17조\", \"holding\": false, \"details\": {\"아동\": true, \"학대행위\": false}, \"facts\": [\"아동\", \"적정 훈육\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "스토킹처벌법 포섭."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"스토킹처벌법 제2조\", \"elements\": [\"반복성\", \"상대방 불안 야기\"]}, \"facts\": [\"다수 접근\", \"불안감 유발\"], \"subsumption\": {\"반복성\": true, \"상대방 불안 야기\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"스토킹처벌법 제2조\", \"holding\": true, \"details\": {\"반복성\": true, \"상대방 불안 야기\": true}, \"facts\": [\"다수 접근\", \"불안감 유발\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "포섭."
+      }
+    ]
+  },
+  {
+    "lane": "L03_subsumption",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "1회 접근?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L03_subsumption</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"subsume\", \"norm\": {\"name\": \"스토킹처벌법 제2조\", \"elements\": [\"반복성\", \"상대방 불안 야기\"]}, \"facts\": [\"1회\", \"불안\"], \"subsumption\": {\"반복성\": false, \"상대방 불안 야기\": true}}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L03_subsumption\", \"norm\": \"스토킹처벌법 제2조\", \"holding\": false, \"details\": {\"반복성\": false, \"상대방 불안 야기\": true}, \"facts\": [\"1회\", \"불안\"]}"
+      },
+      {
+        "role": "assistant",
+        "content": "불포섭."
+      }
+    ]
+  }
+]

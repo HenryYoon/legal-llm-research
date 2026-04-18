@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Virtual env
+.venv/
+venv/
+
+# Model checkpoints (too large for git)
+models/
+
+# Evaluation logs
+results/logs/
+
+# Temp
+/tmp/
+*.log
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,721 @@
+[
+  {
+    "from": "researcher-lit",
+    "text": "researcher-lit 합류 완료 보고합니다.\n\n## 완료\n- plan.md v2.0 완독 (§5 선행 연구, §11 참고 자료 숙지)\n- 팀 구성 확인 (team-lead, director, researcher-lit/-data/-model)\n- 결과물 디렉토리 `/mnt/hdd/coding/llm-research/research/lit/` 생성\n\n## 담당 이해\n1. §11 선행 연구 조사·요약 (Bonsai/BitNet, PAL/PoT/SatLM/NL2Logic, DinoDS/Semantic Router/MoDEM, TinyAgent/NexusRaven/BFCL, Outlines/XGrammar/DCCD, Phi)\n2. 기술 선택 근거 (Outlines vs XGrammar, Unsloth vs TRL, DPO vs KTO)\n3. §5.2 리스크 대응 연구 (NL→형식어 정확도, 1-bit MMLU -17.3p)\n4. 평가 프로토콜 설계 지원 (GSM8K/FOLIO/BFCL/MMLU/IFEval/MT-Bench, lm-eval-harness)\n5. director/타 연구원 대상 근거 기반 권고\n\n## 다음\ndirector의 첫 Task 대기 중. 발행되는 대로 착수합니다.",
+    "summary": "researcher-lit 합류 보고, Task 대기",
+    "timestamp": "2026-04-18T07:01:41.463Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:01:43.979Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:01:43.979Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "researcher-data 합류 보고.\n\n완료:\n1. plan.md v2.0 완독 (§3 Lane, §4 Tool Call, §6 Phase 2, §9 Month 3~4 숙지)\n2. 팀 config.json 확인 (team-lead, director, researcher-lit, researcher-data 식별; researcher-model은 아직 config에 미등록 상태로 보임 — 확인 필요)\n3. 작업 디렉토리 준비: /mnt/hdd/coding/llm-research/data/{datasets,prompts,pipelines}\n\n대기 상태: director의 Phase 1 Task(GSM8K few-shot 프롬프트·SymPy 입력 형식·라운드트립 검증) 착수 준비 완료.\n\n참고: researcher-model이 config에 보이지 않는데, 해당 연구원이 합류 전이면 Phase 1 실행 담당이 공백이니 확인 부탁드립니다.",
+    "summary": "researcher-data 합류·준비 완료 보고",
+    "timestamp": "2026-04-18T07:02:04.368Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:02:07.712Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:02:07.712Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "director입니다. plan.md v2.0 완독 및 config.json 확인 후 Phase 1 과제를 3인에게 발행 완료했습니다.\n\n## 발행 내역 요약\n\n### researcher-lit\n- **Task 1**: PAL/PoT/SatLM/Bonsai/TinyAgent/NL2Logic 6편 선행연구 요약 (`research/lit/01~06_*.md`). plan.md §5.1 수치 출처 검증 포함\n- **Task 2**: GSM8K 평가 프로토콜 초안 (`research/lit/07_gsm8k_protocol.md`). +3p 통계 유의성 검토 요구\n- **기한**: PAL+Bonsai 5일, 전체 10일\n\n### researcher-data\n- **Task 1**: GSM8K few-shot 프롬프트(CoT 8/SymPy 8/SymPy 16) + README (`research/data/prompts/`)\n- **Task 2**: SymPy/Z3 입력 스키마 및 화이트리스트, Lane R01~R03 매핑 (`research/data/schemas/`)\n- **Task 3**: 라운드트립 검증 파이프라인 **설계 문서만** — 구현은 Phase 2로 유보 (`research/data/design/roundtrip_verification.md`)\n- **기한**: 각 5/7/10일\n\n### researcher-model\n- **Task**: Bonsai 8B/1.7B 다운로드 + PrismML llama.cpp 포크 빌드 계획서 (`research/model/setup_plan.md`)\n- **GPU/다운로드는 계획 승인 후 실행**으로 게이트. read-only 명령만 허용\n- **기한**: 7일\n\n## 의존성 조율\n- lit → data (GSM8K 프로토콜 → 프롬프트 설계)\n- lit → model (Bonsai 요약 → 환경 구축 파라미터)\n- model 환경 → data 프롬프트 실행 (Phase 1 PoC 통합)\n\n## 체크포인트 기준\nplan.md §9의 2개월 체크포인트(GSM8K +3p) 충족 시점까지 본 과제가 사전작업. 블로커/피벗 필요 시 즉시 재보고하겠습니다.\n\n현재 위험 요인: Bonsai의 PrismML 포크 URL/커밋이 plan.md에 미명시 → researcher-lit의 04_bonsai.md에서 확인 예정.",
+    "summary": "Phase 1 과제 3건 발행 완료 보고",
+    "timestamp": "2026-04-18T07:02:33.073Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:02:44.281Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-model] Bonsai 다운로드 및 llama.cpp 빌드 계획서 작성\"}",
+    "timestamp": "2026-04-18T07:02:44.281Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:03:34.854Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 환경 구축 계획서 (승인 요청)\"}",
+    "timestamp": "2026-04-18T07:03:34.854Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"shutdown_approved\",\"requestId\":\"shutdown-1776495810913@researcher-model\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:03:40.754Z\",\"paneId\":\"in-process\",\"backendType\":\"in-process\"}",
+    "timestamp": "2026-04-18T07:03:40.754Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:03:45.100Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:03:45.100Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "researcher-model의 환경 구축 계획서 v0.1 검토 결과 보고드립니다.\n\n## 주요 발견\n- RTX 3060 driver OK, 디스크 273GB 여유, 인벤토리 견실\n- **CUDA Toolkit 미설치**: 빌드에 필요하나 sudo 회피 가능(user-space nvcc 또는 llama-cpp-python wheel)\n- **기존 venv 재활용 후보 있음**(edge-llm-pipeline) → 충돌 위험으로 신규 venv 권장 채택\n- **Bonsai HF 레포 ID가 plan.md에 미명시**: 실제 레포/라이선스/포맷 선검증 필요\n\n## 승인 판정\n- **선승인(자율 집행)**: Step A(venv), Step D(솔버 스모크)\n- **조건부 승인**: Step B(Bonsai 다운로드) — 레포 ID/라이선스/포맷 감사 보고서 제출 후 재승인\n- **조건부 승인**: Step C(빌드) — llama-cpp-python wheel 경로만 허용, sudo 금지, 1-bit 커널 실측 후에만 포크 빌드로 전환\n- **보류**: Phase 1 PoC 실행(Step E) — researcher-data 산출물 수령 후\n\n## 스코프 조정\n- **FOLIO는 Phase 1에서 제외**, GSM8K만 집중. plan.md §9 2개월 체크포인트(GSM8K +3p)에만 정렬\n- `model/runs/` 디렉토리 생성 유보(Phase 2까지)\n\n## 리스크\n- Bonsai GGUF가 표준 llama.cpp에서 로드되지 않으면 PrismML 포크 + user-space nvcc 필요 → 최악의 경우 30~60분 빌드\n- 이 경우에도 로컬 완결, 추가 비용 $0\n\n다음 보고는 researcher-model의 Step A/D 결과 및 Bonsai 레포 감사 보고서 수령 후.",
+    "summary": "researcher-model 계획서 검토 및 부분 승인",
+    "timestamp": "2026-04-18T07:04:04.054Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:04:07.833Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-model] Step A, D 선승인 / B, C 조건부 / 질문 답변\"}",
+    "timestamp": "2026-04-18T07:04:07.833Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:05:57.474Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-data] Task 1 승인, 경미한 보완 요청\"}",
+    "timestamp": "2026-04-18T07:05:57.474Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:07:15.873Z\",\"idleReason\":\"available\",\"summary\":\"[to director] setup_plan.md 제출 - 승인 요청\"}",
+    "timestamp": "2026-04-18T07:07:15.873Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "researcher-lit 1차 조사(PAL + Bonsai)에서 **중대 발견 2건** 보고드립니다. plan.md 일부 가정 재검토가 필요합니다.\n\n## 발견 1 (리스크): Bonsai Tool Calling 전제 약화\n- plan.md §5.1은 \"Bonsai 8B tool call 독립 벤치 8/8 만점, 신뢰도 **높음**\"을 핵심 근거로 사용\n- **공식 BFCL v3 실제 점수: Bonsai 65.7, Qwen3 81.0 (−15.3p 열세)**\n- \"8/8 만점\"은 PrismML 데모/유튜브일 가능성 — 출처 추적 중\n- **영향**: 계획의 핵심 내러티브(\"Bonsai+Lane+솔버로 대형 모델 이긴다\") 중 **tool calling 강점**이 실제로는 약점일 수 있음 → Lane SFT가 예상보다 더 heavy-lifting 해야 함\n\n**조치**: researcher-lit에 L1(출처 추적, 3일), L3(plan.md 수정 권고문) 발행\n\n## 발견 2 (호재): PAL의 GSM-Hard +38.1p\n- 1-bit 모델의 가장 약한 영역(정밀 산술)에서 솔버가 가장 크게 이득\n- 계획 가설 \"1-bit 약점을 솔버로 메운다\"의 **정량적 직접 근거 확보**\n\n## 발견 3 (사실 정정): Bonsai = Qwen3-8B의 PTQ\n- Bonsai는 처음부터 학습된 1-bit 모델이 아니라 **기존 Qwen3-8B를 PTQ(Q1_0)한 것**\n- plan.md §2.3 \"처음부터 학습 필요 없음\"은 방향만 맞고 표현이 부정확\n- **영향**: 대안 경로 가능 — **Qwen3-8B에 SFT 후 PTQ 재양자화**. researcher-lit에 L2(타당성 조사, 5일) 발행.\n\n## Bonsai 레포 정보 확보\n- HF: `huggingface.co/prism-ml/Bonsai-8B-gguf` (Apache 2.0)\n- 기반 모델: Qwen3-8B, context 65,536, GQA 32Q/8KV\n- 추론: PrismML 포크 llama.cpp (+ MLX)\n- researcher-model에 즉시 공유 → 레포 감사 가속\n\n## 체크포인트에 미치는 영향\nplan.md §9 2개월 체크포인트(GSM8K +3p)에는 오히려 **긍정적** — Bonsai 8B는 이미 GSM8K 88점, 솔버 경유로 +3~8p 추가 기대(lit 추정).\n**6개월 체크포인트(Bonsai+솔버 > Qwen3 CoT)는 BFCL 리스크와 별개** — GSM8K는 CoT에서도 88 vs Qwen3 93, −5p 격차라 솔버로 역전 가능.\n\n## 피벗 여부\n현재는 **피벗 불필요**. BFCL 출처 확인 결과 따라 판단:\n- 8/8이 실제 tool-call 만점이었다면 → plan 유지\n- 내부 데모였다면 → plan.md §5.1 신뢰도 조정 + Lane SFT에 tool call 데이터 비중 상향\n\n다음 보고: BFCL 출처 확인 및 researcher-model 레포 감사 완료 시.",
+    "summary": "리스크 에스컬레이션: Bonsai BFCL −15.3p 발견, plan.md 가정 재검토 필요",
+    "timestamp": "2026-04-18T07:07:38.855Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:07:59.673Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-model] Bonsai HF 레포 ID 공유 — 감사 가속\"}",
+    "timestamp": "2026-04-18T07:07:59.673Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:08:46.924Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 재합류 보고 — Step A, D 완료 / Step B, C 승인 요청\"}",
+    "timestamp": "2026-04-18T07:08:46.924Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:08:50.802Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-lit] 재합류 현황 정정 + 파일명 규칙 확정 + 우선순위 재지시\"}",
+    "timestamp": "2026-04-18T07:08:50.802Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "사용자 지시 접수했습니다. Qwen 대체 허가를 의사결정 플로우에 통합했습니다.\n\n## 조치 완료\n- **researcher-lit L2 범위 확장**: 3옵션(A/B/C) 비교서 `08_model_choice_options.md`로 발주\n  - A: Bonsai 유지 + Lane SFT로 BFCL 보완\n  - B: Qwen3-8B FP + 솔버 (1-bit 포기)\n  - C: Qwen3를 자체 재양자화 (Q1_0 / BitNet b1.58)\n- 비교 기준: 설정 시간, 메모리, 내러티브 보존, 체크포인트 달성 가능성, 추가 비용, 리스크\n- 본인 추천안 포함 요구\n\n## 의사결정 플로우 (제안)\n```\nL1 (BFCL 출처 추적, 3일)\n ├─ 결과 A: 8/8이 공식 점수 → Bonsai 유지 (옵션 A), L2 보조 자료화\n └─ 결과 B: 내부 데모/비공식 → L2 비교서 본격 활용\n     └─ L2 비교서 (+5일) → director 1차 권고 → team-lead(사용자) 최종 승인 → plan.md §9 피벗 항목 추가\n```\n\n## 체크포인트 적용\n사용자 지시대로 **2개월 GSM8K +3p는 선택 모델 무관**하게 동일 적용. 단, 모델별 baseline이 다르므로:\n- Bonsai 8B CoT baseline 88 → 목표 91+\n- Qwen3-8B FP CoT baseline 93 → 목표 96+ (SOTA 근접, 더 어려움)\n- Qwen3 자체 재양자화 baseline은 재양자화 후 실측 (사전 예측 불가)\n\n## director 현재 선호 (예비, 근거 변경 시 수정)\n현 시점에서는 **옵션 A 우선 + 옵션 B를 baseline 측정용으로 병행**이 효율적이라 봅니다:\n- Bonsai는 이미 GGUF 배포 → 즉시 PoC 가능\n- Qwen3-8B FP를 **비교 baseline으로 유지**하면 plan.md §7.1 표의 Qwen3 기준선이 실측으로 확보됨\n- 옵션 C는 엔지니어링 부담(커널, 캘리브레이션) 대비 이득 불확실 → **L1 결과와 L2 비교서 본 후 판단**\n\n단, 이는 예비 판단이며 L1/L2 결과에 따라 달라집니다. 최종 권고는 L2 수령 후 보고드리겠습니다.\n\n## 요청\n의사결정 플로우 동의 여부 확인 부탁드립니다. 특히:\n1. \"L1이 결과 A이면 L2는 보조 자료로만 — 추가 분석 축소해도 되는가\"\n2. \"옵션 B를 주 실험이 아닌 baseline으로 항상 병행하는 것에 동의하는가\"\n3. \"옵션 C 착수 가능 시점: 옵션 A/B 실측 후에만 고려\" 기준 OK인가\n\n답변 주시면 researcher-lit에 반영하여 작업 범위 최적화합니다.",
+    "summary": "Qwen 대체 지시 접수, 3옵션 비교서 발주 — 의사결정 플로우 합의 요청",
+    "timestamp": "2026-04-18T07:09:57.370Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:10:15.496Z\",\"idleReason\":\"available\",\"summary\":\"[to director] Task 2 완료 보고 — sympy_schema, z3_schema, lane_schema\"}",
+    "timestamp": "2026-04-18T07:10:15.496Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:10:23.406Z\",\"idleReason\":\"available\",\"summary\":\"[to director] Task 2, 3 완료: 솔버 스키마와 라운드트립 설계\"}",
+    "timestamp": "2026-04-18T07:10:23.406Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:10:38.102Z\",\"idleReason\":\"available\",\"summary\":\"[to director] Bonsai HF 감사 완료 - 승인 재요청\"}",
+    "timestamp": "2026-04-18T07:10:38.102Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:10:50.349Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-data] Task 2 스키마를 모델 중립적으로 — Qwen 대체 가능성 알림\"}",
+    "timestamp": "2026-04-18T07:10:50.350Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:11:48.487Z\",\"idleReason\":\"available\",\"summary\":\"[to director] Phase 1 전체 완료, 핵심 발견 5건 포함\"}",
+    "timestamp": "2026-04-18T07:11:48.487Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:12:08.572Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 스키마 모델 중립화 반영 완료\"}",
+    "timestamp": "2026-04-18T07:12:08.572Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "의사결정 플로우 3건 승인 확정 감사합니다. 반영 완료했습니다.\n\n## 반영 내역\n\n### researcher-lit\n- L1 결과별 L2 자동 조정 규칙 전달 (A면 축소 / B면 전체)\n- L1 보고서에 **URL 체인 필수**: BFCL 공식 점수(Bonsai 65.7, Qwen3 81.0) 출처 + \"8/8\" 최초 언급처 + 웹 아카이브 스냅샷 요청\n- 옵션 C 게이트 조건을 L2 비교서에 명시적 박스로 표기\n- 본인 추천안 포함 유지\n\n### researcher-model\n- 옵션 B baseline 병행 준비: Qwen3-8B GGUF **Q8_0 우선**(~8.5GB, 3060 12GB fit)\n- 실행 순서: Bonsai+솔버(1차) → Qwen3 FP CoT(2차), **동일 GSM8K 프로토콜**\n- `eval/phase1/`는 `bonsai/` / `qwen3/` 서브디렉토리로 분리 → 공정 비교 보장\n- 옵션 C 준비는 일단 불요 명시\n\n### researcher-data\n- Task 2 스키마를 **모델 중립** 설계로 가이드 (이전 메시지)\n\n## director 자율 결정 범위 수락\n옵션 A/B 결정 권한 위임 받았습니다. 다음 자율 결정 예정:\n- L1 결과 후 옵션 A 확정/대체\n- 1차/2차 PoC 착수 타이밍\n- Lane SFT 데이터 비중 (tool call 상향 여부)\n\n옵션 C가 필요해지는 시점에서 별도 승인 요청드리겠습니다.\n\n## 다음 보고 예정 시점\n- researcher-lit S1 응답 수신 즉시\n- researcher-lit L1 + researcher-model 감사 보고서 동시 수신 시 (종합 판단 가능)\n- 그 외 블로커 발생 시\n\n현재 전 연구원 진행 중. 외부 변수 없으면 3~5일 내 L1/감사 보고서 수령 예상.",
+    "summary": "승인 확정 — 반영 완료 보고",
+    "timestamp": "2026-04-18T07:12:11.240Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:12:31.218Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-model] Qwen3-8B FP baseline 병행 — Bonsai 감사 후 다운로드 목록에 추가\"}",
+    "timestamp": "2026-04-18T07:12:31.218Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:12:40.319Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 1차 문헌 조사 완료 보고 — 11개 파일\"}",
+    "timestamp": "2026-04-18T07:12:40.319Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:13:44.449Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-model] setup_plan.md 승인 + 5개 질문 답변 + 실행 단계 가이드\"}",
+    "timestamp": "2026-04-18T07:13:44.449Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:14:14.515Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-model] Step B, C 승인 — 이전 지시 재전달 (세션 단절 복구)\"}",
+    "timestamp": "2026-04-18T07:14:14.515Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:14:32.212Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 감사서 §12 Qwen3 baseline 보강 완료\"}",
+    "timestamp": "2026-04-18T07:14:32.212Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:15:38.784Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-data] Task 2 조건부 승인 + 3건 보완 요청 + Task 3 착수 허가\"}",
+    "timestamp": "2026-04-18T07:15:38.784Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:15:48.028Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 감사 보고서 완료 + Qwen3 baseline 반영 + Step B/C/C2 승인 요청\"}",
+    "timestamp": "2026-04-18T07:15:48.028Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:16:47.611Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-data] Task 2/3 최종 승인 + D1 잔여 정리 요청\"}",
+    "timestamp": "2026-04-18T07:16:47.611Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "스키마 경로 병렬 버전 발견 — 상황 공유(블로커 아님, 해결 중).\n\n프로젝트에 두 개의 평행한 Task 2/3 산출물이 있습니다.\n1. 제가 작성한 `research/data/{schemas,design,prompts}/` (현재 세션)\n2. 다른 출처의 `data/{schemas,pipelines,datasets}/` (디렉토리 mtime 16:06~16:14, 제가 쓴 기억 없음)\n\n디렉토리 mtime과 내용을 보면 #2는 별도 세션 또는 다른 에이전트가 같은 Task를 다른 설계로 작성한 것으로 보입니다(구조: `{tool, method, args, lineage}` + SFT 레코드 중심, Z3 실행기에 `eval()` 사용 등).\n\ndirector가 조건부 승인하고 D1/D2/D3 보완을 지시한 대상은 #2입니다. director 지시에 따라 #2를 canonical로 채택하고 `research/data/`로 이동·병합하는 방향으로 진행합니다. 제가 중복 작성한 #1의 파일들은 대체되거나, Pydantic 미러처럼 #2에 없는 유용한 부분만 canonical 구조에 맞춰 재작성해 보존합니다.\n\n확인 요청(블로킹은 아니지만 배경 파악 차원):\n- 다른 연구원이 먼저 Task 2/3을 시도했는지\n- 프로젝트에 두 개의 data 루트(`data/`, `research/data/`)를 유지할 의도가 있었는지\n\n없다면 현재 지시대로 `research/data/`로 일원화해 진행하겠습니다.",
+    "summary": "스키마 병렬 버전 존재 — canonical 일원화 진행",
+    "timestamp": "2026-04-18T07:17:06.473Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:17:36.258Z\",\"idleReason\":\"available\",\"summary\":\"[to director] Task 3 완료 — 라운드트립 파이프라인 설계+구현, FSM 다이어그램 포함\"}",
+    "timestamp": "2026-04-18T07:17:36.258Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:17:54.120Z\",\"idleReason\":\"available\",\"summary\":\"[to director] S1/L1/L2/L3 완료 보고\"}",
+    "timestamp": "2026-04-18T07:17:54.120Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:18:10.657Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-lit] plan.md 수정 권고문에 추가 항목 3건 요청\"}",
+    "timestamp": "2026-04-18T07:18:10.657Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:18:24.379Z\",\"idleReason\":\"available\",\"summary\":\"[to director] D1 잔여 정리 완료\"}",
+    "timestamp": "2026-04-18T07:18:24.380Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:19:00.911Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 통합 완료 확인 — data/ 이미 없음, research/data/ 단일 canonical\"}",
+    "timestamp": "2026-04-18T07:19:00.911Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:19:09.049Z\",\"idleReason\":\"available\",\"summary\":\"[to director] L1/L2/L3 완료, 5건 권고 정리\"}",
+    "timestamp": "2026-04-18T07:19:09.049Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:19:37.957Z\",\"idleReason\":\"available\",\"summary\":\"[to director] CUDA 방법 A 실패 — 재승인 질의\"}",
+    "timestamp": "2026-04-18T07:19:37.957Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:20:16.960Z\",\"idleReason\":\"available\",\"summary\":\"[to director] CUDA 방법 A 실패 재확인 요청\"}",
+    "timestamp": "2026-04-18T07:20:16.960Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "researcher-lit가 Phase 1을 **Day 1 조기 완료**했습니다. L1 BFCL 출처 확정 결과 및 plan.md 수정 권고문 보고드립니다.\n\n## L1 결정적 증거 — \"8/8\"의 실체\n\n**alex-rentel의 커뮤니티 벤치마크 (Apple Silicon MLX, 비공식, Tool Calling 8문항)**\n\n즉 Bonsai 주장의 tool calling 우위 근거는 **제3자 검증 없는 8문항 내부 테스트**. 공식 BFCL v3 실제 점수는:\n- Bonsai 65.7 vs Qwen3 81.0 (−15.3p)\n\n## 판정: 옵션 A 흔들림 → 모델 선택 재검토 필요\nBFCL \"8/8\" 전제가 약화됐으므로 plan.md §5.1 신뢰도는 \"높음\"→\"중간\" 조정이 타당. researcher-lit에 **새 파일 `09_model_choice_options.md`** (이전 메시지의 A/B/C 비교서)를 2일 내 요청했습니다. 본인의 기존 `08`은 **옵션 A 내부 구현(SFT 경로)**을 깊이 있게 다뤘으므로 활용합니다.\n\n## Phase 1 lit 산출물 (전원 승인)\n| 파일 | 내용 |\n|------|------|\n| `00_plan_md_revision_notes.md` | 수정 권고 5건 (항목 6~8 추가 지시 중) |\n| `01_pal.md` | PAL: GSM-Hard +38.1p 확인 |\n| `02_pot.md` | PoT: 8개 데이터셋 평균 +12p |\n| `03_satlm.md` | SatLM: Z3 명시, LSAT SOTA |\n| `04_bonsai.md` | Qwen3-8B PTQ Q1_0 확인 |\n| `05_tinyagent.md` | 1.1B로 GPT-4-Turbo 초과 |\n| `06_nl2logic.md` | AST-guided, 0.5B에서 executable 0.99 |\n| `07_gsm8k_protocol.md` | 5 variants + McNemar + 재현성 체크리스트 |\n| `08_bonsai_finetune_paths.md` | 경로 A(QLoRA→Q1_0 재양자화) 권고 |\n\n### 특히 가치 있는 발견\n1. **NL2Logic (06)**: plan.md §5.2 \"의미정확도 0.01\"은 실은 **executable rate**. AST-guided iterative로 0.99 달성 — **plan.md 리스크 등급 하향 가능**.\n2. **PAL GSM-Hard +38.1p**: 1-bit 산술 약점→솔버 보완 가설의 정량적 근거.\n3. **SFT 경로 A 실현성**: Qwen3-8B QLoRA on RTX 3060 12GB 가능 (Unsloth 공식 가이드). 재양자화 손실 −2~5p 추정.\n\n## 현재 팀 진행 현황\n| 연구원 | 상태 |\n|--------|------|\n| researcher-lit | Phase 1 완료, 09/권고문 항목 6~8 대기 |\n| researcher-data | Task 1/2/3 완료, 07 인계 받고 오염 재검증 중 |\n| researcher-model | Bonsai 레포 감사 완료, 빌드/다운로드 착수 승인됨 |\n\n## 다음 보고 예정\n1. researcher-lit 09_model_choice_options 수령 시 → director 권고 + 사용자 최종 승인 요청\n2. researcher-model execution_report 수령 시 → Phase 1 PoC 실행 Task 발행\n3. Phase 1 PoC 첫 실측 결과(GSM8K Bonsai 88 재현) 시 → 체크포인트 준비\n\n## 사용자 판단 요청 (비긴급, L2 보충본 도착 후 재요청)\n옵션 A(Bonsai 유지) 신뢰 저하 상황에서 director 예비 선호:\n- 옵션 A 먼저 착수(Bonsai GGUF 즉시 가용) + **옵션 B(Qwen3-8B Q8_0) baseline 병행**은 이미 승인된 경로 유지\n- 옵션 C(Qwen3 자체 재양자화, 경로 A의 구체 레시피는 08에 존재) 착수는 A/B 실측 결과에 따른 게이트\n\n**09 도착 후 본인 추천안과 함께 최종 판단 요청드리겠습니다.**",
+    "summary": "L1 결과 확정: 커뮤니티 벤치 + Phase 1 lit 전체 완료 보고",
+    "timestamp": "2026-04-18T07:20:36.917Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:20:45.572Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-data] 07_gsm8k_protocol.md 인계 — Task 1 오염 재검증 착수\"}",
+    "timestamp": "2026-04-18T07:20:45.572Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:21:07.555Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-data] 모델 중립화 확인, D1 잔여와 R1~R3 진행 확인\"}",
+    "timestamp": "2026-04-18T07:21:07.555Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:21:52.393Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-lit] 세션 상태 동기화: 이미 모든 산출물 완료·승인됨, 남은 작업 정리\"}",
+    "timestamp": "2026-04-18T07:21:52.393Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:21:59.314Z\",\"idleReason\":\"available\",\"summary\":\"[to director] R1/R2/R3 완료 — 방침 A 채택, CoT 유지, SymPy 교체 스크립트 작성, B4 해제\"}",
+    "timestamp": "2026-04-18T07:21:59.314Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:22:24.784Z\",\"idleReason\":\"available\",\"summary\":\"[to director] D1 잔여 완료 확인 — 구 경로 이미 존재하지 않음\"}",
+    "timestamp": "2026-04-18T07:22:24.784Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:23:03.410Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-lit] 디스크 기준 최종 상태 정정 + 08 model choice 승인\"}",
+    "timestamp": "2026-04-18T07:23:03.410Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:23:21.888Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 상태 점검 — 현재 대기 중, 추가 지시 요청\"}",
+    "timestamp": "2026-04-18T07:23:21.888Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:24:03.558Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-model] §12 승인 + Q1~Q5 이전 답변 재전달 + Q6/Q7 답변\"}",
+    "timestamp": "2026-04-18T07:24:03.558Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:24:32.051Z\",\"idleReason\":\"available\",\"summary\":\"[to director] L1 URL 체인·L2 C 게이트·L3 정밀 반영 완료\"}",
+    "timestamp": "2026-04-18T07:24:32.051Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:24:49.646Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-model] 전부 승인 — 모든 결정 이미 내려짐, 즉시 착수\"}",
+    "timestamp": "2026-04-18T07:24:49.646Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:26:11.345Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-data] Task 3 + R1~R3 + D1 전부 최종 승인, 대기 모드 전환\"}",
+    "timestamp": "2026-04-18T07:26:11.345Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:26:35.988Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 09 축약본 완료, 08 역할 분리 안내, 00 항목 6~8 이미 포함\"}",
+    "timestamp": "2026-04-18T07:26:35.988Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:27:03.776Z\",\"idleReason\":\"available\",\"summary\":\"[to director] D1/D2/D3 + Horn-clause 반영 완료 보고\"}",
+    "timestamp": "2026-04-18T07:27:03.777Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:27:14.910Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-lit] 디스크 실제 상태 재확인 + Phase 1 완전 종결\"}",
+    "timestamp": "2026-04-18T07:27:14.910Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:27:15.994Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 세션 상태 교차 검증, 모든 작업 이미 완료 확인\"}",
+    "timestamp": "2026-04-18T07:27:15.994Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:27:39.862Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 세션 복귀 후 현황 보고 — 모든 지시 완료됨\"}",
+    "timestamp": "2026-04-18T07:27:39.862Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:27:54.844Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 파일명 변경 완료 + 00 권고문 항목 확인\"}",
+    "timestamp": "2026-04-18T07:27:54.844Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:27:57.347Z\",\"idleReason\":\"available\",\"summary\":\"[to director] 디스크 재검증, 00 권고 1~8 모두 반영 완료 확인\"}",
+    "timestamp": "2026-04-18T07:27:57.347Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:27:58.915Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-data] Phase 1 data 완전 종결 — seed42 실행까지 모두 확인\"}",
+    "timestamp": "2026-04-18T07:27:58.916Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:28:12.509Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-data] 확인 완료, 대기 모드 OK\"}",
+    "timestamp": "2026-04-18T07:28:12.509Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:28:19.784Z\",\"idleReason\":\"available\",\"summary\":\"[to director] extract_gsm8k_seed42 실행 완료, 8/8 검증 통과\"}",
+    "timestamp": "2026-04-18T07:28:19.784Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:28:23.023Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:28:23.023Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "researcher-data",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-data\",\"timestamp\":\"2026-04-18T07:28:41.742Z\",\"idleReason\":\"available\",\"summary\":\"[to director] Phase 1 종결 수용 + 참조 경로 정리 완료\"}",
+    "timestamp": "2026-04-18T07:28:41.742Z",
+    "color": "yellow",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:28:53.610Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:28:53.610Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:28:56.075Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:28:56.075Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "Phase 1 lit + data 파트가 **완전 종결**되었습니다. researcher-model의 execution_report만 대기 중이며, 그 시점에 전체 Phase 1 준비 단계 보고드리겠습니다.\n\n## 주요 결과물\n\n### 모델 선택 결정 — 사용자 판단 대기\n`research/lit/09_model_choice_decision.md` (7KB, 축약 결정용)\n- 옵션 A(Bonsai 유지) / 옵션 B(Qwen3 FP) / 옵션 C(Qwen3 재양자화) 비교표\n- 본인 추천안 + 옵션 C 착수 게이트\n- 상세 근거는 `08_model_choice_options.md` (16.5KB)\n\n**director 예비 권고** (사용자 결정 시 참조):\n- **옵션 A 주 실험 + 옵션 B baseline 병행** (기존 방침 유지)\n- 근거: \n  1. TinyAgent SFT +67.4p 사례 → BFCL −15.3p는 SFT로 회복 가능\n  2. 옵션 B는 별도 실측값 확보용으로 이미 승인된 경로\n  3. 옵션 C는 A/B 실측 후 미달 시에만 게이트\n- plan.md §5.1 신뢰도 \"높음→중간\" 조정 권고 유지\n\n### plan.md 수정 권고 5건\n`research/lit/00_plan_md_revision_notes.md` (10.5KB)\n- §2.3: Bonsai=Qwen3-8B PTQ 명시 [중]\n- §5.1: tool calling 신뢰도 \"높음→중간\" [**고**]\n- §5.1: PAL \"+15%\" baseline 명시 [중]\n- §5.2: NL2Logic \"0.01\" = executable rate 명시, AST-guided 0.99 달성 [중]\n- §11: 참고 자료 URL 보강 [저]\n\n**사용자 판단 요청**: plan.md v2.1 패치 착수 여부. researcher-lit에 승인 시 패치 가능.\n\n### 핵심 기술적 발견 3건\n1. Bonsai = **Qwen3-8B의 PTQ (Q1_0)** — SFT는 FP16 Qwen3-8B에서 수행 후 재양자화 필요\n2. PAL **GSM-Hard +38.1p** — 1-bit 산술 약점 솔버 보완 가설 정량 근거\n3. NL2Logic **0.5B → executable 0.99** (AST-guided) — plan.md §5.2 리스크 하향 가능\n\n## 팀 현황\n| 연구원 | 상태 |\n|--------|------|\n| researcher-lit | ✅ Phase 1 완결 (09 포함 9개 문서), 대기 모드 |\n| researcher-data | ✅ Phase 1 완결 (스키마·FSM·340줄 구현·seed42 프롬프트), 대기 모드 |\n| researcher-model | 🔄 Bonsai 포크 빌드 + Qwen3 Q8_0 다운로드 + 스모크 진행 중 (예상 100분) |\n\n## 다음 action\n1. execution_report.md 수령 → Phase 1 PoC 실행 Task 발행 (Variant A~E on Bonsai 8B + Qwen3 Q8_0 baseline)\n2. 첫 실측 결과(GSM8K Bonsai 88 재현 게이트) 확인 후 2개월 체크포인트 조기 평가 가능\n\n## 사용자 판단 요청 (비긴급)\n- [ ] 09 모델 선택 결정 검토 후 옵션 A+B 병행 방향 최종 승인\n- [ ] plan.md v2.1 패치 착수 승인 여부",
+    "summary": "Phase 1 lit + data 전체 완결 — 09 결정 문서 준비 완료",
+    "timestamp": "2026-04-18T07:29:21.863Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:29:33.777Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-lit] Phase 1 lit 최종 종결 선언\"}",
+    "timestamp": "2026-04-18T07:29:33.777Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:30:21.069Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-model] 대안 1 (miniforge user-space) 승인 + 다운로드 병렬 착수\"}",
+    "timestamp": "2026-04-18T07:30:21.070Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:31:19.969Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:19.969Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "최종 판정 접수했습니다. 즉시 연쇄 조치 완료.\n\n## 연쇄 조치\n1. **plan.md v2.1 패치 발주**: researcher-lit에 오늘 내 1차 제출 지시. 원본 백업(v2.0.bak) + Edit으로 정밀 수정. 명시 처리 요구 3건(§5.1 BFCL, §5.2 NL2Logic, §2.3 Bonsai 학습 기술) 포함 5건 + 모델 선택 결정 박스 + Bonsai 감사 결과(1.7B 컨텍스트 등) 반영\n2. **옵션 C 게이트 조건 3개 확정**: plan.md v2.1에 박스 노트로 명시\n3. **researcher-model CUDA 블로커 해결**: 대안 1(miniforge user-space nvcc, conda-forge) 승인. 방법 A의 정신(sudo 없음, $HOME 한정, 시스템 영향 없음)과 동일 범주 판단. 방법 B는 계속 금지.\n\n## researcher-model 상태 업데이트\n- **방법 A(pip wheel) 실패** 확인됨: `nvidia-cuda-nvcc-cu12`가 `ptxas`만 제공, `nvcc` 드라이버 바이너리 없음 (JIT 런타임 용도)\n- **방법 C(llama-cpp-python) 건너뜀**: Bonsai GGUF 로드 실패 증거 발견 (WebSearch: \"standard llama.cpp refuse to load Bonsai GGUF\")\n- **대안 1 채택**: `miniforge3 + cuda-nvcc 12.8` conda-forge user-space\n  - sudo 없음, `$HOME/miniforge3` 한정\n  - 디스크 +6GB\n  - 시간 +10분\n- 병렬 진행: CUDA 셋업 + Bonsai/Qwen3 다운로드 2 tracks. 전체 벽시계 ~110분 예상\n\n## 확인 사항 (비승인, 보고)\n위 대안 1은 director 판단 권한 내라고 봤습니다(방법 B와는 본질적으로 다름, sudo 없음). 만약 이 판단이 과도했다면 말씀해 주세요.\n\n## 체크포인트 적용\n사용자 최종 판정의 \"GSM8K Bonsai CoT 88 재현 → +3p (91) 목표\" 및 \"Qwen3-8B Q8_0 baseline 동시 측정\"을 Phase 1 PoC Task 발행 시 명시하겠습니다.\n\n## 다음 보고 예정\n1. **plan.md v2.1 패치 1차 제출** (오늘 내): researcher-lit 결과 확인 후 최종 확정 보고\n2. **researcher-model 빌드 + 다운로드 완료** (~110분 후): execution_report 수령 시 Phase 1 PoC Task 발행 승인 요청\n3. **Phase 1 PoC 1차 실측 (Bonsai CoT 88 재현)**: Month 1~2 체크포인트 첫 관측\n\n진행합니다.",
+    "summary": "최종 판정 접수 + 5건 패치 발주 + CUDA 대안 1 승인 보고",
+    "timestamp": "2026-04-18T07:31:36.232Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-lit",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-lit\",\"timestamp\":\"2026-04-18T07:31:39.332Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:39.332Z",
+    "color": "green",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:39.766Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-lit] plan.md v2.1 패치 승인 — 5건 일괄 적용, 3건 명시 처리 요구\"}",
+    "timestamp": "2026-04-18T07:31:39.766Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:40.375Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:40.375Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:40.842Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:40.842Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:41.295Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:41.295Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:41.803Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:41.803Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:42.300Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:42.300Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:42.905Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:42.905Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:43.417Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:43.417Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:43.886Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:43.886Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:44.606Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:44.606Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:45.058Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:45.058Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:45.579Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:45.579Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:46.082Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:46.082Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:46.992Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:46.992Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:47.549Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:47.549Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"director\",\"timestamp\":\"2026-04-18T07:31:48.323Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:31:48.323Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:33:06.284Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:33:06.284Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:33:06.736Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:33:06.737Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:33:07.338Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:33:07.338Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "researcher-model",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"researcher-model\",\"timestamp\":\"2026-04-18T07:38:42.964Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T07:38:42.964Z",
+    "color": "purple",
+    "read": true
+  },
+  {
+    "from": "team-lead-2",
+    "text": "실행 재개 완료.\n\n**researcher-model**에 일괄 발주:\n1. 환경 점검 (miniforge/llama.cpp 완료 여부)\n2. Qwen3-8B Q8_0 다운로드 재개 (`.incomplete` 상태 확인)\n3. Phase 1 PoC 실측 — Bonsai 8B Q1_0 CoT baseline / +SymPy 솔버 / Qwen3 8B CoT, GSM8K 500문제, `eval/phase1/` 저장\n\nresearcher-data, researcher-lit은 추가 지시 없음 (대기 유지).\n\n성공 기준: Bonsai 8B + 솔버 ≥ 91% (baseline 88% + 3p).",
+    "summary": "실행 재개 완료 보고",
+    "timestamp": "2026-04-18T13:21:34.615Z",
+    "color": "red",
+    "read": true
+  },
+  {
+    "from": "team-lead-2",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"team-lead-2\",\"timestamp\":\"2026-04-18T13:21:38.245Z\",\"idleReason\":\"available\",\"summary\":\"[to researcher-model] 재기동: Qwen3 다운로드 + CUDA 셋업 + Phase 1 PoC 실측 일괄 발주\"}",
+    "timestamp": "2026-04-18T13:21:38.245Z",
+    "color": "red",
+    "read": true
+  },
+  {
+    "from": "team-lead-2",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"team-lead-2\",\"timestamp\":\"2026-04-18T13:31:21.830Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T13:31:21.830Z",
+    "color": "red",
+    "read": true
+  },
+  {
+    "from": "team-lead-2",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"team-lead-2\",\"timestamp\":\"2026-04-18T13:32:17.931Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T13:32:17.931Z",
+    "color": "red",
+    "read": true
+  },
+  {
+    "from": "team-lead-2",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"team-lead-2\",\"timestamp\":\"2026-04-18T13:33:39.608Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T13:33:39.608Z",
+    "color": "red",
+    "read": true
+  },
+  {
+    "from": "team-lead-2",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"team-lead-2\",\"timestamp\":\"2026-04-18T13:35:00.927Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T13:35:00.927Z",
+    "color": "red",
+    "read": true
+  },
+  {
+    "from": "team-lead-2",
+    "text": "{\"type\":\"idle_notification\",\"from\":\"team-lead-2\",\"timestamp\":\"2026-04-18T13:35:48.626Z\",\"idleReason\":\"available\"}",
+    "timestamp": "2026-04-18T13:35:48.627Z",
+    "color": "red",
+    "read": true
+  }
+]

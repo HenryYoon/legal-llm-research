@@ -1,0 +1,1227 @@
+[
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Modus Ponens: P→Q, P ⊢ Q"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P => Q\", \"P\"], \"conclusion\": \"Q\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P => Q\", \"P\"], \"conclusion\": \"Q\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid — modus ponens."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Modus Tollens: P→Q, ¬Q ⊢ ¬P"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P => Q\", \"not Q\"], \"conclusion\": \"not P\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P => Q\", \"not Q\"], \"conclusion\": \"not P\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid — modus tollens."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Affirming the consequent: P→Q, Q ⊢ P"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P => Q\", \"Q\"], \"conclusion\": \"P\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": false, \"premises\": [\"P => Q\", \"Q\"], \"conclusion\": \"P\", \"countermodel\": {\"Q\": true, \"P\": false}}"
+      },
+      {
+        "role": "assistant",
+        "content": "Invalid — fallacy."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Denying the antecedent: P→Q, ¬P ⊢ ¬Q"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P => Q\", \"not P\"], \"conclusion\": \"not Q\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": false, \"premises\": [\"P => Q\", \"not P\"], \"conclusion\": \"not Q\", \"countermodel\": {\"Q\": true, \"P\": false}}"
+      },
+      {
+        "role": "assistant",
+        "content": "Invalid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Disjunctive syllogism: P∨Q, ¬P ⊢ Q"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P or Q\", \"not P\"], \"conclusion\": \"Q\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P or Q\", \"not P\"], \"conclusion\": \"Q\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Hypothetical syllogism: P→Q, Q→R ⊢ P→R"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\", \"R\"], \"premises\": [\"P => Q\", \"Q => R\"], \"conclusion\": \"P => R\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P => Q\", \"Q => R\"], \"conclusion\": \"P => R\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Constructive dilemma"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\", \"R\", \"S\"], \"premises\": [\"(P => Q) and (R => S)\", \"P or R\"], \"conclusion\": \"Q or S\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"(P => Q) and (R => S)\", \"P or R\"], \"conclusion\": \"Q or S\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "And-intro: P, Q ⊢ P∧Q"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P\", \"Q\"], \"conclusion\": \"P and Q\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P\", \"Q\"], \"conclusion\": \"P and Q\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "And-elim: P∧Q ⊢ P"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P and Q\"], \"conclusion\": \"P\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P and Q\"], \"conclusion\": \"P\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Or-intro: P ⊢ P∨Q"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P\"], \"conclusion\": \"P or Q\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P\"], \"conclusion\": \"P or Q\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Negation elim: ¬¬P ⊢ P"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\"], \"premises\": [\"not not P\"], \"conclusion\": \"P\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"not not P\"], \"conclusion\": \"P\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Contradiction fallacy: P, ¬P ⊢ anything (ex falso)"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P\", \"not P\"], \"conclusion\": \"Q\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P\", \"not P\"], \"conclusion\": \"Q\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid (ex falso quodlibet)."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "If guilty and negligent then liable; guilty, negligent ⇒ liable."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"guilty\", \"negligent\", \"liable\"], \"premises\": [\"(guilty and negligent) => liable\", \"guilty\", \"negligent\"], \"conclusion\": \"liable\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"(guilty and negligent) => liable\", \"guilty\", \"negligent\"], \"conclusion\": \"liable\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "If guilty then liable; not guilty ⇒ not liable (invalid)."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"guilty\", \"liable\"], \"premises\": [\"guilty => liable\", \"not guilty\"], \"conclusion\": \"not liable\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": false, \"premises\": [\"guilty => liable\", \"not guilty\"], \"conclusion\": \"not liable\", \"countermodel\": {\"liable\": true, \"guilty\": false}}"
+      },
+      {
+        "role": "assistant",
+        "content": "Invalid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Contract: offer∧acceptance ⇒ formation; offer∧acceptance ⇒ formation."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"offer\", \"acceptance\", \"formation\"], \"premises\": [\"(offer and acceptance) => formation\", \"offer\", \"acceptance\"], \"conclusion\": \"formation\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"(offer and acceptance) => formation\", \"offer\", \"acceptance\"], \"conclusion\": \"formation\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "No acceptance: conclude formation (invalid)."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"offer\", \"acceptance\", \"formation\"], \"premises\": [\"(offer and acceptance) => formation\", \"offer\", \"not acceptance\"], \"conclusion\": \"formation\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": false, \"premises\": [\"(offer and acceptance) => formation\", \"offer\", \"not acceptance\"], \"conclusion\": \"formation\", \"countermodel\": {\"offer\": true, \"formation\": false, \"acceptance\": false}}"
+      },
+      {
+        "role": "assistant",
+        "content": "Invalid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Duty∧breach∧causation∧harm ⇒ negligence liable."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"duty\", \"breach\", \"cause\", \"harm\", \"liable\"], \"premises\": [\"(duty and breach and cause and harm) => liable\", \"duty\", \"breach\", \"cause\", \"harm\"], \"conclusion\": \"liable\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"(duty and breach and cause and harm) => liable\", \"duty\", \"breach\", \"cause\", \"harm\"], \"conclusion\": \"liable\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Missing harm:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"duty\", \"breach\", \"cause\", \"harm\", \"liable\"], \"premises\": [\"(duty and breach and cause and harm) => liable\", \"duty\", \"breach\", \"cause\", \"not harm\"], \"conclusion\": \"liable\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": false, \"premises\": [\"(duty and breach and cause and harm) => liable\", \"duty\", \"breach\", \"cause\", \"not harm\"], \"conclusion\": \"liable\", \"countermodel\": {\"harm\": false, \"liable\": false, \"duty\": true, \"cause\": true, \"breach\": true}}"
+      },
+      {
+        "role": "assistant",
+        "content": "Invalid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "PJ: (MC and PA and FP) ⇒ PJ; all true ⇒ PJ."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"MC\", \"PA\", \"FP\", \"PJ\"], \"premises\": [\"(MC and PA and FP) => PJ\", \"MC\", \"PA\", \"FP\"], \"conclusion\": \"PJ\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"(MC and PA and FP) => PJ\", \"MC\", \"PA\", \"FP\"], \"conclusion\": \"PJ\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Missing FP:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"MC\", \"PA\", \"FP\", \"PJ\"], \"premises\": [\"(MC and PA and FP) => PJ\", \"MC\", \"PA\", \"not FP\"], \"conclusion\": \"PJ\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": false, \"premises\": [\"(MC and PA and FP) => PJ\", \"MC\", \"PA\", \"not FP\"], \"conclusion\": \"PJ\", \"countermodel\": {\"FP\": false, \"PJ\": false, \"MC\": true, \"PA\": true}}"
+      },
+      {
+        "role": "assistant",
+        "content": "Invalid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Hearsay: (OOC and forTruth) ⇒ hearsay; both ⇒ hearsay."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"OOC\", \"forTruth\", \"hearsay\"], \"premises\": [\"(OOC and forTruth) => hearsay\", \"OOC\", \"forTruth\"], \"conclusion\": \"hearsay\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"(OOC and forTruth) => hearsay\", \"OOC\", \"forTruth\"], \"conclusion\": \"hearsay\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Not for truth:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"OOC\", \"forTruth\", \"hearsay\"], \"premises\": [\"(OOC and forTruth) => hearsay\", \"OOC\", \"not forTruth\"], \"conclusion\": \"not hearsay\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": false, \"premises\": [\"(OOC and forTruth) => hearsay\", \"OOC\", \"not forTruth\"], \"conclusion\": \"not hearsay\", \"countermodel\": {\"hearsay\": true, \"forTruth\": false, \"OOC\": true}}"
+      },
+      {
+        "role": "assistant",
+        "content": "Invalid (denial of antecedent)."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "De Morgan: ¬(P∧Q) ⊢ ¬P∨¬Q"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"not (P and Q)\"], \"conclusion\": \"(not P) or (not Q)\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"not (P and Q)\"], \"conclusion\": \"(not P) or (not Q)\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "De Morgan reverse:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"(not P) or (not Q)\"], \"conclusion\": \"not (P and Q)\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"(not P) or (not Q)\"], \"conclusion\": \"not (P and Q)\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Biconditional: P↔Q, P ⊢ Q"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P <=> Q\", \"P\"], \"conclusion\": \"Q\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P <=> Q\", \"P\"], \"conclusion\": \"Q\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "P↔Q, ¬P ⊢ ¬Q"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P <=> Q\", \"not P\"], \"conclusion\": \"not Q\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P <=> Q\", \"not P\"], \"conclusion\": \"not Q\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Self-contradiction premise → any conclusion valid (trivial)."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P and not P\"], \"conclusion\": \"Q\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P and not P\"], \"conclusion\": \"Q\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid (vacuous)."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Tautology conclusion: ⊢ P or not P."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\"], \"premises\": [], \"conclusion\": \"P or (not P)\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [], \"conclusion\": \"P or (not P)\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid (tautology)."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Non-tautology without premises:"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\"], \"premises\": [], \"conclusion\": \"P\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": false, \"premises\": [], \"conclusion\": \"P\", \"countermodel\": {\"P\": false}}"
+      },
+      {
+        "role": "assistant",
+        "content": "Invalid (no premise forces P)."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Nested implication: (P→Q)→R, P→Q ⊢ R"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\", \"R\"], \"premises\": [\"(P => Q) => R\", \"P => Q\"], \"conclusion\": \"R\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"(P => Q) => R\", \"P => Q\"], \"conclusion\": \"R\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Resolution: (P or Q) and (¬P or R) ⊢ Q or R"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\", \"R\"], \"premises\": [\"P or Q\", \"(not P) or R\"], \"conclusion\": \"Q or R\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P or Q\", \"(not P) or R\"], \"conclusion\": \"Q or R\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Guilty→prison; innocent→freedom; guilty ⊢ prison."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"guilty\", \"prison\", \"innocent\", \"freedom\"], \"premises\": [\"guilty => prison\", \"innocent => freedom\", \"guilty\"], \"conclusion\": \"prison\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"guilty => prison\", \"innocent => freedom\", \"guilty\"], \"conclusion\": \"prison\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Guilty→prison, ¬prison ⊢ ¬guilty (modus tollens)."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"guilty\", \"prison\"], \"premises\": [\"guilty => prison\", \"not prison\"], \"conclusion\": \"not guilty\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"guilty => prison\", \"not prison\"], \"conclusion\": \"not guilty\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "범죄성립 and 공소시효 미완성 ⇒ 기소 가능"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"범죄성립\", \"시효미완성\", \"기소가능\"], \"premises\": [\"(범죄성립 and 시효미완성) => 기소가능\", \"범죄성립\", \"시효미완성\"], \"conclusion\": \"기소가능\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"(범죄성립 and 시효미완성) => 기소가능\", \"범죄성립\", \"시효미완성\"], \"conclusion\": \"기소가능\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "시효 완성 시 기소 가능?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"범죄성립\", \"시효미완성\", \"기소가능\"], \"premises\": [\"(범죄성립 and 시효미완성) => 기소가능\", \"범죄성립\", \"not 시효미완성\"], \"conclusion\": \"기소가능\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": false, \"premises\": [\"(범죄성립 and 시효미완성) => 기소가능\", \"범죄성립\", \"not 시효미완성\"], \"conclusion\": \"기소가능\", \"countermodel\": {\"시효미완성\": false, \"범죄성립\": true, \"기소가능\": false}}"
+      },
+      {
+        "role": "assistant",
+        "content": "Invalid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "정당방위 ⇒ 위법성조각, 정당방위 ⊢ 위법성조각"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"정당방위\", \"위법성조각\"], \"premises\": [\"정당방위 => 위법성조각\", \"정당방위\"], \"conclusion\": \"위법성조각\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"정당방위 => 위법성조각\", \"정당방위\"], \"conclusion\": \"위법성조각\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "정당방위 ⇒ 조각, ¬조각 ⊢ ¬정당방위."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"정당방위\", \"위법성조각\"], \"premises\": [\"정당방위 => 위법성조각\", \"not 위법성조각\"], \"conclusion\": \"not 정당방위\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"정당방위 => 위법성조각\", \"not 위법성조각\"], \"conclusion\": \"not 정당방위\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "¬(P or Q) ⊢ ¬P and ¬Q (De Morgan)"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"not (P or Q)\"], \"conclusion\": \"(not P) and (not Q)\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"not (P or Q)\"], \"conclusion\": \"(not P) and (not Q)\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "P and Q ⊢ Q and P (comm)"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P and Q\"], \"conclusion\": \"Q and P\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P and Q\"], \"conclusion\": \"Q and P\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "(P or Q) and R ⊢ (P and R) or (Q and R) (distrib)"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\", \"R\"], \"premises\": [\"(P or Q) and R\"], \"conclusion\": \"(P and R) or (Q and R)\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"(P or Q) and R\"], \"conclusion\": \"(P and R) or (Q and R)\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "P→(Q→R), P, Q ⊢ R"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\", \"R\"], \"premises\": [\"P => (Q => R)\", \"P\", \"Q\"], \"conclusion\": \"R\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P => (Q => R)\", \"P\", \"Q\"], \"conclusion\": \"R\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Only-if: P only if Q, ¬Q ⊢ ¬P (same as modus tollens)"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P => Q\", \"not Q\"], \"conclusion\": \"not P\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P => Q\", \"not Q\"], \"conclusion\": \"not P\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "If-then contradiction: P→Q, P→¬Q ⊢ ¬P"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P => Q\", \"P => (not Q)\"], \"conclusion\": \"not P\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P => Q\", \"P => (not Q)\"], \"conclusion\": \"not P\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Existential fallacy sketch (propositional proxy):"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"A\", \"B\"], \"premises\": [\"A => B\"], \"conclusion\": \"B\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": false, \"premises\": [\"A => B\"], \"conclusion\": \"B\", \"countermodel\": {\"A\": false, \"B\": false}}"
+      },
+      {
+        "role": "assistant",
+        "content": "Invalid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Double implication: P→Q, Q→P ⊢ P↔Q"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P => Q\", \"Q => P\"], \"conclusion\": \"P <=> Q\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P => Q\", \"Q => P\"], \"conclusion\": \"P <=> Q\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Absorption: P→Q ⊢ P → (P and Q)"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\"], \"premises\": [\"P => Q\"], \"conclusion\": \"P => (P and Q)\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P => Q\"], \"conclusion\": \"P => (P and Q)\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Self-implication: ⊢ P → P"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\"], \"premises\": [], \"conclusion\": \"P => P\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [], \"conclusion\": \"P => P\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "Proof by cases: P∨Q, P→R, Q→R ⊢ R"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"P\", \"Q\", \"R\"], \"premises\": [\"P or Q\", \"P => R\", \"Q => R\"], \"conclusion\": \"R\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": true, \"premises\": [\"P or Q\", \"P => R\", \"Q => R\"], \"conclusion\": \"R\", \"countermodel\": null}"
+      },
+      {
+        "role": "assistant",
+        "content": "Valid."
+      }
+    ]
+  },
+  {
+    "lane": "L04_logic_judgment",
+    "messages": [
+      {
+        "role": "system",
+        "content": "너는 법률 추론 AI야. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출해라."
+      },
+      {
+        "role": "user",
+        "content": "If acceptance but no offer, still formation? invalid."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L04_logic_judgment</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_validity\", \"variables\": [\"offer\", \"acc\", \"form\"], \"premises\": [\"(offer and acc) => form\", \"acc\", \"not offer\"], \"conclusion\": \"form\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"lane\": \"L04_logic_judgment\", \"valid\": false, \"premises\": [\"(offer and acc) => form\", \"acc\", \"not offer\"], \"conclusion\": \"form\", \"countermodel\": {\"offer\": false, \"acc\": true, \"form\": false}}"
+      },
+      {
+        "role": "assistant",
+        "content": "Invalid."
+      }
+    ]
+  }
+]

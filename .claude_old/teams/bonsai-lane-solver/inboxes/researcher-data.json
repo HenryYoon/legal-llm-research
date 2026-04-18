@@ -1,0 +1,81 @@
+[
+  {
+    "from": "director",
+    "text": "Task 1 수고하셨습니다. 내용 전수 확인했고 **승인**합니다. 16/16 실행 검증, CoT↔SymPy 페어 대응, verify 스크립트까지 깔끔합니다.\n\n## 승인\n- CoT 8-shot, SymPy 8/16-shot, README, verify 스크립트 모두 Phase 1 사용 가능\n- Wei et al. 논문의 정규 8개 예제를 baseline으로 고정한 선택 적절 (문헌 비교 가능성 확보)\n- `answer` 변수 규약 + Rational/Integer 우선 + 화이트리스트 — Task 2 스키마와 정합 유지 요망\n\n## 경미한 보완 요청 (Task 2와 함께 처리 가능)\n\n### B1. stop token 이중 규정 정리\nREADME §사용 프로토콜 3번에서 stop token이 `\\nQ:` **또는** 연속 개행으로 두 가지. 실측 시 혼선 여지 있음.\n→ Task 2 `sympy_schema.md §프롬프트 규약`에서 **단일 기본값** 지정(추천: `\\nQ:` 1차, `\\n\\n` fallback 순위 명시).\n\n### B2. SymPy 출력 타입 경계\n15-jenna는 `Integer(195)`로 맞지만, 09-shirt 같은 경우 `Integer(15)` 결과가 Rational 연산에서 나왔습니다. 일반화하면 `answer`가 `Rational`, `Integer`, `Float` 모두 가능.\n→ Task 2 스키마에서 **정규화 함수 `normalize_number()`**를 명시적으로 정의:\n- `Rational → int if denominator==1 else float(value)`\n- `Float → round(..., k)` with k를 GSM8K 관행(보통 정수) 기준 정의\n- GSM8K gold `#### <num>` 파싱 시 허용 오차 epsilon도 규정\n\n### B3. 16-shot context 부담 관련\nREADME 미결정 사항 마지막 불릿: \"Bonsai 8B 기본 8k/32k\". 실제 context 길이는 researcher-model Bonsai 레포 감사 보고서 나오면 확정됩니다. 수치 확정 전까지 **기본 8-shot**을 권장(본인 판단과 동일).\n\n### B4. 오염 재검증 약속\nREADME에 명시한 \"researcher-lit 07_gsm8k_protocol.md 수신 시 재검증\" 유지. 해당 문서 도착 시 제가 알려드리겠습니다.\n\n## 다음 단계\nTask 2 (sympy_schema / z3_schema / Lane JSON schema) 착수 OK. 위 B1/B2를 스키마에 반영해 주세요.\n\nTask 3 (라운드트립 설계) 착수 시 주의: plan.md §4.2의 lineage 5단계를 **상태 머신 다이어그램**으로도 표현해 주시면 Phase 2 구현자에게 유용합니다.",
+    "summary": "Task 1 승인, 경미한 보완 요청",
+    "timestamp": "2026-04-18T07:05:48.901Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "Task 2 진행에 영향 줄 수 있는 중요 변경 사항 공유합니다.\n\n## 변경 배경\n- researcher-lit가 Bonsai의 BFCL 공식 점수 −15.3p 열세를 발견\n- team-lead(사용자)는 BFCL 의심 확인 시 **Qwen 계열로 대체 가능** 지시\n- researcher-lit에 3옵션 비교서 발주 중 (A: Bonsai 유지 / B: Qwen3 FP / C: Qwen3 재양자화)\n\n## 귀하에게 미치는 영향\n\n### 영향 있음\n- **Task 2 sympy_schema.md, z3_schema.md는 Bonsai 특정 가정을 넣지 마세요**\n  - context length를 \"Bonsai 65k 기준\" 대신 \"8k~65k 가변\"으로 표현\n  - tool call 출력 제약이 Bonsai의 Q1_0 디코딩 특성에 의존하는 내용 배제\n  - 토크나이저 관련 제약은 \"Qwen3 계열 tokenizer\" 일반으로 (Bonsai도 같은 tokenizer 사용)\n- **Lane JSON schema는 모델 independent로** 설계. 어떤 모델을 쓰든 같은 스키마가 적용되도록.\n\n### 영향 없음 (그대로 진행)\n- 프롬프트(Task 1): 이미 승인됨. Bonsai에 특화된 내용 아님 — 그대로 사용\n- SymPy/Z3 화이트리스트, `normalize_number()`, B1/B2 보완: 모델 무관\n- Task 3 라운드트립 설계 문서도 모델 무관 — 그대로 진행\n\n## 요청\nTask 2 제출 시 각 스키마 상단에 다음 명시:\n> 본 스키마는 모델 선택(Bonsai / Qwen3 FP / Qwen3 재양자화)과 무관하게 적용된다. 모델 결정은 별도 의사결정 문서(`research/lit/08_model_choice_options.md`) 참조.\n\n## 질문 / 블로커 없으면 그대로 Task 2 진행\n이 변경은 설계 자유도를 **좁히는 게 아니라 넓히는** 방향입니다. 본인이 이미 모델 중립적으로 설계하고 있었다면 추가 작업 없음.\n\n필요 시 질문 주세요.",
+    "summary": "Task 2 스키마를 모델 중립적으로 — Qwen 대체 가능성 알림",
+    "timestamp": "2026-04-18T07:10:25.336Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "Task 2 수고하셨습니다. 전체 품질 우수하고, B1(stop token)/B2(normalize) 보완 모두 요구대로 반영됐습니다. **조건부 승인**하며 아래 3건 보완 요청합니다. Task 3은 병행 착수 OK.\n\n## 잘한 점\n- `normalize_number`의 타입 분기(Integer/Rational/Rational(q≠1)/Float) 명확, epsilon 비교까지 완결\n- `safe_exec_sympy`의 AST import 화이트리스트 + SIGALRM 이중 방어\n- 코드 블록 추출 3단 fallback 견실\n- `lane_schema.json`의 `id` 패턴·lineage enum·3개 예시(R02/R01/C01)로 테스트베드 충분\n- `lane_taxonomy.md`의 라우팅 의사결정 트리 잘 구성됨\n\n## 보완 요청\n\n### D1. 경로 이탈 — 이동 필요 (우선순위 높음)\n- 원래 지시 경로: `/mnt/hdd/coding/llm-research/research/data/schemas/`\n- 실제 저장 경로: `/mnt/hdd/coding/llm-research/data/schemas/`\n- Task 1 프롬프트는 `research/data/prompts/`에 있어 **프로젝트 내 경로 불일치 발생**\n- 조치: 4개 파일을 **`research/data/schemas/`로 이동**하고, 기존 `data/schemas/`는 제거. 내부 상호 참조(`sympy_schema.md §4.1` 등)는 상대 경로라 영향 없음.\n\n### D2. 모델 중립성 명시 누락\n이전 메시지에서 지시한 대로 각 스키마 상단에 다음 박스 추가:\n```\n> 본 스키마는 모델 선택(Bonsai / Qwen3 FP / Qwen3 재양자화)과 무관하게 적용된다.\n> 모델 결정은 별도 의사결정 문서(`research/lit/08_model_choice_options.md`) 참조.\n```\n대상: `sympy_schema.md`, `z3_schema.md`, `lane_taxonomy.md` 3개.\n\n### D3. `z3_schema.md` 보안 위험 — `eval()` 사용\n§4의 `_check_entailment`에서 `eval(p, {\"__builtins__\": {}}, {**z3.__dict__, **ctx_vars})` 사용:\n- `__builtins__` 비워도 `z3.__dict__` 전부 노출 → Z3 API 악용 가능(`z3.Function`으로 임의 선언 등)\n- 합성 데이터 소스가 모델 생성 문자열이라 **프롬프트 인젝션 통로**가 될 수 있음\n\n**대안 중 택일**:\na) **SMT-LIB2 문자열로 변환** → `z3.parse_smt2_string()` 사용. 이 경우 모델 출력 포맷도 SMT-LIB로 재정의\nb) **제한된 AST 파서 작성**: `ast.parse(p)` 후 허용 노드(`Name`, `Call`, `BinOp`, `Compare`, `BoolOp` 등)만 통과, `And/Or/Not/Implies/ForAll/Exists/Int/Real/Bool` 화이트리스트만 반영\nc) **현 방식 유지 + 입력 전 AST 사전 검증 레이어** 추가 (최소한의 보완)\n\n**권장**: a) SMT-LIB2 전환. 이유:\n- Z3 공식 표준, 파서 검증 완료\n- SatLM(선행연구)이 정확히 이 방식\n- 프롬프트 포맷을 `(declare-const x Int) (assert ...)` 로 바꾸면 모델이 생성할 구조도 명확해짐\n- researcher-lit의 SatLM 요약(03_satlm.md)에서 프롬프트 포맷 참고 가능\n\n선택한 방식을 `z3_schema.md` §4로 재작성하고, §5 Few-shot 예시도 같은 포맷으로 갱신.\n\n### 추가 메모 (비차단)\n- `lane_taxonomy.md` §4 R01 예시의 \"펭귄 fly\" 주석(\"실제로는 not_entailed\")은 좋은 캐비어트이지만, SFT 데이터에 이런 세계지식 반전 문제가 섞이면 **혼란 유발**. Phase 2 데이터 생성 시 R01은 **닫힌 Horn clause**로 제한하는 규약을 `roundtrip_verification.md`에 명시 부탁.\n\n## Task 3 착수 허가\n위 보완과 병행해 Task 3 착수 OK. 제가 이전에 요청한:\n- plan.md §4.2 lineage 5단계의 **상태 머신 다이어그램** 포함\n- 실패 케이스 분류(문법/의미/타임아웃) + 리포트 포맷\n- **R01 닫힌 Horn clause 제한 규약**(위 메모)을 §실패 분류에 함께 반영\n\n## 의존성 상태\n- researcher-lit `07_gsm8k_protocol.md` 대기 중 — 수령 시 Task 1 오염 재검증 가능\n- researcher-model Bonsai 환경 완료 시 실제 프롬프트 실행\n- L1(BFCL 출처) 결과는 Task 2/3와 무관 — 진행 계속\n\n## 기한\n- D1: 즉시 (파일 이동만)\n- D2: 오늘 내\n- D3: 2일 내 (SMT-LIB2 전환이라면 재작성 시간 반영)\n- Task 3 전체: 원래 기한 10일 유지",
+    "summary": "Task 2 조건부 승인 + 3건 보완 요청 + Task 3 착수 허가",
+    "timestamp": "2026-04-18T07:15:33.326Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "Task 2 보완판과 Task 3 모두 **최종 승인**합니다. D3 SMT-LIB2 전환 훌륭합니다. 다만 **D1 정리가 미완**이라 마무리만 부탁합니다.\n\n## 승인 내역\n\n### Task 2 보완판\n- `z3_schema.md`: SMT-LIB2 전환 + `Solver.from_string()` 경로 + logic 화이트리스트 + 에러 코드 9종 — 요청 그대로 반영\n- `sympy_schema.md`: 모델 중립 박스 추가 확인\n- `lane_schema.json`: Draft 2020-12 + `oneOf` 분기 + Pydantic v2 미러까지 — **추가 산출물 감사**합니다\n\n### Task 3\n- 5단계 파이프라인 다이어그램 명료, Protocol/dataclass 인터페이스 깔끔\n- 실패 모드 5종(NL_AMBIGUOUS/LEAKED_ANSWER/PARSE_FAIL/SEMANTIC_DRIFT/SOLVER_DIFF) 적절\n- API 비용 산정 세부: Haiku 4.5 샘플당 $0.00019, 50K → $9.5, 예비 $2.7 — $13 예산 내 합리\n- CLI idempotency(`sha1(input||config)` 기반 skip) 좋음\n- 검수 지표 4가지(구문≥99/의미≥95/누출≤1/Self-BLEU≤0.5) 구체적\n\n## 잔여 정리 (블로킹 아님, 오늘 내 마무리)\n\n### D1 잔여\n- 구 경로 `/mnt/hdd/coding/llm-research/data/schemas/` 에 4개 파일(구 버전) 아직 존재. **삭제** 해주세요.\n- 신 경로 `/mnt/hdd/coding/llm-research/research/data/schemas/` 에 `lane_taxonomy.md` 없음. **이동** 해주세요(구 경로 → 신 경로).\n- 이동 시 `lane_taxonomy.md` 상단에 모델 중립 박스(D2)도 추가.\n\n### 기타 메모\n- `roundtrip_verification.md` §3 저장 구조에서 `/data/pipelines/...` 경로를 사용 중이지만, 프로젝트 전체 규약은 **`research/data/`** 하위입니다. Phase 2 착수 시점에 `research/data/pipelines/` 또는 프로젝트 루트의 `data/`(구현 코드용) 중 어디를 쓸지 결정 필요 — 지금은 설계 문서이므로 보류 OK, 구현 단계에서 확정.\n\n## 주요 결정 수용\n1. **Haiku 4.5 기본 + 파일럿 후 Sonnet 승격**: 승인. 500 샘플 파일럿 결과 보고해 주세요(Phase 2 착수 직전).\n2. **`logic` 명시적 고정 + Phase 2 초기 QF_LIA만**: 승인. 1-bit slot filling 정확도 우선 판단 타당.\n3. **`set-logic`/옵션 강제 삽입**: 승인. 보안/일관성 확보.\n4. **Z3 runner 초판을 researcher-model이 Phase 1에 선착**: **기각**. 이유:\n   - Phase 1은 FOLIO가 아닌 **GSM8K 집중**(plan.md 스코프 조정)\n   - researcher-model은 현재 Bonsai 환경 구축 중 — 추가 부담 지양\n   - Z3 runner는 Phase 2 착수 Task로 별도 발행할 예정이며, 그때 구현자는 researcher-model 또는 researcher-data 중 재배정\n   - FOLIO 사전 테스트는 Phase 2로 이월\n\n## 리스크 플래그 수용\n귀하가 플래그한 3건은 모두 Phase 2 착수 직전 파일럿으로 검증합니다. **cross-family 검증**(Haiku 생성 + Opus 검증)은 샤드 단위로 부분 적용이라는 권고 채택. 구체 비율은 Phase 2 예산 검토 시 확정.\n\n## 다음 단계\n- **지금**: D1 잔여 정리 (파일 이동·삭제·taxonomy 모델중립 박스 추가)\n- **대기**: researcher-lit `07_gsm8k_protocol.md` 수령 → Task 1 오염 재검증\n- **Phase 2 착수 시**: 파이프라인 구현 Task 별도 발행\n\nPhase 1 범위에서 귀하의 작업은 D1 정리로 일단락. 그 이후는 Phase 2 착수 지시까지 대기 모드. 수고하셨습니다.",
+    "summary": "Task 2/3 최종 승인 + D1 잔여 정리 요청",
+    "timestamp": "2026-04-18T07:16:32.974Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "team-lead",
+    "text": "상황 확인했습니다. 블로커 아님 동의. 원인/지시 드립니다.\n\n## 원인\n- **두 개는 동일한 \"당신\"의 산출물**입니다. 재스폰 전(Opus 세션)의 당신이 `data/` 루트로 작성했고(초기 브리핑 경로), 재스폰 후(Sonnet 세션) 당신이 director의 Task 경로대로 `research/data/`에 작성했습니다.\n- 다른 에이전트가 쓴 것이 아닙니다. 디렉토리 mtime이 재스폰 전/후 시점으로 갈라진 것뿐.\n- 두 루트를 유지할 의도는 **없었습니다**. 프롬프트 상 초기 지시(`data/`)와 director의 Task 경로(`research/data/`)가 불일치했던 것이 혼선의 직접 원인.\n\n## 방침\n**director가 canonical로 지정한 `research/data/`를 유일 루트로 채택.** 이유:\n- director의 조건부 승인/보완 지시(D1/D2/D3)가 이 경로 산출물을 대상으로 함 — 근거 체인 단절 없이 이어갈 수 있음\n- `data/`에는 현재 README.md 하나만 남아있음 → 이관 부담 최소\n- Phase 2에서 `data/datasets/` 실제 jsonl이 대용량으로 쌓일 때 루트 혼재를 막아야 함\n\n## 지시\n1. `data/README.md`의 내용 중 **canonical에 없는 유용한 부분**(예: 파이프라인 개요, 디렉토리 가이드, API 예산 $13 기록, lineage 단계 설명 등)은 `research/data/README.md`에 통합\n2. `data/` 디렉토리는 **빈 상태로 남기지 말고 삭제** (git 미적용 환경이므로 단순 rm)\n3. Pydantic 미러 등 canonical #2에 없지만 가치 있는 설계는 지시대로 canonical 구조 안에 **그대로 합병**(덮어쓰기 금지, 별 파일/섹션으로 추가)\n4. 통합 완료 후 `research/data/` 트리를 짧게 director에게 보고\n\n## 추가 가드\n- 앞으로 **director가 지정한 경로를 기준**으로 하세요. 초기 합류 프롬프트의 경로와 director 지시가 다를 경우 director 지시 우선.\n- 이후 디렉토리 구조 변경 필요 시 director 승인 후 진행.\n\n계속 진행하세요.",
+    "summary": "원인: 재스폰 전후 중복 — research/data/ 일원화 지시",
+    "timestamp": "2026-04-18T07:17:52.526Z",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "researcher-lit가 `07_gsm8k_protocol.md`를 완료했습니다. Task 1에 약속했던 **오염 재검증 트리거** 발동합니다.\n\n## 경로\n`/mnt/hdd/coding/llm-research/research/lit/07_gsm8k_protocol.md`\n\n## 귀하에게 필요한 섹션\n- **§3 프롬프트 포맷**: 5 variants 정의 (CoT/CoT+SC/PAL/PoT/SymPy Lane)\n- **§3 Few-shot 예제 선정 방침**: **\"고정 시드 42, train 분할에서 8개 추출, 동일 8개 전 Variant 공유\"** → 귀하 Task 1의 선별 방식과 차이 있음\n- **§6 솔버 타임아웃 처리**: SymPy 10s 기본, 초과 시 오답 (귀하 schema와 정합 확인)\n\n## 지시\n\n### R1. Task 1 프롬프트 오염 재검증\nREADME에 약속했던 대로 이제 실행합니다.\n- `gsm8k_cot_8shot.txt` — Wei et al. 2022 Appendix G.1 표준 8개: **07 §3 Variant A가 요구하는 \"lm-eval-harness gsm8k-cot.yaml\"과 동일한지 확인**\n  - 일치하면 유지\n  - 불일치하면 lm-eval-harness 예제로 교체 (공식 표준 맞추기)\n- `gsm8k_sympy_8shot.txt` — 귀하의 새로 작성한 8개: **07 §3 방침(train 시드 42 고정 추출)과 어긋남** → 재작성 필요할 수 있음\n\n### R2. 예제 출처 합의\n아래 A/B/C 중 선택해 `research/data/prompts/README.md` 미결 사항 §오염 방지에 명기:\n\n- **A**: 07의 방침(lm-eval-harness gsm8k-cot.yaml + train 시드 42) 그대로 채택 — **권고**. 공식 표준과 정합.\n- **B**: 현재 Task 1 프롬프트(Wei et al. 표준 8개 + 새로 작성 8개) 유지 + 07에 예외 반영 요청\n- **C**: 혼합 (CoT만 lm-eval 표준, SymPy 8개는 귀하 작성 유지)\n\n**director 추천**: **A**. 이유:\n1. lm-eval-harness가 GSM8K 커뮤니티 표준\n2. Bonsai 88 재현 게이트(07 §4)의 기준 프롬프트와 일치 필요\n3. 본인의 \"새로 작성 8개\"는 test 오염 위험 낮으나, train 직접 추출이 **증명 가능한 non-contamination** 제공\n\n### R3. 경로 재확인\n- `sympy_schema.md §6 솔버 타임아웃` vs `07 §6 솔버 타임아웃` 정합 확인 (둘 다 10s)\n- 불일치 있으면 schema를 기준으로 07에 피드백 전달\n\n### 기한\n- R1/R2: 3일 내\n- R3: 오늘 내 (한 줄 확인)\n\n## 의존성 해제\n귀하의 Task 1 README 미결 §B4(lit 프로토콜 수신 시 재검증)가 **해제됩니다**. 이 작업 후 Phase 1 데이터 파트는 일단락.\n\n질문 주세요.",
+    "summary": "07_gsm8k_protocol.md 인계 — Task 1 오염 재검증 착수",
+    "timestamp": "2026-04-18T07:20:00.323Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "모델 중립화 반영 확인. 잘 처리하셨습니다. 검증 3건(jsonschema/JSON 샘플/Pydantic self-test) OK까지 보고 주신 점 좋습니다.\n\n## 상태 정리\n- **D2 모델 중립**: 완료\n- **D1 경로 이탈 정리**: 아직 미확인 — 이전 메시지(Task 2/3 최종 승인) 지시대로 구 경로 `/mnt/hdd/coding/llm-research/data/schemas/` 4개 파일 삭제 + `lane_taxonomy.md`를 신 경로로 이동해 주세요. 이 작업은 블로킹 아니지만 프로젝트 구조 정합 필요.\n- **D3 SMT-LIB2 전환**: 완료 (이전 승인)\n- **R1/R2/R3 (07 인계 기반 오염 재검증)**: 별도 메시지로 지시됨. 3일 내 처리 부탁.\n\n## 한 줄만 확인 부탁\n- D1 잔여 정리 진행 중/완료/대기 중 여부 한 줄 회신\n\n그 외 블로커 없음. Phase 2 착수 시점까지 Task 2/3 동결. 수고하셨습니다.",
+    "summary": "모델 중립화 확인, D1 잔여와 R1~R3 진행 확인",
+    "timestamp": "2026-04-18T07:21:01.983Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "Task 3 + R1~R3(07 인계 오염 재검증) + D1 정리 **전부 최종 승인**합니다. 수고하셨습니다.\n\n## 디스크 실제 상태 확인 (직접 확인)\n```\nresearch/data/\n├── README.md\n├── prompts/\n│   ├── README.md, verify_gsm8k_sympy.py\n│   ├── gsm8k_cot_8shot.txt, gsm8k_sympy_8shot.txt, gsm8k_sympy_16shot.txt\n│   └── extract_gsm8k_seed42.py  ← R1/R2 방침 A 구현 (NEW)\n├── schemas/\n│   ├── sympy_schema.md, z3_schema.md\n│   ├── lane_schema.json, lane_schema.py\n│   └── lane_taxonomy.md  ← 이동 완료 (D1 ✅)\n├── design/\n│   ├── roundtrip_verification.md (기존 설계)\n│   └── roundtrip_pipeline.md  ← FSM 다이어그램 (NEW, v1.1)\n└── pipelines/\n    └── roundtrip_pipeline.py  ← 340줄 구현 (NEW)\n```\n\n**구 경로 `/mnt/hdd/coding/llm-research/data/`는 완전 비어있음** — D1 ✅ 완료.\n\n## 경로 보고 오차만 정정\n귀하 보고의 \"`data/pipelines/...`\"와 \"`data/README.md`\"는 실제로 **`research/data/pipelines/`, `research/data/README.md`**입니다. 올바른 경로에 저장됐으니 실제 작업엔 영향 없음, 앞으로 보고 시 경로 확인 부탁.\n\n## 승인 내역\n\n### Task 3 (roundtrip_pipeline.md + .py)\n- **FSM 다이어그램**: 시각적 명확, S0→S4 + DROPPED/DPO_REJECTED 분기 완비\n- **구현 340줄**: R02(SymPy)/R01(Z3) 생성기, `safe_exec_sympy()` AST+SIGALRM, `safe_exec_z3()` 10s timeout, `normalize_number()` 일치\n- **DPO 자동 저장**: S3 실패 → `(chosen=원본, rejected=모델 출력)` 쌍. Phase 3 DPO 데이터 선제 확보\n- **비용**: 50K × ~$0.0000025 = ~$1.25 Haiku 역생성만 — plan.md §6 Phase 2 예산 $13 내 대폭 여유\n- **CLI**: `--skip-roundtrip` 플래그로 Phase 1은 Stage 2까지만 실행 가능 — model 완료 전 활용 가능\n\n### R1/R2 (07 인계 반영)\n- `extract_gsm8k_seed42.py` 작성 — 07 방침 A(lm-eval-harness + train 시드 42) 채택\n- 이유 타당: \"증명 가능한 non-contamination\" 제공, Bonsai 88 재현 게이트와 정합\n- 방침 A 채택 결과를 README에 반영하시면 R2 완료\n\n### D1 (경로 정리)\n- 구 `data/schemas/` 삭제 완료 ✅\n- `lane_taxonomy.md` 이동 완료 ✅\n\n### R3 (타임아웃 정합)\n- sympy_schema와 07 양쪽 10s 일치 확인된 듯. 명시 회신이 없었지만 구현물에 10s 하드코딩됨 → 정합 OK\n\n## 미결정 사항\n- `extract_gsm8k_seed42.py` 실행 결과 파일(`gsm8k_sympy_8shot_seed42.txt`, `gsm8k_cot_8shot_seed42.txt`)은 아직 생성 전. datasets 설치 후 실행해 교체용 프롬프트 파일 생성 부탁합니다. **기한: 2일 내**. 완료 후 짧은 회신만 주세요.\n- 기존 `gsm8k_*_8shot.txt`(Wei et al. + 새로 작성 8개) 파일은 seed42 버전 생성 후 **백업 후 교체** 또는 **병행 유지** 결정이 필요. director 판단: **병행 유지** 권장 — `_seed42` 접미사로 두 버전 공존하게 두고 Phase 1 실측 후 어느 쪽이 Bonsai 88 재현에 맞는지 비교\n\n## 대기 모드\n귀하의 Phase 1 범위 작업은 위 `extract_gsm8k_seed42.py` 실행 완료를 끝으로 **일단락**. 다음 Task는 Phase 2 착수 시점에 별도 발행됩니다(합성 데이터 생성, Stage 3 roundtrip 본격 실행 등). 그때까지 대기 모드.\n\n## 한 가지 추가 안내\n`roundtrip_pipeline.py`는 `research/data/pipelines/`에 있고, roundtrip_verification.md가 언급한 `data/pipelines/`와 경로가 다릅니다. Phase 2 착수 시 이 점 고려해 문서 path 일관화해야 합니다. 지금은 보류.\n\n수고 많으셨습니다. Phase 1 data 파트 전부 완결.",
+    "summary": "Task 3 + R1~R3 + D1 전부 최종 승인, 대기 모드 전환",
+    "timestamp": "2026-04-18T07:25:59.514Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "확인했습니다. 디스크 실제 상태를 방금 봤는데, **보고보다 더 많이 완료**되어 있습니다.\n\n## 실제 상태 (방금 확인)\n```\nresearch/data/schemas/lane_taxonomy.md v1.1    ✅ 모델 중립 박스 확인\nresearch/data/prompts/\n├── gsm8k_cot_8shot.txt             (기존, Wei et al.)\n├── gsm8k_cot_8shot_seed42.txt      ✅ 생성됨! (NEW)\n├── gsm8k_sympy_8shot.txt           (기존, 새로 작성)\n├── gsm8k_sympy_8shot_seed42.txt    ✅ 생성됨! (NEW)\n├── gsm8k_sympy_16shot.txt          (기존, 확장)\n├── extract_gsm8k_seed42.py\n└── verify_gsm8k_sympy.py\n```\n\n**seed42 버전 프롬프트 파일 2개 이미 생성 완료**. 제가 2일 내 요청한 작업이 이미 끝나 있습니다.\n\n## 최종 상태 — 모두 완료\n- D1 경로 정리: ✅ (구 경로 완전 제거 확인)\n- D2 모델 중립: ✅ (lane_taxonomy 포함 전 스키마)\n- D3 SMT-LIB2: ✅\n- R1 프롬프트 seed42 추출: ✅\n- R2 방침 결정: ✅ (병행 유지 — 기존/seed42 두 버전 공존)\n- R3 타임아웃 정합: ✅\n- Task 2 (스키마): ✅\n- Task 3 (FSM + 340줄 구현): ✅\n\n## 의존성 참조 경로 주의\n귀하가 추가한 모델 중립 박스에서 참조 경로가:\n> \"research/lit/08_bonsai_finetune_paths.md\"\n\n로 되어 있는데, 디스크의 실제 파일명은 **`08_model_choice_options.md`**입니다. researcher-lit 쪽 파일명이 변경됐기 때문입니다. 시간 날 때 `lane_taxonomy.md`의 이 참조 경로를 수정해 주세요. **긴급하지 않습니다** — Phase 2 착수 시점에 함께 해도 OK.\n\n## 최종 선언\n**researcher-data Phase 1 범위 완전 종결**. 다음 Task는 Phase 2 착수 시점에 별도 발행됩니다. 그때까지 대기 모드.\n\n수고 많으셨습니다. 산출물 품질 매우 우수했습니다.",
+    "summary": "Phase 1 data 완전 종결 — seed42 실행까지 모두 확인",
+    "timestamp": "2026-04-18T07:27:52.094Z",
+    "color": "blue",
+    "read": true
+  },
+  {
+    "from": "director",
+    "text": "확인 감사합니다. canonical 트리 깔끔하게 정리됐네요.\n\n다만 참고로, 직전 확인에서 `research/data/prompts/`에 `gsm8k_cot_8shot_seed42.txt`, `gsm8k_sympy_8shot_seed42.txt`, `extract_gsm8k_seed42.py`도 존재합니다(귀하 트리에 누락). 07 인계로 생성된 seed42 변형본으로, Phase 1 실측 시 기존 8-shot과 병행 비교 용도로 활용할 예정입니다. 삭제하지 말아주세요.\n\n그 외 OK. Phase 2 착수 지시까지 대기.",
+    "summary": "확인 완료, 대기 모드 OK",
+    "timestamp": "2026-04-18T07:28:07.654Z",
+    "color": "blue",
+    "read": true
+  }
+]
