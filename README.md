@@ -64,6 +64,8 @@
 
 Lane은 **"이 질문에 답하려면 어떤 종류의 추론이 필요한가"** 를 분류하는 태그입니다. 모델이 질문을 받자마자 `<lane>L01</lane>` 같은 태그를 먼저 출력하게 SFT로 학습시킵니다.
 
+> **개념 출처.** Lane이라는 용어와 "추론 유형별로 경로를 분기한다"는 발상은 [DinoDS AI — Lanes](https://dinodsai.com/lanes) 에서 제안된 프레임워크를 본 연구의 **법률 도메인**에 맞게 재구성한 것입니다. 원본은 범용 추론 경로 라우팅을 다루며, 본 연구는 그중 "형식화 가능 vs 자유 생성"의 경계선이 유독 뚜렷한 법률 영역에 Lane을 특화 적용했습니다. 관련 라우팅 선행연구로는 **Semantic Router**, **MoDEM (2024)** 등이 있으며, 상세 비교는 [`reports/literature_review.md`](reports/literature_review.md) 참고.
+
 ### R2(현재) Lane 체계 — 5개
 
 | Lane | 의미 | 처리 | 예시 |
@@ -394,6 +396,7 @@ python scripts/eval_with_solver_r2.py --model qwen25 --variant lane_solver --tas
 - **NL2Logic** (2026) — AST 경유 NL → FOL → Z3/SMT-LIB. 0.5B에서도 작동.
 - **SaulLM** (NeurIPS 2024) — 540B 법률 토큰 pretrain (54B/141B). 파라미터-효율 비교군.
 - **LegalBench** (arXiv 2308.11462) — 162 법률 태스크 벤치마크.
+- **DinoDS AI — Lanes** ([https://dinodsai.com/lanes](https://dinodsai.com/lanes)) — Lane 개념(추론 유형별 경로 분기)의 원 출처. 본 연구는 이를 법률 도메인에 특화.
 
 ### 라이선스
 
