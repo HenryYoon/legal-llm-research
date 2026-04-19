@@ -173,7 +173,7 @@ model:     <lane>L06</lane>
 
 ## 현재 진행 상태
 
-프로젝트는 **R1(실패 + 원인 분석) → R2(재설계 + 재학습)** 순으로 진행 중입니다.
+프로젝트는 **R1(실패) → R2(재설계, 개선 0) → R3(pipeline fix + 영문 확충)** 순으로 진행 중입니다.
 
 ### R1 결과 (완료)
 
@@ -195,14 +195,29 @@ model:     <lane>L06</lane>
 2. **Schema 밖 메서드 환각** — 모델이 `equation_check`, `all_values_tac` 등 존재하지 않는 메서드 생성. 제약 디코딩 미적용이 원인.
 3. **Final answer 평균 11.5자** — Yes/No 파싱용 접두사(`<lane>`)가 parser를 방해하고, 생성형 태스크는 짧아서 ROUGE 하락.
 
-### R2 (진행 중)
+### R2 결과 (완료, 가설 미증명)
 
 | Step | 내용 | 상태 |
 |------|------|------|
 | R2-1 | [`context/researcher2_r2.md`](context/researcher2_r2.md) 작성 | ✅ |
 | R2-2 | Lane 10→5 축소, 영어 70%, Outlines 통합, final answer ≥80자 | ✅ (실제 평균 639자) |
-| R2-3 | SFT 재학습 | 🔄 진행 중 |
-| R2-4 | A2/A3 재평가 + R1 대비 개선 측정 | ⏳ |
+| R2-3 | SFT 재학습 (66분, loss 0.025) | ✅ |
+| R2-4 | A2/A3 재평가 — **R1과 동일 mean 0.402** | ✅ [`results/analysis_r2.md`](results/analysis_r2.md) |
+
+### R2 실패 원인 (trace 분석 기반)
+
+1. **Pipeline 파싱 버그** — `<lane>L01</lane><tool_call>...` 텍스트가 final_answer 문자열로 누출, lane=L06으로 오인됨.
+2. **영문 SFT 커버리지 부족** — hearsay tool_call 발화 시 `element_of_purpose`, `element_of_malice` 등 generic 환각.
+3. **Binary 응답 포맷 부재** — parse_rate 28~35%, 모델이 Yes/No 대신 paragraph 출력.
+
+### R3 (진행 중, HARD STOP 20:00 KST)
+
+| Step | 내용 | 상태 |
+|------|------|------|
+| R3-1 | [`context/researcher2_r3.md`](context/researcher2_r3.md) 작성 | ✅ |
+| R3-2 | Pipeline fix + 영문 시드 740 + schema enum + binary regex 강제 | ✅ (SFT 8.5K EN 87.5%) |
+| R3-3 | SFT 재학습 (`sft_qwen25_r3.yaml`, epochs=2) | 🔄 진행 중 |
+| R3-4 | A3 평가 + trace 검증 | ⏳ |
 
 ---
 
@@ -223,23 +238,23 @@ model:     <lane>L06</lane>
 - thinking 모드는 PJ에서만 +16pp로 크게 도움, 다른 태스크에서는 오히려 하락.
 - 이 두 관찰 모두 "더 많이 생각"이 만능은 아니라는 기존 가정과 부합.
 
-### A2/A3 (R1, 가설 기각)
+### A2/A3 비교 (R1 vs R2)
 
-| Task | A1 | A2 (+solver) | A3 (+SFT Lane) | Δ (A3−A1) |
-|------|----|--------------|-----------------|-----------|
-| hearsay | 0.522 | **0.543** | 0.526 | +0.004 |
-| PJ | **0.591** | 0.500 | 0.500 | −0.091 |
-| rule_qa | 0.121 | **0.176** | 0.092 | −0.029 |
-| textualism | **0.583** | 0.444 | 0.489 | −0.094 |
-| **평균** | **0.454** | 0.416 | 0.402 | **−0.052** |
+| Task | A1 | R1 A2 | R1 A3 | R2 A2 | **R2 A3** |
+|------|----|-------|-------|-------|-----------|
+| hearsay | 0.522 | **0.543** | 0.526 | 0.500 | 0.523 |
+| PJ | **0.591** | 0.500 | 0.500 | 0.500 | 0.500 |
+| rule_qa (ROUGE-L) | 0.121 | **0.176** | 0.092 | 0.178 | 0.117 |
+| textualism | **0.583** | 0.444 | 0.489 | 0.500 | 0.469 |
+| **평균** | **0.454** | 0.416 | 0.402 | 0.419 | **0.402** |
 
-- **A3 평균이 A1보다 5pp 낮음** → 핵심 가설 기각.
-- 단, **A2가 A1을 이기는 태스크는 존재** (hearsay +2pp, rule_qa +5.5pp) → 솔버 자체 효과는 태스크 선별 시 유효.
+- **R1 A3 = R2 A3 = 0.402** — R2가 가설을 증명도 기각도 하지 못함. 데이터 재생성 + Outlines 도입만으로는 부족.
+- **A2 > A1 이기는 태스크는 존재**: hearsay (+2pp), rule_qa (+5.5pp) → 솔버 자체 효과는 태스크 선별 시 유효.
 
-### R2 목표
+### R3 목표
 
-- A3 평균이 최소 B1(0.412)을 넘고, 이상적으로 baseline A1(0.454)도 넘는 것.
-- 개별 태스크 단위로 A3 > A2 > A1 구도 재현.
+- A3 평균 > B1 (0.412), 이상적으로 A1 (0.454) 초과.
+- Pipeline 버그 수정 + 영문 LegalBench-style 시드 600+ 확충 + binary regex 강제 + schema enum.
 
 ---
 
