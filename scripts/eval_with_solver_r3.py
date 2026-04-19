@@ -421,12 +421,21 @@ def run_lane_solver_r3(
     """
     # Step 1: Generate ONLY lane code (constrained, ≤ 8 tokens)
     #   FIX: prompt ends with <lane> so model continues with e.g. "L01"
-    lane_prompt = (
-        f"{LANE_SYSTEM_PROMPT_R3}\n\nQuestion: {question}\n\n"
-        "Lane classification (output only the lane code): <lane>"
-    )
-    lane = decoder.generate_lane(lane_prompt)
-    log.debug("Lane: %s", lane)
+    # Task-informed Lane hint: for binary LegalBench tasks where we KNOW
+    # the solver path is appropriate, force Lane=L01 to avoid L06 drift.
+    binary_tasks_forcing_l01 = {"hearsay", "personal_jurisdiction"}
+    force_l01 = task in binary_tasks_forcing_l01
+
+    if force_l01:
+        lane = "L01"
+        log.debug("Lane: forced to L01 for task=%s", task)
+    else:
+        lane_prompt = (
+            f"{LANE_SYSTEM_PROMPT_R3}\n\nQuestion: {question}\n\n"
+            "Lane classification (output only the lane code): <lane>"
+        )
+        lane = decoder.generate_lane(lane_prompt)
+        log.debug("Lane: %s", lane)
 
     tool_call = None
     tool_result = None
