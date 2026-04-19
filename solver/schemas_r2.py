@@ -1,9 +1,46 @@
-"""JSON Schemas for R2 Lane-specific tool_call payloads (5 lanes, 2 tools).
+"""JSON Schemas for R2/R3 Lane-specific tool_call payloads (5 lanes, 2 tools).
 
 R2 design: Lane 10 -> 5, tools: z3.check_elements + sympy.calc only.
+R3 change: elements field uses enum whitelist to prevent hallucination.
 Schema-outside methods are strictly rejected.
 """
 from __future__ import annotations
+
+# ---------------------------------------------------------------------------
+# R3: Whitelisted element names (P1-B)
+# ---------------------------------------------------------------------------
+
+ELEMENT_ENUM_R3 = [
+    # English — hearsay (FRE 801(c))
+    "out_of_court_statement",
+    "offered_for_truth",
+    # English — personal jurisdiction
+    "minimum_contacts",
+    "purposeful_availment",
+    "fair_play_and_substantial_justice",
+    # English — textualism
+    "dictionary_definition_used",
+    "plain_meaning_invoked",
+    # Korean civil law
+    "절도죄_구성요건",
+    "점유이탈물횡령",
+    "사기죄_구성요건",
+    "소멸시효_완성",
+    "시효중단",
+    "계약해지권",
+    "손해배상_요건",
+    "과실_책임",
+    "고의_책임",
+]
+
+# Per-task element whitelist for runtime validation
+ELEMENT_WHITELIST_BY_TASK = {
+    "hearsay": ["out_of_court_statement", "offered_for_truth"],
+    "personal_jurisdiction": [
+        "minimum_contacts", "purposeful_availment", "fair_play_and_substantial_justice"
+    ],
+    "textualism_tool": ["dictionary_definition_used", "plain_meaning_invoked"],
+}
 
 # ---------------------------------------------------------------------------
 # Core tool call schemas (R2)
@@ -67,6 +104,52 @@ SCHEMAS_R2 = {
     "L09": None,
     "L10": None,
 }
+
+# ---------------------------------------------------------------------------
+# R3: L01 schema with elements enum (whitelist enforced)
+# ---------------------------------------------------------------------------
+
+_L01_SCHEMA_R3 = {
+    "type": "object",
+    "required": ["tool", "method", "elements", "facts", "matching"],
+    "properties": {
+        "tool": {"const": "z3"},
+        "method": {"const": "check_elements"},
+        "elements": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "enum": ELEMENT_ENUM_R3,
+            },
+            "minItems": 1,
+        },
+        "facts": {
+            "type": "array",
+            "items": {"type": "string"},
+        },
+        "matching": {
+            "type": "object",
+            "additionalProperties": {"type": "boolean"},
+        },
+        "mode": {"enum": ["and", "or"], "default": "and"},
+    },
+    "additionalProperties": False,
+}
+
+SCHEMAS_R3 = {
+    "L01": _L01_SCHEMA_R3,
+    "L05": _L05_SCHEMA,
+    "L06": None,
+    "L09": None,
+    "L10": None,
+}
+
+
+def get_schema_r3(lane: str):
+    """Return the R3 JSON schema for *lane* (with element enum whitelist)."""
+    if lane not in SCHEMAS_R3:
+        raise KeyError(f"Unknown R3 lane: {lane!r}. Valid: {list(SCHEMAS_R3)}")
+    return SCHEMAS_R3[lane]
 
 # Allowed (tool, method) pairs — anything outside is rejected.
 ALLOWED_TOOL_METHODS_R2 = {

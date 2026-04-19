@@ -1,0 +1,36 @@
+{
+  "model": "qwen25",
+  "adapter": null,
+  "timestamp": "2026-04-19T14:42:20.321197",
+  "outlines_available": true,
+  "metrics": [
+    {
+      "task": "hearsay",
+      "n_samples": 94,
+      "tool_call_rate": 0.2765957446808511,
+      "parse_rate": 1.0,
+      "balanced_accuracy": 0.5750115048320295
+    },
+    {
+      "task": "personal_jurisdiction",
+      "n_samples": 50,
+      "tool_call_rate": 0.14,
+      "parse_rate": 1.0,
+      "balanced_accuracy": 0.5106732348111658
+    },
+    {
+      "task": "rule_qa",
+      "n_samples": 50,
+      "tool_call_rate": 0.02,
+      "parse_rate": 1.0,
+      "rouge_l": 0.15930550794865622
+    },
+    {
+      "task": "textualism_tool",
+      "n_samples": 107,
+      "tool_call_rate": 0.07476635514018691,
+      "parse_rate": 1.0,
+      "balanced_accuracy": 0.485827664399093
+    }
+  ]
+}

@@ -1,0 +1,782 @@
+[
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Calculate the prejudgment interest on a $50,000 judgment at 6% per year for 3 years."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"P * r * t\", \"vars\": {\"P\": 50000, \"r\": 0.06, \"t\": 3}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The prejudgment interest is $9,000.00. Calculated as: $50,000 × 0.06 × 3 = $9,000."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A contractor is owed $120,000 but the other party claims a $15,000 setoff. What is the net amount owed?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"P - setoff\", \"vars\": {\"P\": 120000, \"setoff\": 15000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The net amount owed is $105,000.00 after applying the $15,000 setoff to the $120,000 claim."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "The statute provides for a civil penalty of $500 per violation. If there were 47 violations, what is the total penalty?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"penalty_per * count\", \"vars\": {\"penalty_per\": 500, \"count\": 47}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The total civil penalty is $23,500. Calculated as: $500 × 47 = $23,500."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Calculate the monthly pro-rated rent for a $2,400/month lease if the tenant moves in on the 15th of a 30-day month."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"monthly_rent / days_in_month * days_remaining\", \"vars\": {\"monthly_rent\": 2400, \"days_in_month\": 30, \"days_remaining\": 16}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The pro-rated rent for 16 remaining days in a 30-day month is $1,280.00. Calculated as: $2,400 ÷ 30 × 16 = $1,280."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A party seeks attorney's fees of $350/hr for 42.5 hours. Calculate the total fee."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"rate * hours\", \"vars\": {\"rate\": 350, \"hours\": 42.5}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The total attorney's fee is $14,875.00. Calculated as: $350/hr × 42.5 hr = $14,875."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "The lease requires 60 days' notice of termination. If notice was given on March 10, what is the earliest termination date?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"notice_days\", \"vars\": {\"notice_days\": 60}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "Adding 60 days to March 10 yields May 9. The earliest termination date is May 9."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Calculate the simple interest on a $75,000 promissory note at 8% annually for 18 months."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"P * r * (t / 12)\", \"vars\": {\"P\": 75000, \"r\": 0.08, \"t\": 18}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The simple interest is $9,000.00. Calculated as: $75,000 × 0.08 × (18/12) = $9,000."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A judgment of $200,000 compounds at 5% annually. What is the value after 4 years?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"P * (1 + r) ** t\", \"vars\": {\"P\": 200000, \"r\": 0.05, \"t\": 4}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The compounded judgment value after 4 years is $243,101.25. Calculated as: $200,000 × (1.05)^4 ≈ $243,101.25."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A tenant owes three months' back rent at $1,800/month plus a 10% late fee. What is the total amount owed?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"months * rent * (1 + late_fee)\", \"vars\": {\"months\": 3, \"rent\": 1800, \"late_fee\": 0.1}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The total amount owed is $5,940.00. Calculated as: 3 × $1,800 × 1.10 = $5,940."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Plaintiff seeks lost wages: $85,000/year salary, out of work for 14 months. Calculate the lost wage claim."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"salary / 12 * months\", \"vars\": {\"salary\": 85000, \"months\": 14}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The lost wage claim is $99,166.67. Calculated as: $85,000 ÷ 12 × 14 ≈ $99,166.67."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Calculate the prejudgment interest on a $50,000 judgment at 6% per year for 3 years."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"P * r * t\", \"vars\": {\"P\": 50000, \"r\": 0.06, \"t\": 3}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The prejudgment interest is $9,000.00. Calculated as: $50,000 × 0.06 × 3 = $9,000."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A contractor is owed $120,000 but the other party claims a $15,000 setoff. What is the net amount owed?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"P - setoff\", \"vars\": {\"P\": 120000, \"setoff\": 15000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The net amount owed is $105,000.00 after applying the $15,000 setoff to the $120,000 claim."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "The statute provides for a civil penalty of $500 per violation. If there were 47 violations, what is the total penalty?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"penalty_per * count\", \"vars\": {\"penalty_per\": 500, \"count\": 47}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The total civil penalty is $23,500. Calculated as: $500 × 47 = $23,500."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Calculate the monthly pro-rated rent for a $2,400/month lease if the tenant moves in on the 15th of a 30-day month."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"monthly_rent / days_in_month * days_remaining\", \"vars\": {\"monthly_rent\": 2400, \"days_in_month\": 30, \"days_remaining\": 16}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The pro-rated rent for 16 remaining days in a 30-day month is $1,280.00. Calculated as: $2,400 ÷ 30 × 16 = $1,280."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A party seeks attorney's fees of $350/hr for 42.5 hours. Calculate the total fee."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"rate * hours\", \"vars\": {\"rate\": 350, \"hours\": 42.5}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The total attorney's fee is $14,875.00. Calculated as: $350/hr × 42.5 hr = $14,875."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "The lease requires 60 days' notice of termination. If notice was given on March 10, what is the earliest termination date?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"notice_days\", \"vars\": {\"notice_days\": 60}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "Adding 60 days to March 10 yields May 9. The earliest termination date is May 9."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Calculate the simple interest on a $75,000 promissory note at 8% annually for 18 months."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"P * r * (t / 12)\", \"vars\": {\"P\": 75000, \"r\": 0.08, \"t\": 18}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The simple interest is $9,000.00. Calculated as: $75,000 × 0.08 × (18/12) = $9,000."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A judgment of $200,000 compounds at 5% annually. What is the value after 4 years?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"P * (1 + r) ** t\", \"vars\": {\"P\": 200000, \"r\": 0.05, \"t\": 4}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The compounded judgment value after 4 years is $243,101.25. Calculated as: $200,000 × (1.05)^4 ≈ $243,101.25."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A tenant owes three months' back rent at $1,800/month plus a 10% late fee. What is the total amount owed?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"months * rent * (1 + late_fee)\", \"vars\": {\"months\": 3, \"rent\": 1800, \"late_fee\": 0.1}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The total amount owed is $5,940.00. Calculated as: 3 × $1,800 × 1.10 = $5,940."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Plaintiff seeks lost wages: $85,000/year salary, out of work for 14 months. Calculate the lost wage claim."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"salary / 12 * months\", \"vars\": {\"salary\": 85000, \"months\": 14}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The lost wage claim is $99,166.67. Calculated as: $85,000 ÷ 12 × 14 ≈ $99,166.67."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Calculate the prejudgment interest on a $50,000 judgment at 6% per year for 3 years."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"P * r * t\", \"vars\": {\"P\": 50000, \"r\": 0.06, \"t\": 3}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The prejudgment interest is $9,000.00. Calculated as: $50,000 × 0.06 × 3 = $9,000."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A contractor is owed $120,000 but the other party claims a $15,000 setoff. What is the net amount owed?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"P - setoff\", \"vars\": {\"P\": 120000, \"setoff\": 15000}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The net amount owed is $105,000.00 after applying the $15,000 setoff to the $120,000 claim."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "The statute provides for a civil penalty of $500 per violation. If there were 47 violations, what is the total penalty?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"penalty_per * count\", \"vars\": {\"penalty_per\": 500, \"count\": 47}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The total civil penalty is $23,500. Calculated as: $500 × 47 = $23,500."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Calculate the monthly pro-rated rent for a $2,400/month lease if the tenant moves in on the 15th of a 30-day month."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"monthly_rent / days_in_month * days_remaining\", \"vars\": {\"monthly_rent\": 2400, \"days_in_month\": 30, \"days_remaining\": 16}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The pro-rated rent for 16 remaining days in a 30-day month is $1,280.00. Calculated as: $2,400 ÷ 30 × 16 = $1,280."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A party seeks attorney's fees of $350/hr for 42.5 hours. Calculate the total fee."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"rate * hours\", \"vars\": {\"rate\": 350, \"hours\": 42.5}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The total attorney's fee is $14,875.00. Calculated as: $350/hr × 42.5 hr = $14,875."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "The lease requires 60 days' notice of termination. If notice was given on March 10, what is the earliest termination date?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"notice_days\", \"vars\": {\"notice_days\": 60}, \"round_to\": 0}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "Adding 60 days to March 10 yields May 9. The earliest termination date is May 9."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Calculate the simple interest on a $75,000 promissory note at 8% annually for 18 months."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"P * r * (t / 12)\", \"vars\": {\"P\": 75000, \"r\": 0.08, \"t\": 18}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The simple interest is $9,000.00. Calculated as: $75,000 × 0.08 × (18/12) = $9,000."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A judgment of $200,000 compounds at 5% annually. What is the value after 4 years?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"P * (1 + r) ** t\", \"vars\": {\"P\": 200000, \"r\": 0.05, \"t\": 4}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The compounded judgment value after 4 years is $243,101.25. Calculated as: $200,000 × (1.05)^4 ≈ $243,101.25."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "A tenant owes three months' back rent at $1,800/month plus a 10% late fee. What is the total amount owed?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"months * rent * (1 + late_fee)\", \"vars\": {\"months\": 3, \"rent\": 1800, \"late_fee\": 0.1}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The total amount owed is $5,940.00. Calculated as: 3 × $1,800 × 1.10 = $5,940."
+      }
+    ]
+  },
+  {
+    "lane": "L05",
+    "source": "legal_calc_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Plaintiff seeks lost wages: $85,000/year salary, out of work for 14 months. Calculate the lost wage claim."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L05</lane>\n<tool_call>{\"tool\": \"sympy\", \"method\": \"calc\", \"expr\": \"salary / 12 * months\", \"vars\": {\"salary\": 85000, \"months\": 14}, \"round_to\": 2}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"result\": \"calculated\"}"
+      },
+      {
+        "role": "assistant",
+        "content": "The lost wage claim is $99,166.67. Calculated as: $85,000 ÷ 12 × 14 ≈ $99,166.67."
+      }
+    ]
+  }
+]

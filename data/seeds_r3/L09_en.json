@@ -1,0 +1,362 @@
+[
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'in rem' mean?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nIn rem is a Latin term meaning 'against the thing.' In law, an in rem proceeding is a legal action directed against property itself rather than against a specific person. Courts exercise in rem jurisdiction over property located within their territorial boundaries."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Translate and explain 'quantum meruit'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nQuantum meruit means 'as much as he has deserved' in Latin. It is an equitable remedy allowing recovery of the reasonable value of services rendered when there is no enforceable contract, to prevent unjust enrichment."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'mens rea' mean in criminal law?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nMens rea is Latin for 'guilty mind.' It refers to the mental state or intent required for criminal liability. Common levels include: purpose/intent, knowledge, recklessness, and negligence. A defendant generally must have both mens rea and actus reus (the guilty act) to be convicted."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain 'locus standi'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nLocus standi means 'place of standing' in Latin. In legal procedure, it refers to a party's right or capacity to bring an action before a court. In U.S. constitutional law it corresponds to standing — requiring injury in fact, causation, and redressability."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is 'habeas corpus'?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nHabeas corpus is Latin for 'you shall have the body.' It is a legal writ requiring that a person detained by the government be brought before a court to determine whether the detention is lawful. It is a fundamental protection against unlawful imprisonment, codified in 28 U.S.C. § 2241."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'de minimis' mean?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nDe minimis is Latin for 'about minimal things.' In law, it refers to something too small or trivial to merit legal consideration. Courts apply the de minimis doctrine to dismiss claims where the alleged harm or violation is negligible and below the threshold that the law was designed to address."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain 'prima facie'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nPrima facie is Latin for 'at first sight' or 'on its face.' A prima facie case is one that appears sufficient to establish a fact or raise a presumption, unless rebutted. In employment discrimination law, for example, a plaintiff must first establish a prima facie case before the burden shifts to the defendant."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'inter alia' mean?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nInter alia is Latin for 'among other things.' It is used in legal writing to indicate that a list is not exhaustive — for example, 'the contract required, inter alia, monthly payments and insurance' means those were among several requirements, not the only ones."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is 'nunc pro tunc'?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nNunc pro tunc is Latin for 'now for then.' It refers to a court order that takes retroactive effect, correcting the record to reflect what should have been done at an earlier time. For example, a nunc pro tunc entry might correct a clerical error in a prior judgment."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Translate and explain 'scienter'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nScienter is Latin for 'knowingly.' In law it refers to the mental state of knowing that a statement or action is false or wrongful. Proof of scienter is often required in fraud, securities violations (e.g., SEC Rule 10b-5), and certain criminal offenses."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'in rem' mean?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nIn rem is a Latin term meaning 'against the thing.' In law, an in rem proceeding is a legal action directed against property itself rather than against a specific person. Courts exercise in rem jurisdiction over property located within their territorial boundaries."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Translate and explain 'quantum meruit'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nQuantum meruit means 'as much as he has deserved' in Latin. It is an equitable remedy allowing recovery of the reasonable value of services rendered when there is no enforceable contract, to prevent unjust enrichment."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'mens rea' mean in criminal law?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nMens rea is Latin for 'guilty mind.' It refers to the mental state or intent required for criminal liability. Common levels include: purpose/intent, knowledge, recklessness, and negligence. A defendant generally must have both mens rea and actus reus (the guilty act) to be convicted."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain 'locus standi'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nLocus standi means 'place of standing' in Latin. In legal procedure, it refers to a party's right or capacity to bring an action before a court. In U.S. constitutional law it corresponds to standing — requiring injury in fact, causation, and redressability."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is 'habeas corpus'?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nHabeas corpus is Latin for 'you shall have the body.' It is a legal writ requiring that a person detained by the government be brought before a court to determine whether the detention is lawful. It is a fundamental protection against unlawful imprisonment, codified in 28 U.S.C. § 2241."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'de minimis' mean?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nDe minimis is Latin for 'about minimal things.' In law, it refers to something too small or trivial to merit legal consideration. Courts apply the de minimis doctrine to dismiss claims where the alleged harm or violation is negligible and below the threshold that the law was designed to address."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain 'prima facie'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nPrima facie is Latin for 'at first sight' or 'on its face.' A prima facie case is one that appears sufficient to establish a fact or raise a presumption, unless rebutted. In employment discrimination law, for example, a plaintiff must first establish a prima facie case before the burden shifts to the defendant."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'inter alia' mean?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nInter alia is Latin for 'among other things.' It is used in legal writing to indicate that a list is not exhaustive — for example, 'the contract required, inter alia, monthly payments and insurance' means those were among several requirements, not the only ones."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is 'nunc pro tunc'?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nNunc pro tunc is Latin for 'now for then.' It refers to a court order that takes retroactive effect, correcting the record to reflect what should have been done at an earlier time. For example, a nunc pro tunc entry might correct a clerical error in a prior judgment."
+      }
+    ]
+  },
+  {
+    "lane": "L09",
+    "source": "legal_translation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Translate and explain 'scienter'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L09</lane>\nScienter is Latin for 'knowingly.' In law it refers to the mental state of knowing that a statement or action is false or wrongful. Proof of scienter is often required in fraud, securities violations (e.g., SEC Rule 10b-5), and certain criminal offenses."
+      }
+    ]
+  }
+]

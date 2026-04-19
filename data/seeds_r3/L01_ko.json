@@ -1,0 +1,3642 @@
+[
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "피고가 피해자 소유의 휴대폰을 허락 없이 가져갔습니다. 절도죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\"], \"facts\": [\"피고가 타인의 재물을 취득함\", \"피해자의 허락이 없었음\"], \"matching\": {\"절도죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 절도죄가 성립합니다. 타인의 재물을 허락 없이 가져갔으므로 형법 제329조의 절도죄 구성요건을 충족합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "A가 B의 지갑을 공원 벤치에서 습득하여 가져갔습니다. 이는 절도죄인가요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"절도죄_구성요건\", \"점유이탈물횡령\"], \"facts\": [\"B가 지갑을 공원에 두고 떠난 상태\", \"A가 이를 습득함\"], \"matching\": {\"절도죄_구성요건\": false, \"점유이탈물횡령\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": false}"
+      },
+      {
+        "role": "assistant",
+        "content": "아니오. 지갑은 B의 점유를 이탈한 상태였으므로 절도죄가 아니라 점유이탈물횡령죄(형법 제360조)가 성립합니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "C는 D에게 허위 사실을 말하여 돈을 받았습니다. 사기죄가 성립하나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"사기죄_구성요건\"], \"facts\": [\"C가 D에게 허위 사실을 고지함\", \"D가 이를 믿고 재산을 교부함\"], \"matching\": {\"사기죄_구성요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 사기죄가 성립합니다. 형법 제347조의 사기죄는 기망행위로 상대방을 착오에 빠뜨려 재산상 이익을 취득하는 경우 성립하며, 모든 요건이 충족됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자 A의 채권이 10년 소멸시효 기간이 경과하였습니다. 소멸시효가 완성되었나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"소멸시효_완성\"], \"facts\": [\"채권 발생 후 10년이 경과함\", \"시효 중단 사유 없음\"], \"matching\": {\"소멸시효_완성\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 소멸시효가 완성되었습니다. 민법 제162조에 따라 일반 채권의 소멸시효는 10년이며, 중단 사유 없이 기간이 경과하면 소멸시효가 완성됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "채권자가 소멸시효 완성 전에 소를 제기하였습니다. 시효가 중단되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"시효중단\"], \"facts\": [\"소멸시효 완성 이전에 소를 제기함\"], \"matching\": {\"시효중단\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 시효가 중단됩니다. 민법 제168조에 따라 재판상 청구는 소멸시효를 중단시키며, 판결 확정 후 새로운 시효가 진행됩니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "임대차 계약에서 임차인이 3개월 이상 차임을 연체하였습니다. 임대인이 계약을 해지할 수 있나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"계약해지권\"], \"facts\": [\"임차인이 3개월 이상 차임 연체\", \"임대인의 해지권 발생\"], \"matching\": {\"계약해지권\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 임대인은 계약을 해지할 수 있습니다. 민법 제640조에 따라 건물 임차인이 2기의 차임을 연체하면 임대인은 해지권을 행사할 수 있습니다."
+      }
+    ]
+  },
+  {
+    "lane": "L01",
+    "source": "korean_civil_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "당신은 법률 추론 AI입니다. 입력을 Legal Lane으로 분류하고 적절한 솔버를 호출하세요."
+      },
+      {
+        "role": "user",
+        "content": "불법행위로 인해 피해자에게 손해가 발생하였습니다. 손해배상 책임이 인정되나요?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L01</lane>\n<tool_call>{\"tool\": \"z3\", \"method\": \"check_elements\", \"elements\": [\"손해배상_요건\"], \"facts\": [\"가해자의 고의 또는 과실이 인정됨\", \"손해 발생 및 인과관계 확인\"], \"matching\": {\"손해배상_요건\": true}, \"mode\": \"and\"}</tool_call>"
+      },
+      {
+        "role": "tool",
+        "content": "{\"all_met\": true}"
+      },
+      {
+        "role": "assistant",
+        "content": "네, 손해배상 책임이 인정됩니다. 민법 제750조에 따라 고의 또는 과실로 인한 위법행위로 타인에게 손해를 가한 경우 손해배상 의무가 발생합니다."
+      }
+    ]
+  }
+]

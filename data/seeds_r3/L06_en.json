@@ -1,0 +1,1262 @@
+[
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the parol evidence rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe parol evidence rule prohibits the introduction of extrinsic evidence — oral or written statements made prior to or contemporaneously with a written contract — to contradict, vary, or add to the terms of a fully integrated written agreement. The rule protects the integrity of written contracts and prevents fraud or mistake in contract formation."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the doctrine of promissory estoppel."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nPromissory estoppel (also called detrimental reliance) allows enforcement of a promise that lacks consideration when: (1) the promisor made a clear and definite promise; (2) the promisee reasonably relied on it; (3) the reliance was detrimental; and (4) injustice can only be avoided by enforcement. It is codified in Restatement (Second) of Contracts § 90."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'res ipsa loquitur' mean in tort law?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nRes ipsa loquitur ('the thing speaks for itself') is a doctrine in negligence law that allows an inference of negligence when: (1) the injury is of a type that ordinarily does not occur absent negligence; (2) the instrumentality causing the harm was in the defendant's exclusive control; and (3) the plaintiff did not contribute to the injury. It shifts the burden of producing evidence to the defendant."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the business judgment rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe business judgment rule is a presumption that in making business decisions, corporate directors acted on an informed basis, in good faith, and in the honest belief that the action was in the best interests of the company. Courts will not second-guess such decisions unless a plaintiff shows fraud, illegality, conflict of interest, or gross negligence in the decision-making process."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the Chevron doctrine."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe Chevron doctrine (Chevron U.S.A., Inc. v. NRDC, 1984) established a two-step framework for judicial review of agency statutory interpretation: (Step 1) Is the statute ambiguous? If clear, apply its plain meaning. (Step 2) If ambiguous, is the agency's interpretation reasonable? If so, courts must defer to it. The doctrine was overruled by Loper Bright Enterprises v. Raimondo (2024), which restored de novo review of statutory meaning."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the difference between specific and general personal jurisdiction?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nGeneral jurisdiction allows a court to hear any claim against a defendant based on their continuous and systematic presence in the forum state (e.g., domicile for individuals; principal place of business or state of incorporation for corporations). Specific jurisdiction is narrower — it requires that the claim arise out of or relate to the defendant's contacts with the forum state, satisfying minimum contacts and fair play under International Shoe Co. v. Washington (1945)."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is 'stare decisis'?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nStare decisis ('to stand by things decided') is the doctrine of legal precedent under which courts are generally bound to follow prior rulings from higher courts in the same jurisdiction when deciding cases with substantially similar facts and legal issues. It promotes consistency, predictability, and stability in the law. A court may depart from precedent if it finds the prior decision was wrongly decided or if circumstances have materially changed."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the concept of 'piercing the corporate veil'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nPiercing the corporate veil is an equitable remedy allowing courts to hold shareholders personally liable for corporate obligations when the corporate form is used as a shield for fraud or when the corporation is a mere alter ego of the shareholder. Courts consider factors such as commingling of assets, failure to observe corporate formalities, undercapitalization, and fraudulent intent."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the 'fruit of the poisonous tree' doctrine?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe fruit of the poisonous tree doctrine, derived from Wong Sun v. United States (1963), holds that evidence obtained as a result of an illegal search or seizure is inadmissible — not only the direct evidence (the 'poisonous tree') but also secondary evidence derived from it (the 'fruit'). Exceptions include: attenuation, independent source, and inevitable discovery."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Describe the elements of common law fraud."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nCommon law fraud requires proof of: (1) a false representation of a material fact; (2) made with knowledge of its falsity or reckless disregard for truth (scienter); (3) with intent to induce reliance; (4) actual and justifiable reliance by the plaintiff; and (5) resulting damages. The heightened pleading standard of FRCP 9(b) requires fraud to be pled with particularity in federal courts."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the parol evidence rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe parol evidence rule prohibits the introduction of extrinsic evidence — oral or written statements made prior to or contemporaneously with a written contract — to contradict, vary, or add to the terms of a fully integrated written agreement. The rule protects the integrity of written contracts and prevents fraud or mistake in contract formation."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the doctrine of promissory estoppel."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nPromissory estoppel (also called detrimental reliance) allows enforcement of a promise that lacks consideration when: (1) the promisor made a clear and definite promise; (2) the promisee reasonably relied on it; (3) the reliance was detrimental; and (4) injustice can only be avoided by enforcement. It is codified in Restatement (Second) of Contracts § 90."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'res ipsa loquitur' mean in tort law?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nRes ipsa loquitur ('the thing speaks for itself') is a doctrine in negligence law that allows an inference of negligence when: (1) the injury is of a type that ordinarily does not occur absent negligence; (2) the instrumentality causing the harm was in the defendant's exclusive control; and (3) the plaintiff did not contribute to the injury. It shifts the burden of producing evidence to the defendant."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the business judgment rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe business judgment rule is a presumption that in making business decisions, corporate directors acted on an informed basis, in good faith, and in the honest belief that the action was in the best interests of the company. Courts will not second-guess such decisions unless a plaintiff shows fraud, illegality, conflict of interest, or gross negligence in the decision-making process."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the Chevron doctrine."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe Chevron doctrine (Chevron U.S.A., Inc. v. NRDC, 1984) established a two-step framework for judicial review of agency statutory interpretation: (Step 1) Is the statute ambiguous? If clear, apply its plain meaning. (Step 2) If ambiguous, is the agency's interpretation reasonable? If so, courts must defer to it. The doctrine was overruled by Loper Bright Enterprises v. Raimondo (2024), which restored de novo review of statutory meaning."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the difference between specific and general personal jurisdiction?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nGeneral jurisdiction allows a court to hear any claim against a defendant based on their continuous and systematic presence in the forum state (e.g., domicile for individuals; principal place of business or state of incorporation for corporations). Specific jurisdiction is narrower — it requires that the claim arise out of or relate to the defendant's contacts with the forum state, satisfying minimum contacts and fair play under International Shoe Co. v. Washington (1945)."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is 'stare decisis'?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nStare decisis ('to stand by things decided') is the doctrine of legal precedent under which courts are generally bound to follow prior rulings from higher courts in the same jurisdiction when deciding cases with substantially similar facts and legal issues. It promotes consistency, predictability, and stability in the law. A court may depart from precedent if it finds the prior decision was wrongly decided or if circumstances have materially changed."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the concept of 'piercing the corporate veil'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nPiercing the corporate veil is an equitable remedy allowing courts to hold shareholders personally liable for corporate obligations when the corporate form is used as a shield for fraud or when the corporation is a mere alter ego of the shareholder. Courts consider factors such as commingling of assets, failure to observe corporate formalities, undercapitalization, and fraudulent intent."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the 'fruit of the poisonous tree' doctrine?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe fruit of the poisonous tree doctrine, derived from Wong Sun v. United States (1963), holds that evidence obtained as a result of an illegal search or seizure is inadmissible — not only the direct evidence (the 'poisonous tree') but also secondary evidence derived from it (the 'fruit'). Exceptions include: attenuation, independent source, and inevitable discovery."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Describe the elements of common law fraud."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nCommon law fraud requires proof of: (1) a false representation of a material fact; (2) made with knowledge of its falsity or reckless disregard for truth (scienter); (3) with intent to induce reliance; (4) actual and justifiable reliance by the plaintiff; and (5) resulting damages. The heightened pleading standard of FRCP 9(b) requires fraud to be pled with particularity in federal courts."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the parol evidence rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe parol evidence rule prohibits the introduction of extrinsic evidence — oral or written statements made prior to or contemporaneously with a written contract — to contradict, vary, or add to the terms of a fully integrated written agreement. The rule protects the integrity of written contracts and prevents fraud or mistake in contract formation."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the doctrine of promissory estoppel."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nPromissory estoppel (also called detrimental reliance) allows enforcement of a promise that lacks consideration when: (1) the promisor made a clear and definite promise; (2) the promisee reasonably relied on it; (3) the reliance was detrimental; and (4) injustice can only be avoided by enforcement. It is codified in Restatement (Second) of Contracts § 90."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'res ipsa loquitur' mean in tort law?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nRes ipsa loquitur ('the thing speaks for itself') is a doctrine in negligence law that allows an inference of negligence when: (1) the injury is of a type that ordinarily does not occur absent negligence; (2) the instrumentality causing the harm was in the defendant's exclusive control; and (3) the plaintiff did not contribute to the injury. It shifts the burden of producing evidence to the defendant."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the business judgment rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe business judgment rule is a presumption that in making business decisions, corporate directors acted on an informed basis, in good faith, and in the honest belief that the action was in the best interests of the company. Courts will not second-guess such decisions unless a plaintiff shows fraud, illegality, conflict of interest, or gross negligence in the decision-making process."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the Chevron doctrine."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe Chevron doctrine (Chevron U.S.A., Inc. v. NRDC, 1984) established a two-step framework for judicial review of agency statutory interpretation: (Step 1) Is the statute ambiguous? If clear, apply its plain meaning. (Step 2) If ambiguous, is the agency's interpretation reasonable? If so, courts must defer to it. The doctrine was overruled by Loper Bright Enterprises v. Raimondo (2024), which restored de novo review of statutory meaning."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the difference between specific and general personal jurisdiction?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nGeneral jurisdiction allows a court to hear any claim against a defendant based on their continuous and systematic presence in the forum state (e.g., domicile for individuals; principal place of business or state of incorporation for corporations). Specific jurisdiction is narrower — it requires that the claim arise out of or relate to the defendant's contacts with the forum state, satisfying minimum contacts and fair play under International Shoe Co. v. Washington (1945)."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is 'stare decisis'?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nStare decisis ('to stand by things decided') is the doctrine of legal precedent under which courts are generally bound to follow prior rulings from higher courts in the same jurisdiction when deciding cases with substantially similar facts and legal issues. It promotes consistency, predictability, and stability in the law. A court may depart from precedent if it finds the prior decision was wrongly decided or if circumstances have materially changed."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the concept of 'piercing the corporate veil'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nPiercing the corporate veil is an equitable remedy allowing courts to hold shareholders personally liable for corporate obligations when the corporate form is used as a shield for fraud or when the corporation is a mere alter ego of the shareholder. Courts consider factors such as commingling of assets, failure to observe corporate formalities, undercapitalization, and fraudulent intent."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the 'fruit of the poisonous tree' doctrine?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe fruit of the poisonous tree doctrine, derived from Wong Sun v. United States (1963), holds that evidence obtained as a result of an illegal search or seizure is inadmissible — not only the direct evidence (the 'poisonous tree') but also secondary evidence derived from it (the 'fruit'). Exceptions include: attenuation, independent source, and inevitable discovery."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Describe the elements of common law fraud."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nCommon law fraud requires proof of: (1) a false representation of a material fact; (2) made with knowledge of its falsity or reckless disregard for truth (scienter); (3) with intent to induce reliance; (4) actual and justifiable reliance by the plaintiff; and (5) resulting damages. The heightened pleading standard of FRCP 9(b) requires fraud to be pled with particularity in federal courts."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the parol evidence rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe parol evidence rule prohibits the introduction of extrinsic evidence — oral or written statements made prior to or contemporaneously with a written contract — to contradict, vary, or add to the terms of a fully integrated written agreement. The rule protects the integrity of written contracts and prevents fraud or mistake in contract formation."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the doctrine of promissory estoppel."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nPromissory estoppel (also called detrimental reliance) allows enforcement of a promise that lacks consideration when: (1) the promisor made a clear and definite promise; (2) the promisee reasonably relied on it; (3) the reliance was detrimental; and (4) injustice can only be avoided by enforcement. It is codified in Restatement (Second) of Contracts § 90."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'res ipsa loquitur' mean in tort law?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nRes ipsa loquitur ('the thing speaks for itself') is a doctrine in negligence law that allows an inference of negligence when: (1) the injury is of a type that ordinarily does not occur absent negligence; (2) the instrumentality causing the harm was in the defendant's exclusive control; and (3) the plaintiff did not contribute to the injury. It shifts the burden of producing evidence to the defendant."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the business judgment rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe business judgment rule is a presumption that in making business decisions, corporate directors acted on an informed basis, in good faith, and in the honest belief that the action was in the best interests of the company. Courts will not second-guess such decisions unless a plaintiff shows fraud, illegality, conflict of interest, or gross negligence in the decision-making process."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the Chevron doctrine."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe Chevron doctrine (Chevron U.S.A., Inc. v. NRDC, 1984) established a two-step framework for judicial review of agency statutory interpretation: (Step 1) Is the statute ambiguous? If clear, apply its plain meaning. (Step 2) If ambiguous, is the agency's interpretation reasonable? If so, courts must defer to it. The doctrine was overruled by Loper Bright Enterprises v. Raimondo (2024), which restored de novo review of statutory meaning."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the difference between specific and general personal jurisdiction?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nGeneral jurisdiction allows a court to hear any claim against a defendant based on their continuous and systematic presence in the forum state (e.g., domicile for individuals; principal place of business or state of incorporation for corporations). Specific jurisdiction is narrower — it requires that the claim arise out of or relate to the defendant's contacts with the forum state, satisfying minimum contacts and fair play under International Shoe Co. v. Washington (1945)."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is 'stare decisis'?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nStare decisis ('to stand by things decided') is the doctrine of legal precedent under which courts are generally bound to follow prior rulings from higher courts in the same jurisdiction when deciding cases with substantially similar facts and legal issues. It promotes consistency, predictability, and stability in the law. A court may depart from precedent if it finds the prior decision was wrongly decided or if circumstances have materially changed."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the concept of 'piercing the corporate veil'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nPiercing the corporate veil is an equitable remedy allowing courts to hold shareholders personally liable for corporate obligations when the corporate form is used as a shield for fraud or when the corporation is a mere alter ego of the shareholder. Courts consider factors such as commingling of assets, failure to observe corporate formalities, undercapitalization, and fraudulent intent."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the 'fruit of the poisonous tree' doctrine?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe fruit of the poisonous tree doctrine, derived from Wong Sun v. United States (1963), holds that evidence obtained as a result of an illegal search or seizure is inadmissible — not only the direct evidence (the 'poisonous tree') but also secondary evidence derived from it (the 'fruit'). Exceptions include: attenuation, independent source, and inevitable discovery."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Describe the elements of common law fraud."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nCommon law fraud requires proof of: (1) a false representation of a material fact; (2) made with knowledge of its falsity or reckless disregard for truth (scienter); (3) with intent to induce reliance; (4) actual and justifiable reliance by the plaintiff; and (5) resulting damages. The heightened pleading standard of FRCP 9(b) requires fraud to be pled with particularity in federal courts."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the parol evidence rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe parol evidence rule prohibits the introduction of extrinsic evidence — oral or written statements made prior to or contemporaneously with a written contract — to contradict, vary, or add to the terms of a fully integrated written agreement. The rule protects the integrity of written contracts and prevents fraud or mistake in contract formation."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the doctrine of promissory estoppel."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nPromissory estoppel (also called detrimental reliance) allows enforcement of a promise that lacks consideration when: (1) the promisor made a clear and definite promise; (2) the promisee reasonably relied on it; (3) the reliance was detrimental; and (4) injustice can only be avoided by enforcement. It is codified in Restatement (Second) of Contracts § 90."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'res ipsa loquitur' mean in tort law?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nRes ipsa loquitur ('the thing speaks for itself') is a doctrine in negligence law that allows an inference of negligence when: (1) the injury is of a type that ordinarily does not occur absent negligence; (2) the instrumentality causing the harm was in the defendant's exclusive control; and (3) the plaintiff did not contribute to the injury. It shifts the burden of producing evidence to the defendant."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the business judgment rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe business judgment rule is a presumption that in making business decisions, corporate directors acted on an informed basis, in good faith, and in the honest belief that the action was in the best interests of the company. Courts will not second-guess such decisions unless a plaintiff shows fraud, illegality, conflict of interest, or gross negligence in the decision-making process."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the Chevron doctrine."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe Chevron doctrine (Chevron U.S.A., Inc. v. NRDC, 1984) established a two-step framework for judicial review of agency statutory interpretation: (Step 1) Is the statute ambiguous? If clear, apply its plain meaning. (Step 2) If ambiguous, is the agency's interpretation reasonable? If so, courts must defer to it. The doctrine was overruled by Loper Bright Enterprises v. Raimondo (2024), which restored de novo review of statutory meaning."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the difference between specific and general personal jurisdiction?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nGeneral jurisdiction allows a court to hear any claim against a defendant based on their continuous and systematic presence in the forum state (e.g., domicile for individuals; principal place of business or state of incorporation for corporations). Specific jurisdiction is narrower — it requires that the claim arise out of or relate to the defendant's contacts with the forum state, satisfying minimum contacts and fair play under International Shoe Co. v. Washington (1945)."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is 'stare decisis'?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nStare decisis ('to stand by things decided') is the doctrine of legal precedent under which courts are generally bound to follow prior rulings from higher courts in the same jurisdiction when deciding cases with substantially similar facts and legal issues. It promotes consistency, predictability, and stability in the law. A court may depart from precedent if it finds the prior decision was wrongly decided or if circumstances have materially changed."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the concept of 'piercing the corporate veil'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nPiercing the corporate veil is an equitable remedy allowing courts to hold shareholders personally liable for corporate obligations when the corporate form is used as a shield for fraud or when the corporation is a mere alter ego of the shareholder. Courts consider factors such as commingling of assets, failure to observe corporate formalities, undercapitalization, and fraudulent intent."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the 'fruit of the poisonous tree' doctrine?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe fruit of the poisonous tree doctrine, derived from Wong Sun v. United States (1963), holds that evidence obtained as a result of an illegal search or seizure is inadmissible — not only the direct evidence (the 'poisonous tree') but also secondary evidence derived from it (the 'fruit'). Exceptions include: attenuation, independent source, and inevitable discovery."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Describe the elements of common law fraud."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nCommon law fraud requires proof of: (1) a false representation of a material fact; (2) made with knowledge of its falsity or reckless disregard for truth (scienter); (3) with intent to induce reliance; (4) actual and justifiable reliance by the plaintiff; and (5) resulting damages. The heightened pleading standard of FRCP 9(b) requires fraud to be pled with particularity in federal courts."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the parol evidence rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe parol evidence rule prohibits the introduction of extrinsic evidence — oral or written statements made prior to or contemporaneously with a written contract — to contradict, vary, or add to the terms of a fully integrated written agreement. The rule protects the integrity of written contracts and prevents fraud or mistake in contract formation."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the doctrine of promissory estoppel."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nPromissory estoppel (also called detrimental reliance) allows enforcement of a promise that lacks consideration when: (1) the promisor made a clear and definite promise; (2) the promisee reasonably relied on it; (3) the reliance was detrimental; and (4) injustice can only be avoided by enforcement. It is codified in Restatement (Second) of Contracts § 90."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'res ipsa loquitur' mean in tort law?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nRes ipsa loquitur ('the thing speaks for itself') is a doctrine in negligence law that allows an inference of negligence when: (1) the injury is of a type that ordinarily does not occur absent negligence; (2) the instrumentality causing the harm was in the defendant's exclusive control; and (3) the plaintiff did not contribute to the injury. It shifts the burden of producing evidence to the defendant."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the business judgment rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe business judgment rule is a presumption that in making business decisions, corporate directors acted on an informed basis, in good faith, and in the honest belief that the action was in the best interests of the company. Courts will not second-guess such decisions unless a plaintiff shows fraud, illegality, conflict of interest, or gross negligence in the decision-making process."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the Chevron doctrine."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe Chevron doctrine (Chevron U.S.A., Inc. v. NRDC, 1984) established a two-step framework for judicial review of agency statutory interpretation: (Step 1) Is the statute ambiguous? If clear, apply its plain meaning. (Step 2) If ambiguous, is the agency's interpretation reasonable? If so, courts must defer to it. The doctrine was overruled by Loper Bright Enterprises v. Raimondo (2024), which restored de novo review of statutory meaning."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the difference between specific and general personal jurisdiction?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nGeneral jurisdiction allows a court to hear any claim against a defendant based on their continuous and systematic presence in the forum state (e.g., domicile for individuals; principal place of business or state of incorporation for corporations). Specific jurisdiction is narrower — it requires that the claim arise out of or relate to the defendant's contacts with the forum state, satisfying minimum contacts and fair play under International Shoe Co. v. Washington (1945)."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is 'stare decisis'?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nStare decisis ('to stand by things decided') is the doctrine of legal precedent under which courts are generally bound to follow prior rulings from higher courts in the same jurisdiction when deciding cases with substantially similar facts and legal issues. It promotes consistency, predictability, and stability in the law. A court may depart from precedent if it finds the prior decision was wrongly decided or if circumstances have materially changed."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the concept of 'piercing the corporate veil'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nPiercing the corporate veil is an equitable remedy allowing courts to hold shareholders personally liable for corporate obligations when the corporate form is used as a shield for fraud or when the corporation is a mere alter ego of the shareholder. Courts consider factors such as commingling of assets, failure to observe corporate formalities, undercapitalization, and fraudulent intent."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the 'fruit of the poisonous tree' doctrine?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nThe fruit of the poisonous tree doctrine, derived from Wong Sun v. United States (1963), holds that evidence obtained as a result of an illegal search or seizure is inadmissible — not only the direct evidence (the 'poisonous tree') but also secondary evidence derived from it (the 'fruit'). Exceptions include: attenuation, independent source, and inevitable discovery."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Describe the elements of common law fraud."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\nCommon law fraud requires proof of: (1) a false representation of a material fact; (2) made with knowledge of its falsity or reckless disregard for truth (scienter); (3) with intent to induce reliance; (4) actual and justifiable reliance by the plaintiff; and (5) resulting damages. The heightened pleading standard of FRCP 9(b) requires fraud to be pled with particularity in federal courts."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the parol evidence rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\n<reasoning>This is a direct explanation task requiring legal analysis without formal element-checking. No solver needed.</reasoning>\nThe parol evidence rule prohibits the introduction of extrinsic evidence — oral or written statements made prior to or contemporaneously with a written contract — to contradict, vary, or add to the terms of a fully integrated written agreement. The rule protects the integrity of written contracts and prevents fraud or mistake in contract formation."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the doctrine of promissory estoppel."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\n<reasoning>This is a direct explanation task requiring legal analysis without formal element-checking. No solver needed.</reasoning>\nPromissory estoppel (also called detrimental reliance) allows enforcement of a promise that lacks consideration when: (1) the promisor made a clear and definite promise; (2) the promisee reasonably relied on it; (3) the reliance was detrimental; and (4) injustice can only be avoided by enforcement. It is codified in Restatement (Second) of Contracts § 90."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What does 'res ipsa loquitur' mean in tort law?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\n<reasoning>This is a direct explanation task requiring legal analysis without formal element-checking. No solver needed.</reasoning>\nRes ipsa loquitur ('the thing speaks for itself') is a doctrine in negligence law that allows an inference of negligence when: (1) the injury is of a type that ordinarily does not occur absent negligence; (2) the instrumentality causing the harm was in the defendant's exclusive control; and (3) the plaintiff did not contribute to the injury. It shifts the burden of producing evidence to the defendant."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the business judgment rule?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\n<reasoning>This is a direct explanation task requiring legal analysis without formal element-checking. No solver needed.</reasoning>\nThe business judgment rule is a presumption that in making business decisions, corporate directors acted on an informed basis, in good faith, and in the honest belief that the action was in the best interests of the company. Courts will not second-guess such decisions unless a plaintiff shows fraud, illegality, conflict of interest, or gross negligence in the decision-making process."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the Chevron doctrine."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\n<reasoning>This is a direct explanation task requiring legal analysis without formal element-checking. No solver needed.</reasoning>\nThe Chevron doctrine (Chevron U.S.A., Inc. v. NRDC, 1984) established a two-step framework for judicial review of agency statutory interpretation: (Step 1) Is the statute ambiguous? If clear, apply its plain meaning. (Step 2) If ambiguous, is the agency's interpretation reasonable? If so, courts must defer to it. The doctrine was overruled by Loper Bright Enterprises v. Raimondo (2024), which restored de novo review of statutory meaning."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the difference between specific and general personal jurisdiction?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\n<reasoning>This is a direct explanation task requiring legal analysis without formal element-checking. No solver needed.</reasoning>\nGeneral jurisdiction allows a court to hear any claim against a defendant based on their continuous and systematic presence in the forum state (e.g., domicile for individuals; principal place of business or state of incorporation for corporations). Specific jurisdiction is narrower — it requires that the claim arise out of or relate to the defendant's contacts with the forum state, satisfying minimum contacts and fair play under International Shoe Co. v. Washington (1945)."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is 'stare decisis'?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\n<reasoning>This is a direct explanation task requiring legal analysis without formal element-checking. No solver needed.</reasoning>\nStare decisis ('to stand by things decided') is the doctrine of legal precedent under which courts are generally bound to follow prior rulings from higher courts in the same jurisdiction when deciding cases with substantially similar facts and legal issues. It promotes consistency, predictability, and stability in the law. A court may depart from precedent if it finds the prior decision was wrongly decided or if circumstances have materially changed."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Explain the concept of 'piercing the corporate veil'."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\n<reasoning>This is a direct explanation task requiring legal analysis without formal element-checking. No solver needed.</reasoning>\nPiercing the corporate veil is an equitable remedy allowing courts to hold shareholders personally liable for corporate obligations when the corporate form is used as a shield for fraud or when the corporation is a mere alter ego of the shareholder. Courts consider factors such as commingling of assets, failure to observe corporate formalities, undercapitalization, and fraudulent intent."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "What is the 'fruit of the poisonous tree' doctrine?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\n<reasoning>This is a direct explanation task requiring legal analysis without formal element-checking. No solver needed.</reasoning>\nThe fruit of the poisonous tree doctrine, derived from Wong Sun v. United States (1963), holds that evidence obtained as a result of an illegal search or seizure is inadmissible — not only the direct evidence (the 'poisonous tree') but also secondary evidence derived from it (the 'fruit'). Exceptions include: attenuation, independent source, and inevitable discovery."
+      }
+    ]
+  },
+  {
+    "lane": "L06",
+    "source": "legal_explanation_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Describe the elements of common law fraud."
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L06</lane>\n<reasoning>This is a direct explanation task requiring legal analysis without formal element-checking. No solver needed.</reasoning>\nCommon law fraud requires proof of: (1) a false representation of a material fact; (2) made with knowledge of its falsity or reckless disregard for truth (scienter); (3) with intent to induce reliance; (4) actual and justifiable reliance by the plaintiff; and (5) resulting damages. The heightened pleading standard of FRCP 9(b) requires fraud to be pled with particularity in federal courts."
+      }
+    ]
+  }
+]

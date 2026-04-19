@@ -1,0 +1,362 @@
+[
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Will the court in this jurisdiction apply the economic loss rule to bar this negligence claim?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nWhether the economic loss rule bars this claim depends on the specific jurisdiction's approach and recent case law. Some states recognize a professional services exception; others apply the rule strictly. Without knowing the jurisdiction, I cannot determine the outcome with confidence."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Is this arbitration clause enforceable under the FAA?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nEnforceability of arbitration clauses under the Federal Arbitration Act depends on multiple factors: whether the clause is unconscionable under state contract law, whether the dispute falls within its scope, and recent Supreme Court precedent. A definitive answer requires reviewing the full agreement and the applicable state law."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Can the plaintiff recover punitive damages in this contract dispute?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nPunitive damages in contract cases are generally not available under traditional common law principles, but some jurisdictions permit them when the breach is accompanied by fraud, malice, or oppression. The answer depends on the jurisdiction and the specific facts of the alleged misconduct."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Does this non-compete agreement violate state law?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nThe enforceability of non-compete agreements varies significantly by state. California, for example, largely prohibits them; other states enforce them if reasonable in scope, duration, and geography. Without knowing the governing state law and reviewing all agreement terms, I cannot make a definitive determination."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Is the statute of limitations tolled in this case?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nTolling of the statute of limitations depends on the discovery rule, equitable tolling doctrines, and any applicable statutory exceptions in the relevant jurisdiction. Whether tolling applies here requires analyzing the plaintiff's knowledge of the injury and the defendant's conduct in more detail."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Does the First Amendment protect this speech in the workplace?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nFirst Amendment protections generally apply to government actors, not private employers. Whether a particular government workplace speech restriction is constitutional depends on whether the employee spoke as a private citizen on a matter of public concern (Garcetti v. Ceballos). The analysis is highly fact-specific."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Is this expert testimony admissible under Daubert?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nAdmissibility under Daubert v. Merrell Dow requires the court to evaluate whether the methodology is testable, has been peer-reviewed, has an acceptable error rate, and is generally accepted in the relevant scientific community. A full analysis requires reviewing the expert's report and qualifications."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Does this settlement release all future claims?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nWhether a release bars future claims depends on its scope, whether it was knowing and voluntary, and whether the future claims were within the reasonable contemplation of the parties at the time of signing. Courts construe releases narrowly if they purport to cover unknown future claims."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Will the court in this jurisdiction apply the economic loss rule to bar this negligence claim?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nWhether the economic loss rule bars this claim depends on the specific jurisdiction's approach and recent case law. Some states recognize a professional services exception; others apply the rule strictly. Without knowing the jurisdiction, I cannot determine the outcome with confidence."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Is this arbitration clause enforceable under the FAA?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nEnforceability of arbitration clauses under the Federal Arbitration Act depends on multiple factors: whether the clause is unconscionable under state contract law, whether the dispute falls within its scope, and recent Supreme Court precedent. A definitive answer requires reviewing the full agreement and the applicable state law."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Can the plaintiff recover punitive damages in this contract dispute?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nPunitive damages in contract cases are generally not available under traditional common law principles, but some jurisdictions permit them when the breach is accompanied by fraud, malice, or oppression. The answer depends on the jurisdiction and the specific facts of the alleged misconduct."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Does this non-compete agreement violate state law?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nThe enforceability of non-compete agreements varies significantly by state. California, for example, largely prohibits them; other states enforce them if reasonable in scope, duration, and geography. Without knowing the governing state law and reviewing all agreement terms, I cannot make a definitive determination."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Is the statute of limitations tolled in this case?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nTolling of the statute of limitations depends on the discovery rule, equitable tolling doctrines, and any applicable statutory exceptions in the relevant jurisdiction. Whether tolling applies here requires analyzing the plaintiff's knowledge of the injury and the defendant's conduct in more detail."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Does the First Amendment protect this speech in the workplace?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nFirst Amendment protections generally apply to government actors, not private employers. Whether a particular government workplace speech restriction is constitutional depends on whether the employee spoke as a private citizen on a matter of public concern (Garcetti v. Ceballos). The analysis is highly fact-specific."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Is this expert testimony admissible under Daubert?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nAdmissibility under Daubert v. Merrell Dow requires the court to evaluate whether the methodology is testable, has been peer-reviewed, has an acceptable error rate, and is generally accepted in the relevant scientific community. A full analysis requires reviewing the expert's report and qualifications."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Does this settlement release all future claims?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nWhether a release bars future claims depends on its scope, whether it was knowing and voluntary, and whether the future claims were within the reasonable contemplation of the parties at the time of signing. Courts construe releases narrowly if they purport to cover unknown future claims."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Will the court in this jurisdiction apply the economic loss rule to bar this negligence claim?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nWhether the economic loss rule bars this claim depends on the specific jurisdiction's approach and recent case law. Some states recognize a professional services exception; others apply the rule strictly. Without knowing the jurisdiction, I cannot determine the outcome with confidence."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Is this arbitration clause enforceable under the FAA?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nEnforceability of arbitration clauses under the Federal Arbitration Act depends on multiple factors: whether the clause is unconscionable under state contract law, whether the dispute falls within its scope, and recent Supreme Court precedent. A definitive answer requires reviewing the full agreement and the applicable state law."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Can the plaintiff recover punitive damages in this contract dispute?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nPunitive damages in contract cases are generally not available under traditional common law principles, but some jurisdictions permit them when the breach is accompanied by fraud, malice, or oppression. The answer depends on the jurisdiction and the specific facts of the alleged misconduct."
+      }
+    ]
+  },
+  {
+    "lane": "L10",
+    "source": "legal_uncertain_r3",
+    "messages": [
+      {
+        "role": "system",
+        "content": "You are a legal reasoning AI. Classify the input into a Legal Lane and invoke the appropriate solver."
+      },
+      {
+        "role": "user",
+        "content": "Does this non-compete agreement violate state law?"
+      },
+      {
+        "role": "assistant",
+        "content": "<lane>L10</lane>\nThe enforceability of non-compete agreements varies significantly by state. California, for example, largely prohibits them; other states enforce them if reasonable in scope, duration, and geography. Without knowing the governing state law and reviewing all agreement terms, I cannot make a definitive determination."
+      }
+    ]
+  }
+]
