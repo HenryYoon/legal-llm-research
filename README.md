@@ -64,7 +64,9 @@
 
 Lane은 **"이 질문에 답하려면 어떤 종류의 추론이 필요한가"** 를 분류하는 태그입니다. 모델이 질문을 받자마자 `<lane>L01</lane>` 같은 태그를 먼저 출력하게 SFT로 학습시킵니다.
 
-> **개념 출처.** Lane이라는 용어와 "추론 유형별로 경로를 분기한다"는 발상은 [DinoDS AI — Lanes](https://dinodsai.com/lanes) 에서 제안된 프레임워크를 본 연구의 **법률 도메인**에 맞게 재구성한 것입니다. 원본은 범용 추론 경로 라우팅을 다루며, 본 연구는 그중 "형식화 가능 vs 자유 생성"의 경계선이 유독 뚜렷한 법률 영역에 Lane을 특화 적용했습니다. 관련 라우팅 선행연구로는 **Semantic Router**, **MoDEM (2024)** 등이 있으며, 상세 비교는 [`reports/literature_review.md`](reports/literature_review.md) 참고.
+> **개념 출처.** Lane이라는 용어와 설계 철학은 [**DinoDS AI — Lanes**](https://dinodsai.com/lanes)에서 가져왔습니다. DinoDS의 Lane Registry는 **37개의 Action Lane**으로 구성되며, 각 Lane이 **자체 스키마(Schema) + QA 계약(QA Contract) + 결정적 출력 포맷**을 갖는 "engineered data pipeline"으로 정의됩니다 — 예: Lane 03 Think Mode, Lane 06 Action Router, Lane 10 Connector Intent, Lane 16 JSON Spec Mode, Lane 22 Translation, Lane 29 Safety & Refusal 등. 각 Lane 샘플은 PII 스크러빙 → 스키마 검증 → 안전 태깅 → lineage 보존의 워터폴을 거쳐 "verified Action-Token"으로 산출됩니다.
+>
+> 본 연구는 이 프레임워크의 핵심 원칙 — **Lane별 스키마 강제 + 라운드트립 검증 + 결정적 출력** — 을 차용하되, 범위를 **법률 추론 10개(→ R2에서 5개) Lane** 으로 좁히고 **형식 논리형 Lane에는 Z3 솔버를 외주**하는 구조를 덧붙인 점이 차별점입니다. 관련 라우팅 선행연구로는 Semantic Router, MoDEM (2024)가 있으며, 상세 비교는 [`reports/literature_review.md`](reports/literature_review.md) 참고.
 
 ### R2(현재) Lane 체계 — 5개
 
@@ -396,7 +398,7 @@ python scripts/eval_with_solver_r2.py --model qwen25 --variant lane_solver --tas
 - **NL2Logic** (2026) — AST 경유 NL → FOL → Z3/SMT-LIB. 0.5B에서도 작동.
 - **SaulLM** (NeurIPS 2024) — 540B 법률 토큰 pretrain (54B/141B). 파라미터-효율 비교군.
 - **LegalBench** (arXiv 2308.11462) — 162 법률 태스크 벤치마크.
-- **DinoDS AI — Lanes** ([https://dinodsai.com/lanes](https://dinodsai.com/lanes)) — Lane 개념(추론 유형별 경로 분기)의 원 출처. 본 연구는 이를 법률 도메인에 특화.
+- **DinoDS AI — Lanes** ([https://dinodsai.com/lanes](https://dinodsai.com/lanes)) — 37 Action Lane 프레임워크, 각 Lane이 schema + QA contract + 결정적 출력 포맷을 갖는 engineered pipeline. 본 연구의 Lane 개념의 직접적 원천.
 
 ### 라이선스
 
