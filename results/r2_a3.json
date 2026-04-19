@@ -1,0 +1,36 @@
+{
+  "model": "qwen25",
+  "adapter": "models/qwen25-1.5b-legal-sft-r2",
+  "timestamp": "2026-04-19T12:08:46.763070",
+  "outlines_available": true,
+  "metrics": [
+    {
+      "task": "hearsay",
+      "n_samples": 94,
+      "tool_call_rate": 0.07446808510638298,
+      "parse_rate": 0.35106382978723405,
+      "balanced_accuracy": 0.5232397606994938
+    },
+    {
+      "task": "personal_jurisdiction",
+      "n_samples": 50,
+      "tool_call_rate": 0.06,
+      "parse_rate": 0.28,
+      "balanced_accuracy": 0.5
+    },
+    {
+      "task": "rule_qa",
+      "n_samples": 50,
+      "tool_call_rate": 0.16,
+      "parse_rate": 1.0,
+      "rouge_l": 0.11689255774488147
+    },
+    {
+      "task": "textualism_tool",
+      "n_samples": 107,
+      "tool_call_rate": 0.102803738317757,
+      "parse_rate": 0.308411214953271,
+      "balanced_accuracy": 0.46938775510204084
+    }
+  ]
+}

@@ -354,8 +354,13 @@ def evaluate_task(
     decoder: OutlinesConstrainedDecoder,
     task: str,
     max_samples: int = 50,
+    trace_path: Optional[Path] = None,
 ) -> Dict[str, Any]:
-    """Run evaluation on a LegalBench task, return metrics dict."""
+    """Run evaluation on a LegalBench task, return metrics dict.
+
+    If ``trace_path`` is provided, per-sample traces are appended as JSONL
+    for manual inspection (lane / tool_call / tool_result / final_answer).
+    """
     import pandas as pd
 
     cfg = TASK_CONFIG[task]
@@ -366,27 +371,52 @@ def evaluate_task(
 
     predictions, labels, tool_call_rates, parse_rates = [], [], [], []
 
-    for _, row in df.iterrows():
-        question = str(row[cfg["question_col"]])
-        label = str(row[cfg["label_col"]]).strip()
-        labels.append(label)
+    trace_fp = None
+    if trace_path:
+        trace_path.parent.mkdir(parents=True, exist_ok=True)
+        trace_fp = open(trace_path, "a", encoding="utf-8")
 
-        lane, tc, tr, fa = run_lane_solver_r2(decoder, question)
+    try:
+        for idx, row in df.iterrows():
+            question = str(row[cfg["question_col"]])
+            label = str(row[cfg["label_col"]]).strip()
+            labels.append(label)
 
-        tool_call_rates.append(1 if tc is not None else 0)
+            lane, tc, tr, fa = run_lane_solver_r2(decoder, question)
 
-        if cfg["type"] == "binary":
-            m = re.search(r"\b(Yes|No)\b", fa, re.IGNORECASE)
-            if m:
-                pred = m.group(1).capitalize()
-                parse_rates.append(1)
+            tool_call_rates.append(1 if tc is not None else 0)
+
+            if cfg["type"] == "binary":
+                m = re.search(r"\b(Yes|No)\b", fa, re.IGNORECASE)
+                if m:
+                    pred = m.group(1).capitalize()
+                    parse_rates.append(1)
+                else:
+                    pred = "No"
+                    parse_rates.append(0)
+                predictions.append(pred)
             else:
-                pred = "No"
-                parse_rates.append(0)
-            predictions.append(pred)
-        else:
-            predictions.append(fa)
-            parse_rates.append(1)
+                predictions.append(fa)
+                parse_rates.append(1)
+
+            if trace_fp:
+                correct = (pred == label) if cfg["type"] == "binary" else None
+                trace_fp.write(json.dumps({
+                    "task": task,
+                    "idx": int(idx),
+                    "question": question[:500],
+                    "label": label,
+                    "lane": lane,
+                    "tool_call": tc,
+                    "tool_result": tr,
+                    "final_answer": fa[:800],
+                    "prediction": pred if cfg["type"] == "binary" else fa[:200],
+                    "correct": correct,
+                }, ensure_ascii=False) + "\n")
+                trace_fp.flush()
+    finally:
+        if trace_fp:
+            trace_fp.close()
 
     metrics: Dict[str, Any] = {
         "task": task,
@@ -459,6 +489,8 @@ def main():
     parser.add_argument("--smoke-test", action="store_true",
                         help="Run single-inference Outlines smoke test")
     parser.add_argument("--output", default=None, help="Path to write results JSON")
+    parser.add_argument("--trace", default=None,
+                        help="Path to write per-sample JSONL traces (appended)")
     args = parser.parse_args()
 
     if args.smoke_test:
@@ -473,9 +505,11 @@ def main():
     if not tasks:
         parser.error("Specify --task <name> or --all-tasks")
 
+    trace_path = Path(args.trace) if args.trace else None
     all_metrics = []
     for task in tasks:
-        m = evaluate_task(decoder, task, max_samples=args.max_samples)
+        m = evaluate_task(decoder, task, max_samples=args.max_samples,
+                          trace_path=trace_path)
         all_metrics.append(m)
 
     results = {
